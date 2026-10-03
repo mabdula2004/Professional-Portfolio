@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArrowUpRight, Code2, Lock } from "lucide-react";
+import { GitHubRepoCount } from "@/components/github-repo-count";
 import { githubRepositories, projects } from "@/lib/portfolio-data";
 
 export const metadata: Metadata = { title: "Projects" };
@@ -10,7 +11,7 @@ export default function ProjectsPage() {
       <section className="page-intro projects-intro">
         <p className="section-index">Selected work / 2024–2026</p>
         <h1>Products, experiments and systems built to solve something real.</h1>
-        <p className="lead narrow">Six detailed case studies, one private in-development project, and {githubRepositories.length} public repositories across web, mobile, Firebase, AI and interface engineering.</p>
+        <p className="lead narrow">Five detailed case studies, one private in-development project, and a live GitHub profile with <GitHubRepoCount /> public repositories across web, mobile, Firebase, AI and interface engineering.</p>
       </section>
 
       <section className="archive-list">
@@ -41,8 +42,8 @@ export default function ProjectsPage() {
 
       <section className="section compact-section repository-section">
         <div className="section-heading split-heading">
-          <div><p className="section-index">GitHub archive / {githubRepositories.length} public repositories</p><h2>The complete public build history.</h2></div>
-          <p>Only recruiter-accessible public repositories are linked; private work is intentionally excluded.</p>
+          <div><p className="section-index">Selected GitHub work / {githubRepositories.length} repositories</p><h2>A focused view of my public build history.</h2></div>
+          <p>The live profile count updates automatically. The selected repositories below are recruiter-accessible; private work is intentionally excluded.</p>
         </div>
         <div className="repo-grid">
           {githubRepositories.map((repo, index) => (

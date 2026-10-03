@@ -1,4 +1,20 @@
-import { Code2, Layers3, Mail, Menu, Moon, Sun, X } from "lucide-react";
+import { Mail, Menu, Moon, Sun, X } from "lucide-react";
+
+function GitHubIcon({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 .7C5.73.7.65 5.78.65 12.05c0 5.02 3.25 9.28 7.76 10.78.57.1.77-.25.77-.55v-2.18c-3.16.69-3.83-1.34-3.83-1.34-.52-1.31-1.26-1.66-1.26-1.66-1.03-.71.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.74 2.66 1.24 3.31.95.1-.74.4-1.24.72-1.52-2.52-.29-5.17-1.26-5.17-5.61 0-1.24.44-2.25 1.17-3.05-.12-.29-.51-1.44.11-3 0 0 .95-.3 3.12 1.16a10.84 10.84 0 0 1 5.68 0c2.17-1.47 3.12-1.16 3.12-1.16.62 1.56.23 2.71.11 3 .73.8 1.17 1.81 1.17 3.05 0 4.36-2.65 5.32-5.18 5.6.41.36.77 1.06.77 2.14v3.18c0 .31.2.66.78.55a11.36 11.36 0 0 0 7.75-10.78C23.35 5.78 18.27.7 12 .7Z" />
+    </svg>
+  );
+}
+
+function LinkedInIcon({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.42v1.57h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29ZM5.32 7.41a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.04H3.54V8.98H7.1v11.47Z" />
+    </svg>
+  );
+}
 
 const nav = [
   ["/", "Home"],
@@ -27,8 +43,8 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
 
         <div className="header-actions">
           <div className="header-socials" aria-label="Professional links">
-            <a className="icon-button social-icon" href="https://github.com/mabdula2004" target="_blank" rel="noreferrer" aria-label="GitHub profile" title="GitHub"><Code2 size={17} /></a>
-            <a className="icon-button social-icon" href="https://www.linkedin.com/in/muhammad-abdullah-17jun" target="_blank" rel="noreferrer" aria-label="LinkedIn profile" title="LinkedIn"><Layers3 size={17} /></a>
+            <a className="icon-button social-icon" href="https://github.com/mabdula2004" target="_blank" rel="noreferrer" aria-label="GitHub profile" title="GitHub"><GitHubIcon /></a>
+            <a className="icon-button social-icon" href="https://www.linkedin.com/in/muhammad-abdullah-17jun" target="_blank" rel="noreferrer" aria-label="LinkedIn profile" title="LinkedIn"><LinkedInIcon /></a>
             <a className="icon-button social-icon" href="/contact" aria-label="Contact Muhammad Abdullah" title="Contact"><Mail size={17} /></a>
           </div>
           <label className="icon-button theme-toggle" title="Toggle light and dark theme">
@@ -41,8 +57,8 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             <nav className="main-nav" aria-label="Mobile navigation">
               {nav.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
               <div className="mobile-socials">
-                <a href="https://github.com/mabdula2004" target="_blank" rel="noreferrer"><Code2 size={16} /> GitHub</a>
-                <a href="https://www.linkedin.com/in/muhammad-abdullah-17jun" target="_blank" rel="noreferrer"><Layers3 size={16} /> LinkedIn</a>
+                <a href="https://github.com/mabdula2004" target="_blank" rel="noreferrer"><GitHubIcon size={16} /> GitHub</a>
+                <a href="https://www.linkedin.com/in/muhammad-abdullah-17jun" target="_blank" rel="noreferrer"><LinkedInIcon size={16} /> LinkedIn</a>
                 <a href="/contact"><Mail size={16} /> Contact</a>
               </div>
             </nav>

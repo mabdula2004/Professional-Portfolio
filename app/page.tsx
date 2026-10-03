@@ -1,4 +1,5 @@
 import { ArrowUpRight, Code2, Database, Layers3, Lock, Sparkles, Wrench } from "lucide-react";
+import { GitHubRepoCount } from "@/components/github-repo-count";
 import { coreSkills, projects } from "@/lib/portfolio-data";
 
 const featured = projects
@@ -21,7 +22,7 @@ export default function Home() {
           </div>
           <div className="hero-proof" aria-label="Quick profile facts">
             <div><strong>3.22</strong><span>CGPA / 4.0</span></div>
-            <div><strong>33</strong><span>GitHub repositories</span></div>
+            <div><strong><GitHubRepoCount /></strong><span>Public GitHub repositories</span></div>
             <div><strong>2026</strong><span>BSCS graduate</span></div>
           </div>
         </div>

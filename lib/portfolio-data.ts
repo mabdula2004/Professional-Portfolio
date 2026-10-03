@@ -149,28 +149,6 @@ export const projects: Project[] = [
     featuredOrder: 3,
     accent: "lime",
   },
-  {
-    slug: "professional-portfolio",
-    title: "Professional Portfolio",
-    eyebrow: "React + TypeScript",
-    summary:
-      "A responsive multi-page developer portfolio designed to present focused case studies, technical skills and professional information clearly.",
-    description:
-      "This portfolio is a production-style React and TypeScript project built around recruiter-friendly navigation and structured storytelling. It combines five focused home-page projects, detailed case studies, a complete public GitHub archive, education, résumé and contact information in one responsive experience.",
-    status: "Live portfolio",
-    year: "2026",
-    stack: ["React", "TypeScript", "Vinext", "Responsive UI"],
-    highlights: [
-      "Multi-page architecture with reliable browser-native navigation",
-      "Five curated projects plus a public GitHub archive",
-      "Responsive desktop and mobile layouts",
-      "Accessible light and dark theme control without JavaScript dependency",
-    ],
-    github: "https://github.com/mabdula2004/Professional-Portfolio",
-    featured: true,
-    featuredOrder: 4,
-    accent: "blue",
-  },
 ];
 
 export const coreSkills = [
@@ -206,5 +184,4 @@ export const githubRepositories: GitHubRepository[] = [
   { name: "React 30-Day Portfolio", repository: "react-30-day-portfolio", category: "React", description: "A public build series focused on consistent React practice." },
   { name: "React Learning Roadmap", repository: "react-learning-roadmap", category: "Learning", description: "A structured repository for React learning goals and progression." },
   { name: "VELORA Fashion Store", repository: "velora-react-shoping-store", category: "React Commerce", description: "A responsive React shopping experience with product interactions." },
-  { name: "Professional Portfolio", repository: "Professional-Portfolio", category: "React & TypeScript", description: "The source for this multi-page professional developer portfolio." },
 ];

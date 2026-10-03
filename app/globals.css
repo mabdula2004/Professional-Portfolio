@@ -155,8 +155,7 @@ button { font: inherit; }
 .private-project-card .project-art::before { opacity: .42; }
 .privacy-badge { position: absolute; z-index: 4; top: 17px; left: 17px; display: inline-flex; align-items: center; gap: 7px; padding: 7px 10px; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; background: rgba(17,15,23,.72); color: white; backdrop-filter: blur(10px); font-size: 9px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
 .project-lock { position: absolute; right: 25px; bottom: 25px; color: var(--project-accent); }
-.featured-project-grid .project-card:nth-child(4) { grid-column: 3 / span 4; }
-.featured-project-grid .project-card:nth-child(5) { grid-column: 7 / span 4; }
+.featured-project-grid .project-card:last-child { grid-column: 9 / span 4; }
 .accent-violet { --project-accent: #7b5cff; }
 .accent-amber { --project-accent: #ff9d3d; }
 .accent-cyan { --project-accent: #2ac6da; }
@@ -318,8 +317,7 @@ button { font: inherit; }
   .hero-copy { max-width: 800px; }
   .hero-visual { min-height: 460px; }
   .project-card { grid-column: span 6; }
-  .project-card:last-child, .featured-project-grid .project-card:nth-child(5) { grid-column: 4 / span 6; }
-  .featured-project-grid .project-card:nth-child(4) { grid-column: span 6; }
+  .project-card:last-child, .featured-project-grid .project-card:last-child { grid-column: span 6; }
   .capability-grid { grid-template-columns: repeat(2, 1fr); }
   .repo-grid { grid-template-columns: repeat(2, 1fr); }
   .case-hero { grid-template-columns: 1fr; }
@@ -349,7 +347,7 @@ button { font: inherit; }
   .section-heading h2, .cta-panel h2, .inline-cta h2, .case-content h2 { font-size: 2.5rem; }
   .project-grid { grid-template-columns: 1fr; }
   .project-card, .project-card:last-child { grid-column: 1; min-height: 480px; }
-  .featured-project-grid .project-card:nth-child(4), .featured-project-grid .project-card:nth-child(5) { grid-column: 1; }
+  .featured-project-grid .project-card:last-child { grid-column: 1; }
   .capability-grid, .principles-grid { grid-template-columns: 1fr; }
   .capability-grid article, .principles-grid article { min-height: 210px; }
   .capability-icon, .principles-grid svg { margin-bottom: 35px; }
