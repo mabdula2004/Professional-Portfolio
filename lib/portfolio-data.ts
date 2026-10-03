@@ -31,7 +31,7 @@ export const projects: Project[] = [
       "A centralized academic platform that studies prior projects to suggest stronger, less repetitive final-year project directions.",
     description:
       "Designed for students and supervisors at COMSATS University Islamabad, Vehari Campus. The platform brings project discovery, submission, supervision and quality checks into one workflow, using previous source code and project documents as context for smarter suggestions.",
-    status: "Repository publishing soon",
+    status: "Public repository · In development",
     year: "2026",
     stack: ["React", "AI integration", "Database", "Authentication"],
     highlights: [
@@ -40,9 +40,32 @@ export const projects: Project[] = [
       "Automated document and project-quality checks",
       "Designed to reduce duplicate or overly similar project ideas",
     ],
+    github: "https://github.com/mabdula2004/AI-powered-FYP-Suggestion-Submission-Portal",
     featured: true,
     featuredOrder: 1,
     accent: "violet",
+  },
+  {
+    slug: "medora-healthcare",
+    title: "Medora Healthcare Platform",
+    eyebrow: "Multi-Role Full-Stack System",
+    summary:
+      "A full-stack healthcare appointment platform unifying patient care, doctor workflows and administrative operations in one role-aware product.",
+    description:
+      "Medora is a React and Supabase healthcare workflow system built as one application with dedicated patient, doctor and admin workspaces. It combines clinician discovery and appointment booking with clinical records, prescriptions, messaging, availability, verification and platform operations, backed by PostgreSQL, Row Level Security and protected server-side workflows.",
+    status: "Full-stack project · Tested",
+    year: "2026",
+    stack: ["React", "Supabase", "PostgreSQL", "Playwright"],
+    highlights: [
+      "Patient, doctor and admin workspaces in one role-aware application",
+      "Server-validated appointment booking, pricing and slot protection",
+      "Supabase Auth, PostgreSQL and Row Level Security authorization",
+      "Responsive end-to-end workflows with automated Playwright QA",
+    ],
+    github: "https://github.com/mabdula2004/Multi-Role-Healthcare-Appointment-Management",
+    featured: true,
+    featuredOrder: 2,
+    accent: "cyan",
   },
   {
     slug: "velora-store",
@@ -85,7 +108,7 @@ export const projects: Project[] = [
     ],
     private: true,
     featured: true,
-    featuredOrder: 2,
+    featuredOrder: 3,
     accent: "green",
   },
   {
@@ -146,8 +169,68 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/mabdula2004/react-30-day-portfolio",
     featured: true,
-    featuredOrder: 3,
+    featuredOrder: 4,
     accent: "lime",
+  },
+  {
+    slug: "roamly-travel-booking",
+    title: "Roamly Travel Booking",
+    eyebrow: "Full-Stack Travel Experience",
+    summary:
+      "An editorial travel discovery and booking product with live catalog data, saved journeys and secure server-calculated bookings.",
+    description:
+      "Roamly combines an image-led React booking experience with a dedicated Supabase backend. Visitors can search and filter curated journeys, while authenticated users can save trips, create bookings and review booking history. PostgreSQL functions validate departure dates and calculate authoritative pricing on the server.",
+    status: "Full-stack project",
+    year: "2026",
+    stack: ["React", "Supabase", "PostgreSQL", "Playwright"],
+    highlights: [
+      "Responsive journey discovery, filtering and booking flows",
+      "Supabase authentication and owner-protected saved journeys",
+      "Database-calculated totals through a secure booking function",
+      "Desktop, tablet and mobile interaction testing with Playwright",
+    ],
+    github: "https://github.com/mabdula2004/Travel-Booking-Application",
+    accent: "green",
+  },
+  {
+    slug: "ember-restaurant-ordering",
+    title: "EMBER° Restaurant Ordering",
+    eyebrow: "Full-Stack Ordering Experience",
+    summary:
+      "A premium responsive restaurant storefront with a live menu, product discovery, cart interactions and a secure Supabase data model.",
+    description:
+      "EMBER° pairs an editorial restaurant interface with Supabase-backed menu and category data. The customer experience includes search, filtering and a calculated cart, while the PostgreSQL schema provides protected profiles, favorites, orders and order items ready for authenticated workflows.",
+    status: "Full-stack project",
+    year: "2026",
+    stack: ["React", "Supabase", "PostgreSQL", "Responsive UI"],
+    highlights: [
+      "Live Supabase menu and category data",
+      "Search, category filtering and interactive cart calculations",
+      "Row Level Security for user-owned profile and order data",
+      "Production-oriented relational model for ordering workflows",
+    ],
+    github: "https://github.com/mabdula2004/Restaurant-Ordering-Application",
+    accent: "amber",
+  },
+  {
+    slug: "atelier-luxury-commerce",
+    title: "ATELIER 01 Luxury Commerce",
+    eyebrow: "Full-Stack Commerce Platform",
+    summary:
+      "A client-ready luxury fashion store with authenticated shopping, persistent cart and wishlist state, checkout and account management.",
+    description:
+      "ATELIER 01 translates editorial fashion direction into a complete React commerce experience backed by Supabase. It includes a database-driven catalog, product discovery, authentication, persistent cart and wishlist data, profile and avatar management, order creation and responsive end-to-end QA.",
+    status: "Full-stack project · Tested",
+    year: "2026",
+    stack: ["React", "Supabase", "PostgreSQL", "Playwright"],
+    highlights: [
+      "Supabase-backed catalog, authentication, cart and wishlist",
+      "Checkout creates protected orders and line-item records",
+      "Private account, profile, avatar storage and order history",
+      "Row Level Security plus automated desktop and mobile QA",
+    ],
+    github: "https://github.com/mabdula2004/luxury-Ecommerce-with-Backend-",
+    accent: "violet",
   },
 ];
 
@@ -159,6 +242,11 @@ export const coreSkills = [
 ];
 
 export const githubRepositories: GitHubRepository[] = [
+  { name: "Medora Healthcare Platform", repository: "Multi-Role-Healthcare-Appointment-Management", category: "React + Supabase", description: "A multi-role healthcare system for patients, doctors and administrators." },
+  { name: "Roamly Travel Booking", repository: "Travel-Booking-Application", category: "React + Supabase", description: "An editorial travel discovery and secure booking experience." },
+  { name: "EMBER° Restaurant Ordering", repository: "Restaurant-Ordering-Application", category: "React + Supabase", description: "A full-stack restaurant storefront with live menu and ordering data." },
+  { name: "ATELIER 01 Luxury Commerce", repository: "luxury-Ecommerce-with-Backend-", category: "React + Supabase", description: "A luxury commerce platform with authentication, checkout and account workflows." },
+  { name: "AI-Powered FYP Portal", repository: "AI-powered-FYP-Suggestion-Submission-Portal", category: "React + AI", description: "A final-year project suggestion and submission workflow for students and supervisors." },
   { name: "My Projects", repository: "My-Projects", category: "Project Collection", description: "A collection of development exercises and project experiments." },
   { name: "Modern Login UI Interface", repository: "modern_login_ui_interface", category: "Interface Design", description: "A focused authentication interface and responsive layout study." },
   { name: "Modern Login UI", repository: "modern_login_ui", category: "Interface Design", description: "A polished login experience built as a reusable UI exercise." },

@@ -6,12 +6,15 @@ import { githubRepositories, projects } from "@/lib/portfolio-data";
 export const metadata: Metadata = { title: "Projects" };
 
 export default function ProjectsPage() {
+  const publicProjectCount = projects.filter((project) => !project.private).length;
+  const privateProjectCount = projects.filter((project) => project.private).length;
+
   return (
     <main className="inner-main page-shell">
       <section className="page-intro projects-intro">
         <p className="section-index">Selected work / 2024–2026</p>
         <h1>Products, experiments and systems built to solve something real.</h1>
-        <p className="lead narrow">Five detailed case studies, one private in-development project, and a live GitHub profile with <GitHubRepoCount /> public repositories across web, mobile, Firebase, AI and interface engineering.</p>
+        <p className="lead narrow">{publicProjectCount} detailed public case studies, {privateProjectCount} private in-development project, and a live GitHub profile with <GitHubRepoCount /> public repositories across full-stack web, mobile, Firebase, AI and interface engineering.</p>
       </section>
 
       <section className="archive-list">
