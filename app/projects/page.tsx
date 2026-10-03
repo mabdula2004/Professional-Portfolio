@@ -10,7 +10,7 @@ export default function ProjectsPage() {
       <section className="page-intro projects-intro">
         <p className="section-index">Selected work / 2024–2026</p>
         <h1>Products, experiments and systems built to solve something real.</h1>
-        <p className="lead narrow">Six detailed case studies plus a complete archive of 27 public repositories across web, mobile, Firebase, AI and interface engineering.</p>
+        <p className="lead narrow">Seven detailed case studies plus a complete archive of 27 public repositories across web, mobile, Firebase, AI and interface engineering.</p>
       </section>
 
       <section className="archive-list">

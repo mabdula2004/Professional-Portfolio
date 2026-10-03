@@ -10,6 +10,7 @@ export type Project = {
   highlights: string[];
   github?: string;
   featured?: boolean;
+  featuredOrder?: number;
   accent: string;
 };
 
@@ -39,6 +40,7 @@ export const projects: Project[] = [
       "Designed to reduce duplicate or overly similar project ideas",
     ],
     featured: true,
+    featuredOrder: 1,
     accent: "violet",
   },
   {
@@ -60,6 +62,7 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/mabdula2004/velora-react-shoping-store",
     featured: true,
+    featuredOrder: 5,
     accent: "amber",
   },
   {
@@ -81,6 +84,7 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/mabdula2004/watchRoad",
     featured: true,
+    featuredOrder: 2,
     accent: "green",
   },
   {
@@ -101,7 +105,6 @@ export const projects: Project[] = [
       "Topic-level progress and student performance views",
     ],
     github: "https://github.com/mabdula2004/STUDENT-side",
-    featured: true,
     accent: "cyan",
   },
   {
@@ -121,7 +124,6 @@ export const projects: Project[] = [
       "Media, browser and desktop application controls",
       "Listening, processing and speaking interface states",
     ],
-    featured: true,
     accent: "green",
   },
   {
@@ -142,7 +144,31 @@ export const projects: Project[] = [
       "Public Git history documenting continued development",
     ],
     github: "https://github.com/mabdula2004/react-30-day-portfolio",
+    featured: true,
+    featuredOrder: 3,
     accent: "lime",
+  },
+  {
+    slug: "professional-portfolio",
+    title: "Professional Portfolio",
+    eyebrow: "React + TypeScript",
+    summary:
+      "A responsive multi-page developer portfolio designed to present focused case studies, technical skills and professional information clearly.",
+    description:
+      "This portfolio is a production-style React and TypeScript project built around recruiter-friendly navigation and structured storytelling. It combines five focused home-page projects, detailed case studies, a complete public GitHub archive, education, résumé and contact information in one responsive experience.",
+    status: "Live portfolio",
+    year: "2026",
+    stack: ["React", "TypeScript", "Vinext", "Responsive UI"],
+    highlights: [
+      "Multi-page architecture with reliable browser-native navigation",
+      "Five curated projects plus a 27-repository public archive",
+      "Responsive desktop and mobile layouts",
+      "Accessible light and dark theme control without JavaScript dependency",
+    ],
+    github: "https://github.com/mabdula2004/Professional-Portfolio",
+    featured: true,
+    featuredOrder: 4,
+    accent: "blue",
   },
 ];
 

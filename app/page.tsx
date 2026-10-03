@@ -1,7 +1,9 @@
 import { ArrowUpRight, Code2, Database, Layers3, Sparkles, Wrench } from "lucide-react";
 import { coreSkills, projects } from "@/lib/portfolio-data";
 
-const featured = projects.filter((project) => project.featured);
+const featured = projects
+  .filter((project) => project.featured)
+  .sort((a, b) => (a.featuredOrder ?? 99) - (b.featuredOrder ?? 99));
 
 export default function Home() {
   return (
