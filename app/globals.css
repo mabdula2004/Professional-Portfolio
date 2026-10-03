@@ -183,7 +183,7 @@ button { font: inherit; }
 
 .inner-main { padding-top: 100px; padding-bottom: 120px; }
 .page-intro { padding: 44px 0 100px; }
-.page-intro h1 { max-width: 1020px; }
+.page-intro h1 { width: min(760px, 100%); max-width: none; text-wrap: balance; }
 .intro-columns { display: grid; grid-template-columns: .9fr 1.1fr; gap: 100px; margin-top: 50px; padding-top: 42px; border-top: 1px solid var(--line); }
 .rich-copy p { margin: 0 0 22px; color: var(--muted); font-size: 18px; }
 .profile-band { display: grid; grid-template-columns: .8fr 1.2fr; min-height: 360px; overflow: hidden; border-radius: 30px; background: #17151d; color: white; }
