@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ArrowUpRight, BookOpen, Compass, GraduationCap } from "lucide-react";
 import { coreSkills } from "@/lib/portfolio-data";
 
@@ -46,7 +45,7 @@ export default function AboutPage() {
 
       <section className="inline-cta">
         <div><p className="section-index">Next</p><h2>See how these skills come together.</h2></div>
-        <Link className="button primary" href="/projects">Explore projects <ArrowUpRight size={17} /></Link>
+        <a className="button primary" href="/projects">Explore projects <ArrowUpRight size={17} /></a>
       </section>
     </main>
   );

@@ -1,8 +1,3 @@
-"use client";
-
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 import { Menu, Moon, Sun, X } from "lucide-react";
 
 const nav = [
@@ -15,53 +10,33 @@ const nav = [
 ];
 
 export function SiteShell({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
-
-  useEffect(() => {
-    const saved = window.localStorage.getItem("portfolio-theme");
-    const next = saved === "light" ? "light" : "dark";
-    setTheme(next);
-    document.documentElement.dataset.theme = next;
-  }, []);
-
-  function toggleTheme() {
-    const next = theme === "dark" ? "light" : "dark";
-    setTheme(next);
-    document.documentElement.dataset.theme = next;
-    window.localStorage.setItem("portfolio-theme", next);
-  }
-
   return (
     <div className="site-frame">
       <header className="site-header">
-        <Link className="brand" href="/" aria-label="Muhammad Abdullah home">
+        <a className="brand" href="/" aria-label="Muhammad Abdullah home">
           <span className="brand-mark">MA</span>
           <span className="brand-copy">
             <strong>Muhammad Abdullah</strong>
             <small>Full-Stack Developer</small>
           </span>
-        </Link>
+        </a>
 
-        <nav className={menuOpen ? "main-nav is-open" : "main-nav"} aria-label="Primary navigation">
-          {nav.map(([href, label]) => {
-            const active = href === "/" ? pathname === href : pathname.startsWith(href);
-            return (
-              <Link key={href} className={active ? "active" : ""} href={href} onClick={() => setMenuOpen(false)}>
-                {label}
-              </Link>
-            );
-          })}
+        <nav className="main-nav desktop-nav" aria-label="Primary navigation">
+          {nav.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
         </nav>
 
         <div className="header-actions">
-          <button className="icon-button" onClick={toggleTheme} aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}>
-            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
-          <button className="icon-button menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation" aria-expanded={menuOpen}>
-            {menuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          <label className="icon-button theme-toggle" title="Toggle light and dark theme">
+            <input type="checkbox" aria-label="Toggle light and dark theme" />
+            <Sun className="theme-sun" size={18} />
+            <Moon className="theme-moon" size={18} />
+          </label>
+          <details className="mobile-nav">
+            <summary className="icon-button" aria-label="Toggle navigation"><Menu className="menu-open-icon" size={20} /><X className="menu-close-icon" size={20} /></summary>
+            <nav className="main-nav" aria-label="Mobile navigation">
+              {nav.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
+            </nav>
+          </details>
         </div>
       </header>
 
@@ -75,7 +50,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         <div className="footer-links">
           <a href="https://github.com/mabdula2004" target="_blank" rel="noreferrer">GitHub</a>
           <a href="https://www.linkedin.com/in/muhammad-abdullah-17jun" target="_blank" rel="noreferrer">LinkedIn</a>
-          <Link href="/contact">Contact</Link>
+          <a href="/contact">Contact</a>
         </div>
         <p className="footer-note">© 2026 Muhammad Abdullah</p>
       </footer>

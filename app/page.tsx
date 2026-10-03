@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { ArrowUpRight, Code2, Database, Layers3, Sparkles } from "lucide-react";
+import { ArrowUpRight, Code2, Database, Layers3, Sparkles, Wrench } from "lucide-react";
 import { coreSkills, projects } from "@/lib/portfolio-data";
 
 const featured = projects.filter((project) => project.featured);
@@ -15,12 +14,12 @@ export default function Home() {
             I&apos;m Muhammad Abdullah, a full-stack developer focused on React and TypeScript—connecting polished interfaces with authentication, databases, APIs and AI-powered features.
           </p>
           <div className="hero-actions">
-            <Link className="button primary" href="/projects">Explore my work <ArrowUpRight size={17} /></Link>
-            <Link className="button secondary" href="/contact">Start a conversation</Link>
+            <a className="button primary" href="/projects">Explore my work <ArrowUpRight size={17} /></a>
+            <a className="button secondary" href="/contact">Start a conversation</a>
           </div>
           <div className="hero-proof" aria-label="Quick profile facts">
             <div><strong>3.22</strong><span>CGPA / 4.0</span></div>
-            <div><strong>26</strong><span>GitHub repositories</span></div>
+            <div><strong>33</strong><span>GitHub repositories</span></div>
             <div><strong>2026</strong><span>BSCS graduate</span></div>
           </div>
         </div>
@@ -54,9 +53,9 @@ export default function Home() {
           <div><p className="section-index">01 / Selected work</p><h2>Projects with a reason to exist.</h2></div>
           <p>From academic systems to commerce experiences, each project is a focused exercise in turning a real workflow into a usable product.</p>
         </div>
-        <div className="project-grid">
+        <div className="project-grid featured-project-grid">
           {featured.map((project, index) => (
-            <Link className={`project-card accent-${project.accent}`} href={`/projects/${project.slug}`} key={project.slug}>
+            <a className={`project-card accent-${project.accent}`} href={`/projects/${project.slug}`} key={project.slug}>
               <div className="project-number">0{index + 1}</div>
               <div className="project-art" aria-hidden="true">
                 <span className="art-grid" />
@@ -70,10 +69,10 @@ export default function Home() {
                 <div className="tag-row">{project.stack.slice(0, 3).map((item) => <small key={item}>{item}</small>)}</div>
               </div>
               <ArrowUpRight className="project-arrow" size={20} />
-            </Link>
+            </a>
           ))}
         </div>
-        <Link className="text-link" href="/projects">View the complete project archive <ArrowUpRight size={16} /></Link>
+        <a className="text-link" href="/projects">View the complete project archive <ArrowUpRight size={16} /></a>
       </section>
 
       <section className="section muted-section">
@@ -81,7 +80,7 @@ export default function Home() {
           <div className="section-heading"><p className="section-index">02 / Capabilities</p><h2>One product mindset, across the stack.</h2></div>
           <div className="capability-grid">
             {coreSkills.map((skill, index) => {
-              const icons = [<Layers3 key="i" />, <Database key="i" />, <Sparkles key="i" />, <Code2 key="i" />];
+              const icons = [<Layers3 key="i" />, <Database key="i" />, <Sparkles key="i" />, <Wrench key="i" />];
               return <article key={skill.group}><div className="capability-icon">{icons[index]}</div><h3>{skill.group}</h3><p>{skill.items.join(" · ")}</p></article>;
             })}
           </div>
@@ -92,7 +91,7 @@ export default function Home() {
         <p className="section-index">03 / What&apos;s next</p>
         <h2>Looking for someone who can learn fast and ship thoughtfully?</h2>
         <p>I&apos;m currently exploring full-stack development opportunities where strong frontend craft and practical product thinking matter.</p>
-        <Link className="button light" href="/contact">Let&apos;s talk <ArrowUpRight size={17} /></Link>
+        <a className="button light" href="/contact">Let&apos;s talk <ArrowUpRight size={17} /></a>
       </section>
     </main>
   );

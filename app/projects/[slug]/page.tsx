@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, CheckCircle2, Code2 } from "lucide-react";
 import { projects } from "@/lib/portfolio-data";
@@ -19,7 +18,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
 
   return (
     <main className="inner-main page-shell">
-      <Link className="back-link" href="/projects"><ArrowLeft size={16} /> All projects</Link>
+      <a className="back-link" href="/projects"><ArrowLeft size={16} /> All projects</a>
       <section className={`case-hero accent-${project.accent}`}>
         <div className="case-copy">
           <p className="section-index">{project.eyebrow} / {project.year}</p>
@@ -48,7 +47,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
 
       <section className="inline-cta">
         <div><p className="section-index">Continue</p><h2>Explore another project.</h2></div>
-        <Link className="button primary" href="/projects">Project archive <ArrowUpRight size={17} /></Link>
+        <a className="button primary" href="/projects">Project archive <ArrowUpRight size={17} /></a>
       </section>
     </main>
   );

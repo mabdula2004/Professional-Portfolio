@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ArrowUpRight, Mail, MapPin } from "lucide-react";
 import { coreSkills } from "@/lib/portfolio-data";
 
@@ -16,12 +15,12 @@ export default function ResumePage() {
         <aside><section><h2>Links</h2><a href="https://github.com/mabdula2004" target="_blank" rel="noreferrer">github.com/mabdula2004</a><a href="https://www.linkedin.com/in/muhammad-abdullah-17jun" target="_blank" rel="noreferrer">LinkedIn profile</a></section><section><h2>Language</h2><p>English — Professional working proficiency</p></section></aside>
         <div className="resume-content">
           <section><h2>Profile</h2><p>Full-stack developer with a strong foundation in React, React Native, HTML, CSS, JavaScript and TypeScript. I build responsive, user-friendly applications and connect them with authentication, databases, APIs and AI-powered features.</p></section>
-          <section><h2>Education</h2><div className="resume-entry"><div><h3>BS Computer Science</h3><p>COMSATS University Islamabad</p></div><span>Sep 2022 – Sep 2026</span></div></section>
+          <section><h2>Education</h2><div className="resume-entry"><div><h3>BS Computer Science</h3><p>COMSATS University Islamabad · CGPA 3.22 / 4.0</p></div><span>Sep 2022 – Sep 2026</span></div></section>
           <section><h2>Core skills</h2><div className="resume-skill-grid">{coreSkills.map((skill) => <div key={skill.group}><h3>{skill.group}</h3><p>{skill.items.join(", ")}</p></div>)}</div></section>
-          <section><h2>Selected projects</h2><div className="resume-entry"><div><h3>AI-Powered FYP Suggestion & Submission Portal</h3><p>Academic platform for project discovery, submission and quality support.</p></div><span>2026</span></div><div className="resume-entry"><div><h3>VELORA React Fashion Store</h3><p>Responsive product discovery and commerce experience.</p></div><span>2026</span></div><div className="resume-entry"><div><h3>Student Learning Platform</h3><p>Role-based Flutter and Firebase academic application.</p></div><span>2024</span></div></section>
+          <section><h2>Selected projects</h2><div className="resume-entry"><div><h3>AI-Powered FYP Suggestion & Submission Portal</h3><p>Academic platform for project discovery, submission and quality support.</p></div><span>2026</span></div><div className="resume-entry"><div><h3>VELORA React Fashion Store</h3><p>Responsive product discovery and commerce experience.</p></div><span>2026</span></div><div className="resume-entry"><div><h3>RoadWatch</h3><p>Active TypeScript product project and portfolio case study.</p></div><span>2026</span></div><div className="resume-entry"><div><h3>David AI Voice Assistant</h3><p>Python, Flask, speech recognition and desktop automation.</p></div><span>2025</span></div><div className="resume-entry"><div><h3>Student Learning Platform</h3><p>Role-based Flutter and Firebase academic application.</p></div><span>2024</span></div></section>
         </div>
       </div>
-      <section className="resume-note"><p>The downloadable ATS-ready CV will be added after the portfolio content review.</p><Link className="text-link" href="/contact">Request current profile <ArrowUpRight size={16} /></Link></section>
+      <section className="resume-note"><p>The downloadable ATS-ready CV will be added after the portfolio content review.</p><a className="text-link" href="/contact">Request current profile <ArrowUpRight size={16} /></a></section>
     </main>
   );
 }
