@@ -52,8 +52,8 @@ export default function Home() {
       </section>
 
       <section className="section page-shell">
-        <div className="section-heading split-heading">
-          <div><p className="section-index">01 / Selected work</p><h2>Projects with a reason to exist.</h2></div>
+        <div className="section-heading split-heading project-section-heading">
+          <div><p className="section-index">01 / Selected work</p><h2>Projects with a reason to exist</h2></div>
           <p>From academic systems to commerce experiences, each project is a focused exercise in turning a real workflow into a usable product.</p>
         </div>
         <div className="project-grid featured-project-grid">
