@@ -1,4 +1,4 @@
-import { Mail, Menu, Moon, Sun, X } from "lucide-react";
+import { Mail, Menu, MessageCircle, Moon, Sun, X } from "lucide-react";
 
 function GitHubIcon({ size = 18 }: { size?: number }) {
   return (
@@ -69,11 +69,34 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       {children}
 
       <footer className="site-footer">
-        <div>
-          <span className="brand-mark small">MA</span>
-          <p>Building thoughtful products across interfaces, data and AI.</p>
+        <div className="footer-grid">
+          <div className="footer-intro">
+            <p className="footer-eyebrow">Full-Stack Developer</p>
+            <h2>Let&apos;s build something useful.</h2>
+            <p>I create responsive React and TypeScript products backed by practical authentication, data and API workflows.</p>
+            <a className="footer-contact" href="/contact"><Mail size={17} /> Start a conversation</a>
+          </div>
+
+          <nav className="footer-column" aria-label="Footer navigation">
+            <h3>Explore</h3>
+            <a href="/about">About</a>
+            <a href="/projects">Projects</a>
+            <a href="/experience">Experience</a>
+            <a href="/resume">Résumé</a>
+          </nav>
+
+          <div className="footer-column footer-connect">
+            <h3>Connect</h3>
+            <a href="https://github.com/mabdula2004" target="_blank" rel="noreferrer"><GitHubIcon size={16} /> GitHub</a>
+            <a href="https://www.linkedin.com/in/muhammad-abdullah-17jun" target="_blank" rel="noreferrer"><LinkedInIcon size={16} /> LinkedIn</a>
+            <a href="https://wa.me/923202929447" target="_blank" rel="noreferrer"><MessageCircle size={16} /> WhatsApp</a>
+            <a href="mailto:muhammadabdula7874747@gmail.com"><Mail size={16} /> Email</a>
+          </div>
         </div>
-        <p className="footer-note">© 2026 Muhammad Abdullah</p>
+        <div className="footer-bottom">
+          <p>© 2026 Muhammad Abdullah. All rights reserved.</p>
+          <p>Lahore, Pakistan · Available for opportunities</p>
+        </div>
       </footer>
     </div>
   );
