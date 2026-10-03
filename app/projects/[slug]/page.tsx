@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowUpRight, CheckCircle2, Code2 } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, CheckCircle2, Code2, Lock } from "lucide-react";
 import { projects } from "@/lib/portfolio-data";
 
 export function generateStaticParams() { return projects.map((project) => ({ slug: project.slug })); }
@@ -15,6 +15,36 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
   const { slug } = await params;
   const project = projects.find((item) => item.slug === slug);
   if (!project) notFound();
+
+  if (project.private) {
+    return (
+      <main className="inner-main page-shell">
+        <a className="back-link" href="/projects"><ArrowLeft size={16} /> All projects</a>
+        <section className={`case-hero private-case-hero accent-${project.accent}`}>
+          <div className="case-copy">
+            <p className="section-index">Private project / {project.year}</p>
+            <h1>{project.title}</h1>
+            <p className="lead">{project.summary}</p>
+            <div className="case-actions"><span className="status-pill private-status"><Lock size={14} /> {project.status}</span></div>
+          </div>
+          <div className="case-art private-case-art">
+            <Lock className="private-case-lock" aria-hidden="true" />
+            <small>Details available on request</small>
+          </div>
+        </section>
+
+        <section className="private-case-message">
+          <p className="section-index">Protected case study</p>
+          <h2>This project is currently private.</h2>
+          <p>The product is under active development. Source code, technical architecture and implementation details are intentionally withheld until release.</p>
+          <div className="private-case-actions">
+            <a className="button primary" href="/contact">Contact me</a>
+            <a className="button secondary" href="/projects">Project archive <ArrowUpRight size={17} /></a>
+          </div>
+        </section>
+      </main>
+    );
+  }
 
   return (
     <main className="inner-main page-shell">

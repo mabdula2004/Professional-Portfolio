@@ -9,6 +9,7 @@ export type Project = {
   stack: string[];
   highlights: string[];
   github?: string;
+  private?: boolean;
   featured?: boolean;
   featuredOrder?: number;
   accent: string;
@@ -68,21 +69,21 @@ export const projects: Project[] = [
   {
     slug: "roadwatch",
     title: "RoadWatch",
-    eyebrow: "TypeScript Application",
+    eyebrow: "Private Mobile Project",
     summary:
-      "A TypeScript-based product project currently being prepared as a complete portfolio case study.",
+      "A private React Native product currently in development. Technical details are available on request.",
     description:
-      "RoadWatch is an active project built with a modern TypeScript interface stack. Its final problem statement, feature set, user workflow and project outcomes will be documented here after the project brief is confirmed.",
-    status: "Case study details coming soon",
+      "RoadWatch is being developed privately while implementation and testing continue. A public case study will be released when the product is ready.",
+    status: "Private · In Development",
     year: "2026",
-    stack: ["TypeScript", "React", "Vite", "Tailwind CSS"],
+    stack: ["React Native", "Expo", "TypeScript"],
     highlights: [
-      "Modern TypeScript application structure",
-      "Responsive component-based interface",
-      "Active development with iterative Git history",
-      "Full feature breakdown to be added from the confirmed brief",
+      "Private repository",
+      "Interface design complete",
+      "Implementation in progress",
+      "Public case study planned after release",
     ],
-    github: "https://github.com/mabdula2004/watchRoad",
+    private: true,
     featured: true,
     featuredOrder: 2,
     accent: "green",
@@ -161,7 +162,7 @@ export const projects: Project[] = [
     stack: ["React", "TypeScript", "Vinext", "Responsive UI"],
     highlights: [
       "Multi-page architecture with reliable browser-native navigation",
-      "Five curated projects plus a 27-repository public archive",
+      "Five curated projects plus a public GitHub archive",
       "Responsive desktop and mobile layouts",
       "Accessible light and dark theme control without JavaScript dependency",
     ],
@@ -205,6 +206,5 @@ export const githubRepositories: GitHubRepository[] = [
   { name: "React 30-Day Portfolio", repository: "react-30-day-portfolio", category: "React", description: "A public build series focused on consistent React practice." },
   { name: "React Learning Roadmap", repository: "react-learning-roadmap", category: "Learning", description: "A structured repository for React learning goals and progression." },
   { name: "VELORA Fashion Store", repository: "velora-react-shoping-store", category: "React Commerce", description: "A responsive React shopping experience with product interactions." },
-  { name: "RoadWatch", repository: "watchRoad", category: "TypeScript", description: "An active TypeScript product project and portfolio case study." },
   { name: "Professional Portfolio", repository: "Professional-Portfolio", category: "React & TypeScript", description: "The source for this multi-page professional developer portfolio." },
 ];

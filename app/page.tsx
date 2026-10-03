@@ -1,4 +1,4 @@
-import { ArrowUpRight, Code2, Database, Layers3, Sparkles, Wrench } from "lucide-react";
+import { ArrowUpRight, Code2, Database, Layers3, Lock, Sparkles, Wrench } from "lucide-react";
 import { coreSkills, projects } from "@/lib/portfolio-data";
 
 const featured = projects
@@ -56,9 +56,10 @@ export default function Home() {
           <p>From academic systems to commerce experiences, each project is a focused exercise in turning a real workflow into a usable product.</p>
         </div>
         <div className="project-grid featured-project-grid">
-          {featured.map((project, index) => (
-            <a className={`project-card accent-${project.accent}`} href={`/projects/${project.slug}`} key={project.slug}>
+          {featured.map((project, index) => {
+            const cardContent = <>
               <div className="project-number">0{index + 1}</div>
+              {project.private ? <span className="privacy-badge"><Lock size={13} /> Private · In Development</span> : null}
               <div className="project-art" aria-hidden="true">
                 <span className="art-grid" />
                 <strong>{project.title.split(" ").slice(0, 2).join(" ")}</strong>
@@ -70,9 +71,19 @@ export default function Home() {
                 <span>{project.summary}</span>
                 <div className="tag-row">{project.stack.slice(0, 3).map((item) => <small key={item}>{item}</small>)}</div>
               </div>
-              <ArrowUpRight className="project-arrow" size={20} />
-            </a>
-          ))}
+              {project.private ? <Lock className="project-lock" size={19} /> : <ArrowUpRight className="project-arrow" size={20} />}
+            </>;
+
+            return project.private ? (
+              <article className={`project-card private-project-card accent-${project.accent}`} key={project.slug} aria-label={`${project.title}, private project in development`}>
+                {cardContent}
+              </article>
+            ) : (
+              <a className={`project-card accent-${project.accent}`} href={`/projects/${project.slug}`} key={project.slug}>
+                {cardContent}
+              </a>
+            );
+          })}
         </div>
         <a className="text-link" href="/projects">View the complete project archive <ArrowUpRight size={16} /></a>
       </section>
