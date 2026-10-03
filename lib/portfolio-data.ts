@@ -155,7 +155,7 @@ export const coreSkills = [
   { group: "Frontend", items: ["React", "React Native", "TypeScript", "JavaScript", "HTML", "CSS", "Responsive UI"] },
   { group: "Backend & data", items: ["Firebase", "Supabase", "PostgreSQL", "MySQL", "Authentication", "REST APIs"] },
   { group: "AI & programming", items: ["AI integrations", "Python", "C++", "Gemini API", "Sentence Transformers"] },
-  { group: "Development Tools", items: ["Git", "GitHub", "VS Code", "Android Studio", "Antigravity", "Cursor", "Claude CLI", "GPT CLI", "Perplexity"] },
+  { group: "Development Tools", items: ["Git", "GitHub", "VS Code", "Android Studio", "Google Colab"] },
 ];
 
 export const githubRepositories: GitHubRepository[] = [
