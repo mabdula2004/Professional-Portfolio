@@ -17,6 +17,7 @@ export default function ExperiencePage() {
       <section className="page-intro">
         <p className="section-index">Experience & education</p>
         <h1>A path shaped by coursework, ambitious projects and consistent practice.</h1>
+        <p className="lead">Project work and a computer science foundation have shaped how I build, learn and solve practical problems.</p>
       </section>
       <section className="timeline">
         {milestones.map((item, index) => <article key={item.title}><div className="timeline-marker"><span>0{index + 1}</span></div><p className="timeline-date">{item.date}</p><div><p className="eyebrow">{item.subtitle}</p><h2>{item.title}</h2><p>{item.body}</p></div></article>)}

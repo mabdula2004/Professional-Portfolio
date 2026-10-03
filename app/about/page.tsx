@@ -10,12 +10,10 @@ export default function AboutPage() {
       <section className="page-intro about-intro">
         <p className="section-index">About / 01</p>
         <h1>Curiosity turned into a way of building.</h1>
-        <div className="intro-columns">
-          <p className="lead">I&apos;m a full-stack developer who enjoys turning ideas and interface designs into responsive, connected applications.</p>
-          <div className="rich-copy">
-            <p>My strongest foundation is in frontend development with React, but my work increasingly connects that experience to authentication, databases, APIs and AI integrations.</p>
-            <p>I learn by building. That has taken me from C++ and Flutter applications to React product experiences, Firebase-backed academic systems and an AI-powered final-year project.</p>
-          </div>
+        <p className="lead">I&apos;m a full-stack developer who enjoys turning ideas and interface designs into responsive, connected applications.</p>
+        <div className="about-detail-copy rich-copy">
+          <p>My strongest foundation is in frontend development with React, but my work increasingly connects that experience to authentication, databases, APIs and AI integrations.</p>
+          <p>I learn by building. That has taken me from C++ and Flutter applications to React product experiences, Firebase-backed academic systems and an AI-powered final-year project.</p>
         </div>
       </section>
 
