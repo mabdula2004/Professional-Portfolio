@@ -158,13 +158,13 @@ button { font: inherit; }
 .privacy-badge { position: absolute; z-index: 4; top: 17px; left: 17px; display: inline-flex; align-items: center; gap: 7px; padding: 7px 10px; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; background: rgba(17,15,23,.72); color: white; backdrop-filter: blur(10px); font-size: 9px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
 .project-lock { position: absolute; right: 25px; bottom: 25px; color: var(--project-accent); }
 .featured-project-grid { gap: 26px; }
-.featured-project-grid .project-card { grid-column: span 4; min-height: 500px; }
-.featured-project-grid .project-art { min-height: 190px; padding: 21px; }
+.featured-project-grid .project-card { grid-column: span 4; min-height: 450px; }
+.featured-project-grid .project-art { min-height: 180px; padding: 20px; }
 .featured-project-grid .project-art strong { font-size: 28px; }
-.featured-project-grid .project-copy { padding: 22px; }
+.featured-project-grid .project-copy { padding: 20px; }
 .featured-project-grid .project-copy h3 { font-size: 19px; }
 .featured-project-grid .project-copy > span { font-size: 13px; line-height: 1.55; }
-.featured-project-grid .tag-row { padding-top: 18px; }
+.featured-project-grid .tag-row { padding-top: 16px; }
 .accent-violet { --project-accent: #7b5cff; }
 .accent-amber { --project-accent: #ff9d3d; }
 .accent-cyan { --project-accent: #2ac6da; }
