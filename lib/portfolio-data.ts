@@ -8,6 +8,11 @@ export type Project = {
   year: string;
   stack: string[];
   highlights: string[];
+  problem?: string;
+  purpose?: string;
+  role?: string;
+  technicalDecisions?: string[];
+  futureWork?: string[];
   github?: string;
   private?: boolean;
   featured?: boolean;
@@ -40,6 +45,11 @@ export const projects: Project[] = [
       "Automated document and project-quality checks",
       "Designed to reduce duplicate or overly similar project ideas",
     ],
+    problem: "Students can struggle to find distinct final-year project directions, while supervisors need a clearer way to review ideas, submissions and repeated concepts.",
+    purpose: "Bring project discovery, suggestion, submission and review into one academic workflow that supports stronger decisions without replacing supervisor judgment.",
+    role: "Product design, React interface development and integration planning across the academic workflow.",
+    technicalDecisions: ["Component-based React interface for role-aware workflows", "AI features treated as decision support rather than an automatic final answer", "Authentication and data structure planned around student and supervisor access"],
+    futureWork: ["Complete backend integration and end-to-end validation", "Add final project screenshots and deployment documentation", "Refine AI-assisted similarity and quality checks"],
     github: "https://github.com/mabdula2004/AI-powered-FYP-Suggestion-Submission-Portal",
     featured: true,
     featuredOrder: 1,
@@ -62,6 +72,11 @@ export const projects: Project[] = [
       "Supabase Auth, PostgreSQL and Row Level Security authorization",
       "Responsive end-to-end workflows with automated Playwright QA",
     ],
+    problem: "Healthcare appointment workflows often become fragmented across patient booking, doctor availability and administrative verification.",
+    purpose: "Create one role-aware product where patients, doctors and administrators can complete their work without losing context between separate systems.",
+    role: "Full-stack design and development across the React interface, Supabase data model, authentication and protected workflows.",
+    technicalDecisions: ["Dedicated workspaces for patient, doctor and admin roles", "PostgreSQL and Row Level Security for protected data access", "Server-validated booking logic and automated Playwright checks"],
+    futureWork: ["Expand notification and communication workflows", "Improve analytics for doctors and administrators", "Prepare a production deployment and monitored test environment"],
     github: "https://github.com/mabdula2004/Multi-Role-Healthcare-Appointment-Management",
     featured: true,
     featuredOrder: 2,
@@ -84,6 +99,11 @@ export const projects: Project[] = [
       "Wishlist, shopping bag and checkout validation",
       "Accessible labels, keyboard focus and reduced-motion support",
     ],
+    problem: "Fashion storefronts can look polished while still making discovery, selection and checkout feel disconnected or difficult to use.",
+    purpose: "Demonstrate a cohesive React commerce experience with realistic browsing and shopping interactions across responsive screens.",
+    role: "Frontend architecture, responsive interface development and product interaction design.",
+    technicalDecisions: ["Reusable React components across collections and product flows", "Browser-local persistence for wishlist and bag state", "Accessible focus, labels and reduced-motion behavior"],
+    futureWork: ["Connect production-ready authentication and backend data", "Add payment-provider integration", "Publish final performance and accessibility results"],
     github: "https://github.com/mabdula2004/velora-react-shoping-store",
     featured: true,
     featuredOrder: 5,
@@ -106,6 +126,11 @@ export const projects: Project[] = [
       "Implementation in progress",
       "Public case study planned after release",
     ],
+    problem: "Road-safety reporting needs a mobile experience that is fast, clear and reliable enough to support real-world use.",
+    purpose: "Develop and validate the core mobile experience before connecting the completed design to the prepared backend services.",
+    role: "Product design, React Native interface implementation and proof-of-concept validation.",
+    technicalDecisions: ["React Native with Expo for a focused cross-platform workflow", "Private development while implementation and testing continue", "Proof of concept used to validate the main product direction"],
+    futureWork: ["Integrate the completed interface with the prepared Supabase backend", "Run full workflow and device testing after integration", "Publish a wider case study only when the product is ready"],
     private: true,
     featured: true,
     featuredOrder: 3,
@@ -167,6 +192,11 @@ export const projects: Project[] = [
       "Light and dark themes where appropriate",
       "Public Git history documenting continued development",
     ],
+    problem: "Tutorial-based learning can create isolated knowledge without showing whether concepts can be applied consistently in real interfaces.",
+    purpose: "Turn a structured learning roadmap into a visible series of shipped React builds that documents progress and practical application.",
+    role: "Independent planning, interface development, iteration and public documentation.",
+    technicalDecisions: ["Progressive build scope from interface fundamentals to application logic", "Reusable components and responsive layout practice", "Public Git history used as a transparent learning record"],
+    futureWork: ["Complete the remaining challenge projects", "Add more TypeScript and React Native builds", "Introduce deeper Supabase-backed application workflows"],
     github: "https://github.com/mabdula2004/react-30-day-portfolio",
     featured: true,
     featuredOrder: 4,
@@ -272,4 +302,5 @@ export const githubRepositories: GitHubRepository[] = [
   { name: "React 30-Day Portfolio", repository: "react-30-day-portfolio", category: "React", description: "A public build series focused on consistent React practice." },
   { name: "React Learning Roadmap", repository: "react-learning-roadmap", category: "Learning", description: "A structured repository for React learning goals and progression." },
   { name: "VELORA Fashion Store", repository: "velora-react-shoping-store", category: "React Commerce", description: "A responsive React shopping experience with product interactions." },
+  { name: "Professional Portfolio", repository: "Professional-Portfolio", category: "React Portfolio", description: "The source repository for this multi-page professional portfolio and case-study system." },
 ];

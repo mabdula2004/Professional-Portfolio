@@ -1,5 +1,5 @@
 import { ArrowUpRight, Code2, Database, Layers3, Lock, Sparkles, Wrench } from "lucide-react";
-import { GitHubRepoCount } from "@/components/github-repo-count";
+import Link from "next/link";
 import { coreSkills, projects } from "@/lib/portfolio-data";
 
 const featured = projects
@@ -17,13 +17,8 @@ export default function Home() {
             I&apos;m Muhammad Abdullah, a full-stack developer focused on React and TypeScript—connecting polished interfaces with authentication, databases, APIs and AI-powered features.
           </p>
           <div className="hero-actions">
-            <a className="button primary" href="/projects">Explore my work <ArrowUpRight size={17} /></a>
-            <a className="button secondary" href="/contact">Start a conversation</a>
-          </div>
-          <div className="hero-proof" aria-label="Quick profile facts">
-            <div><strong>3.22</strong><span>CGPA / 4.0</span></div>
-            <div><strong><GitHubRepoCount /></strong><span>Public GitHub repositories</span></div>
-            <div><strong>2026</strong><span>BSCS graduate</span></div>
+            <Link className="button primary" href="/projects">Explore my work <ArrowUpRight size={17} /></Link>
+            <a className="button secondary" href="mailto:mabdullah17jun@gmail.com">Start a conversation</a>
           </div>
         </div>
 
@@ -75,18 +70,14 @@ export default function Home() {
               {project.private ? <Lock className="project-lock" size={19} /> : <ArrowUpRight className="project-arrow" size={20} />}
             </>;
 
-            return project.private ? (
-              <article className={`project-card private-project-card accent-${project.accent}`} key={project.slug} aria-label={`${project.title}, private project in development`}>
+            return (
+              <Link className={`project-card ${project.private ? "private-project-card" : ""} accent-${project.accent}`} href={`/projects/${project.slug}`} key={project.slug} aria-label={project.private ? `${project.title}, private project in development` : project.title}>
                 {cardContent}
-              </article>
-            ) : (
-              <a className={`project-card accent-${project.accent}`} href={`/projects/${project.slug}`} key={project.slug}>
-                {cardContent}
-              </a>
+              </Link>
             );
           })}
         </div>
-        <a className="text-link" href="/projects">View the complete project archive <ArrowUpRight size={16} /></a>
+        <Link className="text-link" href="/projects">View the complete project archive <ArrowUpRight size={16} /></Link>
       </section>
 
       <section className="section muted-section">
@@ -105,7 +96,7 @@ export default function Home() {
         <p className="section-index">03 / What&apos;s next</p>
         <h2>Looking for someone who can learn fast and ship thoughtfully?</h2>
         <p>I&apos;m currently exploring full-stack development opportunities where strong frontend craft and practical product thinking matter.</p>
-        <a className="button light" href="/contact">Let&apos;s talk <ArrowUpRight size={17} /></a>
+        <a className="button light" href="mailto:mabdullah17jun@gmail.com">Let&apos;s talk <ArrowUpRight size={17} /></a>
       </section>
     </main>
   );

@@ -1,4 +1,5 @@
-import { Mail, Menu, Moon, Sun, X } from "lucide-react";
+import { Download, Mail, Menu, Moon, Sun, X } from "lucide-react";
+import Link from "next/link";
 
 function GitHubIcon({ size = 18 }: { size?: number }) {
   return (
@@ -20,33 +21,32 @@ const nav = [
   ["/", "Home"],
   ["/about", "About"],
   ["/projects", "Projects"],
-  ["/experience", "Experience"],
   ["/resume", "Résumé"],
-  ["/contact", "Contact"],
 ];
 
 export function SiteShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="site-frame">
       <header className="site-header">
-        <a className="brand" href="/" aria-label="Muhammad Abdullah home">
+        <Link className="brand" href="/" aria-label="Muhammad Abdullah home">
           <span className="brand-mark">MA</span>
           <span className="brand-copy">
             <strong>Muhammad Abdullah</strong>
             <small>Full-Stack Developer</small>
           </span>
-        </a>
+        </Link>
 
         <nav className="main-nav desktop-nav" aria-label="Primary navigation">
-          {nav.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
+          {nav.map(([href, label]) => <Link key={href} href={href}>{label}</Link>)}
         </nav>
 
         <div className="header-actions">
           <div className="header-socials" aria-label="Professional links">
             <a className="icon-button social-icon" href="https://github.com/mabdula2004" target="_blank" rel="noreferrer" aria-label="GitHub profile" title="GitHub"><GitHubIcon /></a>
             <a className="icon-button social-icon" href="https://www.linkedin.com/in/muhammad-abdullah-17jun" target="_blank" rel="noreferrer" aria-label="LinkedIn profile" title="LinkedIn"><LinkedInIcon /></a>
-            <a className="icon-button social-icon" href="/contact" aria-label="Contact Muhammad Abdullah" title="Contact"><Mail size={17} /></a>
+            <a className="icon-button social-icon" href="mailto:mabdullah17jun@gmail.com" aria-label="Email Muhammad Abdullah" title="Email"><Mail size={17} /></a>
           </div>
+          <a className="header-cv-link" href="/Muhammad-Abdullah-CV.pdf" download><Download size={15} /> Download CV</a>
           <label className="icon-button theme-toggle" title="Toggle light and dark theme">
             <input type="checkbox" aria-label="Toggle light and dark theme" />
             <Sun className="theme-sun" size={18} />
@@ -55,11 +55,12 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           <details className="mobile-nav">
             <summary className="icon-button" aria-label="Toggle navigation"><Menu className="menu-open-icon" size={20} /><X className="menu-close-icon" size={20} /></summary>
             <nav className="main-nav" aria-label="Mobile navigation">
-              {nav.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
+              {nav.map(([href, label]) => <Link key={href} href={href}>{label}</Link>)}
               <div className="mobile-socials">
                 <a href="https://github.com/mabdula2004" target="_blank" rel="noreferrer"><GitHubIcon size={16} /> GitHub</a>
                 <a href="https://www.linkedin.com/in/muhammad-abdullah-17jun" target="_blank" rel="noreferrer"><LinkedInIcon size={16} /> LinkedIn</a>
-                <a href="/contact"><Mail size={16} /> Contact</a>
+                <a href="mailto:mabdullah17jun@gmail.com"><Mail size={16} /> Email</a>
+                <a href="/Muhammad-Abdullah-CV.pdf" download><Download size={16} /> CV</a>
               </div>
             </nav>
           </details>
@@ -74,7 +75,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             <p className="footer-eyebrow">Full-Stack Developer</p>
             <h2>Let&apos;s build something useful</h2>
             <p>I create responsive React and TypeScript products backed by practical authentication, data and API workflows.</p>
-            <a className="footer-contact" href="/contact"><Mail size={17} /> Start a conversation</a>
+            <a className="footer-contact" href="mailto:mabdullah17jun@gmail.com"><Mail size={17} /> Start a conversation</a>
           </div>
         </div>
       </footer>
