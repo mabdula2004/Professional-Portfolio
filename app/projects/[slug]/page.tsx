@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, CheckCircle2, Code2, ImageIcon, Lock } from "lucide-react";
+import { FypHeroReel } from "@/components/fyp-hero-reel";
 import { projects } from "@/lib/portfolio-data";
 
 const caseStudies = projects.filter((project) => project.featured);
@@ -20,15 +21,16 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
   const { slug } = await params;
   const project = caseStudies.find((item) => item.slug === slug);
   if (!project) notFound();
+  const isFypCase = project.slug === "fyp-intelligence-portal";
   const hasEvidence = Boolean(project.verification?.length || project.limitations?.length);
   const screenshotSection = hasEvidence ? "06" : "05";
-  const futureSection = hasEvidence ? "07" : "06";
+  const futureSection = isFypCase ? "06" : hasEvidence ? "07" : "06";
 
   return (
     <main className="inner-main page-shell case-study-page">
       <a className="back-link" href="/"><ArrowLeft size={16} /> Featured projects</a>
 
-      <section className={`case-hero ${project.private ? "private-case-hero" : ""} accent-${project.accent}`}>
+      <section className={`case-hero ${isFypCase ? "case-hero-with-reel" : ""} ${project.private ? "private-case-hero" : ""} accent-${project.accent}`}>
         <div className="case-copy">
           <p className="section-index">{project.eyebrow} / {project.year}</p>
           <h1>{project.title}</h1>
@@ -36,17 +38,20 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
           <div className="case-actions">
             {project.private ? (
               <span className="status-pill private-status"><Lock size={14} /> {project.status}</span>
-            ) : project.github ? (
-              <a className="button primary" href={project.github} target="_blank" rel="noreferrer"><Code2 size={17} /> View repository</a>
             ) : (
-              <span className="status-pill">{project.status}</span>
+              <>
+                {project.live ? <a className="button primary" href={project.live} target="_blank" rel="noreferrer">Open live product <ArrowUpRight size={17} /></a> : null}
+                {project.github ? <a className={`button ${project.live ? "secondary" : "primary"}`} href={project.github} target="_blank" rel="noreferrer"><Code2 size={17} /> View repository</a> : <span className="status-pill">{project.status}</span>}
+              </>
             )}
           </div>
         </div>
-        <div className={`case-art ${project.private ? "private-case-art" : ""}`}>
-          {project.private ? <Lock className="private-case-lock" aria-hidden="true" /> : <span>{project.title.split(" ").map((word) => word[0]).slice(0, 3).join("")}</span>}
-          <small>{project.private ? "Protected project in active development" : project.status}</small>
-        </div>
+        {isFypCase ? <FypHeroReel /> : (
+          <div className={`case-art ${project.private ? "private-case-art" : ""}`}>
+            {project.private ? <Lock className="private-case-lock" aria-hidden="true" /> : <span>{project.title.split(" ").map((word) => word[0]).slice(0, 3).join("")}</span>}
+            <small>{project.private ? "Protected project in active development" : project.status}</small>
+          </div>
+        )}
       </section>
 
       <section className="case-overview-grid">
@@ -106,14 +111,16 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
         </section>
       ) : null}
 
-      <section className="case-visual-section">
-        <div>
-          <p className="section-index">{screenshotSection} / Screenshots</p>
-          <h2>Visual documentation</h2>
-          <p>{project.private ? "RoadWatch visuals remain protected while implementation and integration testing continue." : "Final product screens will be added as the public case-study documentation is completed."}</p>
-        </div>
-        <div className="case-visual-placeholder"><ImageIcon size={32} /><span>{project.private ? "Private until release" : "Screenshots coming soon"}</span></div>
-      </section>
+      {!isFypCase ? (
+        <section className="case-visual-section">
+          <div>
+            <p className="section-index">{screenshotSection} / Screenshots</p>
+            <h2>Visual documentation</h2>
+            <p>{project.private ? "RoadWatch visuals remain protected while implementation and integration testing continue." : "Final product screens will be added as the public case-study documentation is completed."}</p>
+          </div>
+          <div className="case-visual-placeholder"><ImageIcon size={32} /><span>{project.private ? "Private until release" : "Screenshots coming soon"}</span></div>
+        </section>
+      ) : null}
 
       <section className="case-future-section">
         <div><p className="section-index">{futureSection} / Future improvements</p><h2>What comes next</h2></div>

@@ -17,6 +17,7 @@ export type Project = {
   limitations?: string[];
   futureWork?: string[];
   github?: string;
+  live?: string;
   private?: boolean;
   featured?: boolean;
   featuredOrder?: number;
@@ -77,6 +78,7 @@ export const projects: Project[] = [
       "Complete production deployment, observability, setup documentation and final interface screenshots.",
     ],
     github: "https://github.com/mabdula2004/AI-powered-FYP-Suggestion-Submission-Portal",
+    live: "https://fyp-proj-module.vercel.app/login",
     featured: true,
     featuredOrder: 1,
     accent: "violet",

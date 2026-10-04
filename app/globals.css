@@ -248,6 +248,7 @@ button { font: inherit; }
 .repo-card > strong { display: flex; align-items: center; gap: 6px; margin-top: auto; padding-top: 24px; font-size: 12px; }
 .back-link { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 30px; color: var(--muted); font-size: 13px; font-weight: 700; }
 .case-hero { display: grid; grid-template-columns: 1.2fr .8fr; min-height: 520px; overflow: hidden; border: 1px solid var(--line); border-radius: 30px; background: var(--surface); }
+.case-hero-with-reel { grid-template-columns: minmax(0, .88fr) minmax(520px, 1.12fr); min-height: 590px; }
 .case-copy { align-self: center; padding: 60px; }
 .case-copy h1 { margin: 18px 0 22px; font-size: clamp(3rem, 5.6vw, 5.6rem); line-height: .98; letter-spacing: -.06em; }
 .case-art { position: relative; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; padding: 42px; background: #17151d; color: white; }
@@ -259,6 +260,31 @@ button { font: inherit; }
 .private-case-art { align-items: center; justify-content: center; text-align: center; background: linear-gradient(145deg, #17151d, #12251e); }
 .private-case-lock { position: relative; z-index: 2; width: 96px; height: 96px; color: var(--project-accent); filter: drop-shadow(0 18px 42px rgba(0,0,0,.38)); }
 .private-case-art > small { margin-top: 26px; }
+.fyp-hero-reel { position: relative; min-width: 0; min-height: 590px; overflow: hidden; isolation: isolate; background: #09090d; color: white; }
+.fyp-hero-reel::after { content: ""; position: absolute; inset: 0; z-index: 8; pointer-events: none; border-left: 1px solid rgba(255,255,255,.08); box-shadow: inset 0 0 80px rgba(0,0,0,.28); }
+.fyp-reel-intro, .fyp-reel-gallery { position: absolute; inset: 0; }
+.fyp-reel-intro { z-index: 7; display: grid; place-items: center; background: #09090d; opacity: 1; visibility: visible; transition: opacity .8s ease, visibility .8s ease; }
+.fyp-reel-intro.is-complete { opacity: 0; visibility: hidden; }
+.fyp-reel-intro video { width: 100%; height: 100%; object-fit: cover; }
+.fyp-reel-intro-label { position: absolute; left: 24px; bottom: 24px; display: inline-flex; align-items: center; gap: 8px; padding: 8px 11px; border: 1px solid rgba(255,255,255,.15); border-radius: 999px; background: rgba(9,9,13,.58); backdrop-filter: blur(12px); color: rgba(255,255,255,.72); font-size: 10px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+.fyp-reel-intro-label span { width: 6px; height: 6px; border-radius: 50%; background: #8b6cff; box-shadow: 0 0 14px #8b6cff; }
+.fyp-reel-gallery { opacity: 0; transition: opacity .75s ease; }
+.fyp-reel-gallery.is-visible { opacity: 1; }
+.fyp-reel-slide { position: absolute; inset: 0; margin: 0; opacity: 0; transform: scale(1.035); transition: opacity 1s ease, transform 5s ease; }
+.fyp-reel-slide.is-active { z-index: 2; opacity: 1; transform: scale(1); }
+.fyp-reel-backdrop, .fyp-reel-screen { position: absolute; inset: 0; width: 100%; height: 100%; }
+.fyp-reel-backdrop { object-fit: cover; filter: blur(28px) brightness(.4) saturate(.8); transform: scale(1.16); opacity: .8; }
+.fyp-reel-screen { z-index: 1; object-fit: contain; filter: drop-shadow(0 24px 48px rgba(0,0,0,.42)); }
+.fyp-reel-shade { position: absolute; inset: 0; z-index: 4; pointer-events: none; background: linear-gradient(180deg, transparent 54%, rgba(6,6,10,.25) 67%, rgba(6,6,10,.96) 100%); }
+.fyp-reel-caption { position: absolute; z-index: 5; left: 26px; right: 170px; bottom: 62px; }
+.fyp-reel-caption span, .fyp-reel-caption strong { display: block; }
+.fyp-reel-caption span { margin-bottom: 5px; color: #a993ff; font-size: 10px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+.fyp-reel-caption strong { font-size: 16px; letter-spacing: -.02em; }
+.fyp-reel-controls { position: absolute; z-index: 6; left: 22px; right: 22px; bottom: 20px; display: flex; align-items: center; gap: 7px; }
+.fyp-reel-controls button { display: inline-grid; min-width: 30px; height: 30px; place-items: center; padding: 0 8px; border: 1px solid rgba(255,255,255,.18); border-radius: 9px; background: rgba(10,10,15,.6); color: white; cursor: pointer; backdrop-filter: blur(12px); }
+.fyp-reel-controls button:hover, .fyp-reel-controls button:focus-visible { border-color: #a993ff; background: rgba(115,83,235,.72); }
+.fyp-reel-controls > span { margin-left: 5px; color: rgba(255,255,255,.62); font: 10px ui-monospace, monospace; }
+.fyp-reel-controls .fyp-reel-replay { display: inline-flex; width: auto; margin-left: auto; gap: 6px; padding-inline: 10px; color: rgba(255,255,255,.74); font-size: 10px; font-weight: 750; }
 .private-case-message { max-width: 820px; margin: 90px auto 0; padding: 54px; border: 1px solid var(--line); border-radius: 28px; background: var(--surface); text-align: center; }
 .private-case-message h2 { margin: 14px 0 18px; font-size: clamp(2.2rem, 4vw, 3.8rem); line-height: 1.05; letter-spacing: -.05em; }
 .private-case-message > p:not(.section-index) { max-width: 620px; margin: 0 auto; color: var(--muted); }
@@ -475,7 +501,9 @@ button { font: inherit; }
   .capability-grid { grid-template-columns: repeat(2, 1fr); }
   .repo-grid { grid-template-columns: repeat(2, 1fr); }
   .case-hero { grid-template-columns: 1fr; }
+  .case-hero-with-reel { grid-template-columns: 1fr; }
   .case-art { min-height: 300px; }
+  .fyp-hero-reel { min-height: 430px; }
   .contact-grid { grid-template-columns: repeat(2, 1fr); }
   .about-profile-grid { grid-template-columns: .9fr 1.1fr; gap: 42px; }
   .about-highlights { grid-template-columns: repeat(2, 1fr); }
@@ -532,6 +560,11 @@ button { font: inherit; }
   .archive-row > svg { grid-column: 3; grid-row: 1; }
   .repo-grid { grid-template-columns: 1fr; }
   .case-copy { padding: 35px 25px; }
+  .case-hero-with-reel { min-height: 0; }
+  .fyp-hero-reel { min-height: 320px; }
+  .fyp-reel-caption { left: 18px; right: 120px; bottom: 58px; }
+  .fyp-reel-controls { left: 16px; right: 16px; bottom: 16px; }
+  .fyp-reel-controls .fyp-reel-replay { font-size: 0; gap: 0; }
   .private-case-message { margin-top: 60px; padding: 38px 24px; }
   .case-body { padding: 70px 0; }
   .timeline article { grid-template-columns: 45px 1fr; }
