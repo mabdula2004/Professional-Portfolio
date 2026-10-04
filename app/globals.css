@@ -188,6 +188,12 @@ button { font: inherit; }
 .about-detail-copy { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(32px, 6vw, 80px); margin-top: 48px; padding-top: 36px; border-top: 1px solid var(--line); }
 .about-detail-copy p { margin: 0; }
 .rich-copy p { margin: 0 0 22px; color: var(--muted); font-size: 18px; }
+.about-page { padding-top: 72px; padding-bottom: 88px; }
+.about-page .about-intro { padding: 34px 0 62px; }
+.about-page .about-intro h1 { width: min(980px, 100%); margin: 18px 0 20px; font-size: clamp(3.5rem, 4.8vw, 4.75rem); line-height: 1.01; letter-spacing: -.05em; }
+.about-page .about-intro .lead { max-width: 760px; font-size: clamp(1.05rem, 1.25vw, 1.18rem); line-height: 1.6; }
+.about-page .about-detail-copy { gap: clamp(30px, 4vw, 52px); margin-top: 34px; padding-top: 28px; }
+.about-page .about-detail-copy p { font-size: 17px; line-height: 1.7; }
 .profile-band { display: grid; grid-template-columns: .8fr 1.2fr; min-height: 360px; overflow: hidden; border-radius: 30px; background: #17151d; color: white; }
 .profile-monogram { display: flex; flex-direction: column; justify-content: flex-end; padding: 42px; background: radial-gradient(circle at 20% 20%, #8a6dff, transparent 38%), linear-gradient(145deg,#25202f,#111116); font-size: 95px; line-height: .8; letter-spacing: -.08em; font-weight: 800; }
 .profile-monogram span { margin-top: 30px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
@@ -204,6 +210,16 @@ button { font: inherit; }
 .skill-list span { padding: 9px 13px; border-radius: 10px; background: var(--surface); color: var(--muted); font-size: 13px; }
 .inline-cta { display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-top: 80px; padding: 40px 0; border-block: 1px solid var(--line); }
 .inline-cta h2 { max-width: 620px; font-size: clamp(2rem, 3vw, 3.3rem); }
+.about-page .profile-band { min-height: 320px; border-radius: 26px; }
+.about-page .profile-monogram { padding: 36px; font-size: 82px; }
+.about-page .profile-monogram span { margin-top: 24px; }
+.about-page .profile-statement { padding: 42px; }
+.about-page .compact-section { padding-block: 72px; }
+.about-page .section-heading { margin-bottom: 36px; }
+.about-page .principles-grid article { min-height: 225px; padding: 26px; }
+.about-page .principles-grid svg { margin-bottom: 36px; }
+.about-page .skill-list > div { gap: 32px; padding: 22px 0; }
+.about-page .inline-cta { gap: 30px; margin-top: 56px; padding: 32px 0; }
 
 .projects-intro .lead.narrow { max-width: 600px; }
 .archive-list { border-top: 1px solid var(--line); }
@@ -375,6 +391,16 @@ button { font: inherit; }
   .cta-panel { margin-block: 80px; padding: 38px 26px; }
   .inner-main { padding-top: 60px; }
   .page-intro { padding-bottom: 70px; }
+  .about-page { padding-top: 48px; padding-bottom: 68px; }
+  .about-page .about-intro { padding: 28px 0 50px; }
+  .about-page .about-intro h1 { width: 100%; margin: 16px 0 18px; font-size: clamp(2.65rem, 12vw, 3.85rem); line-height: 1.02; }
+  .about-page .about-detail-copy { gap: 18px; margin-top: 28px; padding-top: 22px; }
+  .about-page .about-detail-copy p { font-size: 16px; }
+  .about-page .compact-section { padding-block: 52px; }
+  .about-page .section-heading { margin-bottom: 30px; }
+  .about-page .profile-monogram { min-height: 240px; padding: 30px; }
+  .about-page .profile-statement { min-height: 260px; padding: 30px; }
+  .about-page .inline-cta { margin-top: 44px; padding: 28px 0; }
   .profile-monogram { min-height: 280px; }
   .profile-statement { min-height: 300px; padding: 34px; }
   .skill-list > div { grid-template-columns: 1fr; gap: 16px; }

@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: "About" };
 
 export default function AboutPage() {
   return (
-    <main className="inner-main page-shell">
+    <main className="inner-main page-shell about-page">
       <section className="page-intro about-intro">
         <p className="section-index">About / 01</p>
         <h1>Curiosity turned into a way of building</h1>
