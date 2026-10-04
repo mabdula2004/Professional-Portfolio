@@ -13,7 +13,7 @@ export default function ProjectsPage() {
     <main className="inner-main page-shell">
       <section className="page-intro projects-intro">
         <p className="section-index">Selected work / 2024–2026</p>
-        <h1>Products, experiments and systems built to solve something real.</h1>
+        <h1>Products, experiments and systems built to solve something real</h1>
         <p className="lead narrow">{publicProjectCount} detailed public case studies, {privateProjectCount} private in-development project, and a live GitHub profile with <GitHubRepoCount /> public repositories across full-stack web, mobile, Firebase, AI and interface engineering.</p>
       </section>
 
@@ -45,7 +45,7 @@ export default function ProjectsPage() {
 
       <section className="section compact-section repository-section">
         <div className="section-heading split-heading">
-          <div><p className="section-index">Selected GitHub work / {githubRepositories.length} repositories</p><h2>A focused view of my public build history.</h2></div>
+          <div><p className="section-index">Selected GitHub work / {githubRepositories.length} repositories</p><h2>A focused view of my public build history</h2></div>
           <p>The live profile count updates automatically. The selected repositories below are recruiter-accessible; private work is intentionally excluded.</p>
         </div>
         <div className="repo-grid">

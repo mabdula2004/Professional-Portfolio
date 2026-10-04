@@ -35,7 +35,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
 
         <section className="private-case-message">
           <p className="section-index">Protected case study</p>
-          <h2>This project is currently private.</h2>
+          <h2>This project is currently private</h2>
           <p>The product is under active development. Source code, technical architecture and implementation details are intentionally withheld until release.</p>
           <div className="private-case-actions">
             <a className="button primary" href="/contact">Contact me</a>
@@ -65,7 +65,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
         <aside><p>Role</p><strong>Design & development</strong><p>Year</p><strong>{project.year}</strong><p>Stack</p><div className="stack-column">{project.stack.map((item) => <span key={item}>{item}</span>)}</div></aside>
         <div className="case-content">
           <p className="section-index">Overview</p>
-          <h2>Turning the concept into a usable workflow.</h2>
+          <h2>Turning the concept into a usable workflow</h2>
           <p>{project.description}</p>
           <div className="highlight-panel">
             <h3>Key outcomes</h3>
@@ -76,7 +76,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
       </section>
 
       <section className="inline-cta">
-        <div><p className="section-index">Continue</p><h2>Explore another project.</h2></div>
+        <div><p className="section-index">Continue</p><h2>Explore another project</h2></div>
         <a className="button primary" href="/projects">Project archive <ArrowUpRight size={17} /></a>
       </section>
     </main>

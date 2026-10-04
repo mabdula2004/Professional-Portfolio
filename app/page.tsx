@@ -12,7 +12,7 @@ export default function Home() {
       <section className="hero page-shell">
         <div className="hero-copy">
           <p className="kicker"><span /> Open to full-stack opportunities</p>
-          <h1>I build digital products that feel clear, fast and genuinely useful.</h1>
+          <h1>I build digital products that feel clear, fast and genuinely useful</h1>
           <p className="hero-summary">
             I&apos;m Muhammad Abdullah, a full-stack developer focused on React and TypeScript—connecting polished interfaces with authentication, databases, APIs and AI-powered features.
           </p>
@@ -91,7 +91,7 @@ export default function Home() {
 
       <section className="section muted-section">
         <div className="page-shell">
-          <div className="section-heading"><p className="section-index">02 / Capabilities</p><h2>One product mindset, across the stack.</h2></div>
+          <div className="section-heading"><p className="section-index">02 / Capabilities</p><h2>One product mindset, across the stack</h2></div>
           <div className="capability-grid">
             {coreSkills.map((skill, index) => {
               const icons = [<Layers3 key="i" />, <Database key="i" />, <Sparkles key="i" />, <Wrench key="i" />];

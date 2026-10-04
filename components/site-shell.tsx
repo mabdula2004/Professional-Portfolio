@@ -72,7 +72,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         <div className="footer-grid">
           <div className="footer-intro">
             <p className="footer-eyebrow">Full-Stack Developer</p>
-            <h2>Let&apos;s build something useful.</h2>
+            <h2>Let&apos;s build something useful</h2>
             <p>I create responsive React and TypeScript products backed by practical authentication, data and API workflows.</p>
             <a className="footer-contact" href="/contact"><Mail size={17} /> Start a conversation</a>
           </div>

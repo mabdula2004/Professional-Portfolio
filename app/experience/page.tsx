@@ -16,7 +16,7 @@ export default function ExperiencePage() {
     <main className="inner-main page-shell">
       <section className="page-intro">
         <p className="section-index">Experience & education</p>
-        <h1>A path shaped by coursework, ambitious projects and consistent practice.</h1>
+        <h1>A path shaped by coursework, ambitious projects and consistent practice</h1>
         <p className="lead">Project work and a computer science foundation have shaped how I build, learn and solve practical problems.</p>
       </section>
       <section className="timeline">
@@ -27,7 +27,7 @@ export default function ExperiencePage() {
         <div className="gpa-badge"><strong>3.22</strong><span>CGPA / 4.0</span></div>
       </section>
       <section className="coursework-panel"><p className="section-index">Relevant coursework</p><div><span>Data Structures & Algorithms</span><span>Object-Oriented Programming</span><span>Database Systems</span><span>Operating Systems</span><span>Artificial Intelligence</span><span>Machine Learning</span><span>Natural Language Processing</span><span>Software Engineering</span></div></section>
-      <section className="inline-cta"><div><p className="section-index">Evidence</p><h2>See the work behind the timeline.</h2></div><a className="button primary" href="/projects">View projects <ArrowUpRight size={17} /></a></section>
+      <section className="inline-cta"><div><p className="section-index">Evidence</p><h2>See the work behind the timeline</h2></div><a className="button primary" href="/projects">View projects <ArrowUpRight size={17} /></a></section>
     </main>
   );
 }
