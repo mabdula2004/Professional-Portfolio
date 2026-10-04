@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import type { Metadata } from "next";
 import { ArrowUpRight, BookOpenCheck, Braces, Code2, Compass, GraduationCap, Layers3, MessageSquareMore, Smartphone } from "lucide-react";
-import Link from "next/link";
 
 export const metadata: Metadata = { title: "About" };
 
@@ -44,7 +44,7 @@ export default function AboutPage() {
           <h1>From pre-medical studies to building digital products</h1>
           <p className="lead">I&apos;m Muhammad Abdullah, a full-stack developer in Lahore with a frontend-first foundation in React and React Native.</p>
           <p>I enjoy turning real problems into clear, responsive products and connecting the interface with authentication, databases, REST APIs and useful AI features. JavaScript is my core language, while TypeScript helps me build with more structure and confidence.</p>
-          <Link className="button primary" href="/projects">View my work <ArrowUpRight size={17} /></Link>
+          <a className="button primary" href="/projects">View my work <ArrowUpRight size={17} /></a>
         </div>
       </section>
 
@@ -88,7 +88,7 @@ export default function AboutPage() {
       <section className="about-next-step">
         <BookOpenCheck size={22} />
         <div><p className="section-index">Next</p><h2>See the projects behind the journey</h2></div>
-        <Link className="text-link" href="/projects">Open project archive <ArrowUpRight size={16} /></Link>
+        <a className="text-link" href="/projects">Open project archive <ArrowUpRight size={16} /></a>
       </section>
     </main>
   );

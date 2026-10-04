@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import { Download, Mail, Menu, Moon, Sun, X } from "lucide-react";
-import Link from "next/link";
 
 function GitHubIcon({ size = 18 }: { size?: number }) {
   return (
@@ -28,16 +28,16 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="site-frame">
       <header className="site-header">
-        <Link className="brand" href="/" aria-label="Muhammad Abdullah home">
+        <a className="brand" href="/" aria-label="Muhammad Abdullah home">
           <span className="brand-mark">MA</span>
           <span className="brand-copy">
             <strong>Muhammad Abdullah</strong>
             <small>Full-Stack Developer</small>
           </span>
-        </Link>
+        </a>
 
         <nav className="main-nav desktop-nav" aria-label="Primary navigation">
-          {nav.map(([href, label]) => <Link key={href} href={href}>{label}</Link>)}
+          {nav.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
         </nav>
 
         <div className="header-actions">
@@ -55,7 +55,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           <details className="mobile-nav">
             <summary className="icon-button" aria-label="Toggle navigation"><Menu className="menu-open-icon" size={20} /><X className="menu-close-icon" size={20} /></summary>
             <nav className="main-nav" aria-label="Mobile navigation">
-              {nav.map(([href, label]) => <Link key={href} href={href}>{label}</Link>)}
+              {nav.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
               <div className="mobile-socials">
                 <a href="https://github.com/mabdula2004" target="_blank" rel="noreferrer"><GitHubIcon size={16} /> GitHub</a>
                 <a href="https://www.linkedin.com/in/muhammad-abdullah-17jun" target="_blank" rel="noreferrer"><LinkedInIcon size={16} /> LinkedIn</a>

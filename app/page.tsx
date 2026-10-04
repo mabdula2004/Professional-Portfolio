@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import { ArrowUpRight, Code2, Database, Layers3, Lock, Sparkles, Wrench } from "lucide-react";
-import Link from "next/link";
 import { coreSkills, projects } from "@/lib/portfolio-data";
 
 const featured = projects
@@ -17,7 +17,7 @@ export default function Home() {
             I&apos;m Muhammad Abdullah, a full-stack developer focused on React and TypeScript—connecting polished interfaces with authentication, databases, APIs and AI-powered features.
           </p>
           <div className="hero-actions">
-            <Link className="button primary" href="/projects">Explore my work <ArrowUpRight size={17} /></Link>
+            <a className="button primary" href="/projects">Explore my work <ArrowUpRight size={17} /></a>
             <a className="button secondary" href="mailto:mabdullah17jun@gmail.com">Start a conversation</a>
           </div>
         </div>
@@ -71,13 +71,13 @@ export default function Home() {
             </>;
 
             return (
-              <Link className={`project-card ${project.private ? "private-project-card" : ""} accent-${project.accent}`} href={`/projects/${project.slug}`} key={project.slug} aria-label={project.private ? `${project.title}, private project in development` : project.title}>
+              <a className={`project-card ${project.private ? "private-project-card" : ""} accent-${project.accent}`} href={`/projects/${project.slug}`} key={project.slug} aria-label={project.private ? `${project.title}, private project in development` : project.title}>
                 {cardContent}
-              </Link>
+              </a>
             );
           })}
         </div>
-        <Link className="text-link" href="/projects">View the complete project archive <ArrowUpRight size={16} /></Link>
+        <a className="text-link" href="/projects">View the complete project archive <ArrowUpRight size={16} /></a>
       </section>
 
       <section className="section muted-section">

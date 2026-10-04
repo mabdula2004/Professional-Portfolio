@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, CheckCircle2, Code2, ImageIcon, Lock } from "lucide-react";
-import Link from "next/link";
 import { projects } from "@/lib/portfolio-data";
 
 const caseStudies = projects.filter((project) => project.featured);
@@ -23,7 +23,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
 
   return (
     <main className="inner-main page-shell case-study-page">
-      <Link className="back-link" href="/"><ArrowLeft size={16} /> Featured projects</Link>
+      <a className="back-link" href="/"><ArrowLeft size={16} /> Featured projects</a>
 
       <section className={`case-hero ${project.private ? "private-case-hero" : ""} accent-${project.accent}`}>
         <div className="case-copy">
@@ -104,7 +104,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
 
       <section className="inline-cta">
         <div><p className="section-index">Continue</p><h2>Explore the public project archive</h2></div>
-        <Link className="button primary" href="/projects">View all repositories <ArrowUpRight size={17} /></Link>
+        <a className="button primary" href="/projects">View all repositories <ArrowUpRight size={17} /></a>
       </section>
     </main>
   );
