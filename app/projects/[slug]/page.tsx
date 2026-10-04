@@ -20,6 +20,9 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
   const { slug } = await params;
   const project = caseStudies.find((item) => item.slug === slug);
   if (!project) notFound();
+  const hasEvidence = Boolean(project.verification?.length || project.limitations?.length);
+  const screenshotSection = hasEvidence ? "06" : "05";
+  const futureSection = hasEvidence ? "07" : "06";
 
   return (
     <main className="inner-main page-shell case-study-page">
@@ -50,7 +53,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
         <aside>
           <div><p>My role</p><strong>{project.role ?? "Design and development"}</strong></div>
           <div><p>Current status</p><strong>{project.status}</strong></div>
-          <div><p>Technologies</p><div className="stack-column">{project.stack.map((item) => <span key={item}>{item}</span>)}</div></div>
+          <div><p>Technologies</p><div className="stack-column">{(project.technologies ?? project.stack).map((item) => <span key={item}>{item}</span>)}</div></div>
         </aside>
 
         <div className="case-narrative">
@@ -84,9 +87,28 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
         </article>
       </section>
 
+      {hasEvidence ? (
+        <section className="case-detail-grid case-evidence-grid">
+          <article className="case-detail-card">
+            <p className="section-index">05 / Implementation evidence</p>
+            <h2>What is present in the repository</h2>
+            <div className="case-check-list">
+              {project.verification?.map((item) => <div key={item}><CheckCircle2 size={18} /><span>{item}</span></div>)}
+            </div>
+          </article>
+          <article className="case-detail-card case-boundary-card">
+            <p className="section-index">Current boundaries</p>
+            <h2>What is not being overstated</h2>
+            <div className="case-boundary-list">
+              {project.limitations?.map((item, index) => <div key={item}><span>0{index + 1}</span><p>{item}</p></div>)}
+            </div>
+          </article>
+        </section>
+      ) : null}
+
       <section className="case-visual-section">
         <div>
-          <p className="section-index">05 / Screenshots</p>
+          <p className="section-index">{screenshotSection} / Screenshots</p>
           <h2>Visual documentation</h2>
           <p>{project.private ? "RoadWatch visuals remain protected while implementation and integration testing continue." : "Final product screens will be added as the public case-study documentation is completed."}</p>
         </div>
@@ -94,7 +116,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
       </section>
 
       <section className="case-future-section">
-        <div><p className="section-index">06 / Future improvements</p><h2>What comes next</h2></div>
+        <div><p className="section-index">{futureSection} / Future improvements</p><h2>What comes next</h2></div>
         <div className="case-future-list">
           {(project.futureWork ?? ["Continue refining the implementation", "Add visual documentation", "Publish deployment details when ready"]).map((item, index) => (
             <div key={item}><span>0{index + 1}</span><p>{item}</p></div>

@@ -11,7 +11,10 @@ export type Project = {
   problem?: string;
   purpose?: string;
   role?: string;
+  technologies?: string[];
   technicalDecisions?: string[];
+  verification?: string[];
+  limitations?: string[];
   futureWork?: string[];
   github?: string;
   private?: boolean;
@@ -35,21 +38,44 @@ export const projects: Project[] = [
     summary:
       "A centralized academic platform that studies prior projects to suggest stronger, less repetitive final-year project directions.",
     description:
-      "Designed for students and supervisors at COMSATS University Islamabad, Vehari Campus. The platform brings project discovery, submission, supervision and quality checks into one workflow, using previous source code and project documents as context for smarter suggestions.",
+      "Built for COMSATS University Islamabad, Vehari Campus, this role-aware portal connects project discovery, group formation, project locking, milestone submission and academic supervision. Students receive skill-aware recommendations and AI assistance, while supervisors can import project documents, review requests and monitor progress from a dedicated workspace.",
     status: "Public repository · In development",
     year: "2026",
     stack: ["React", "AI integration", "Database", "Authentication"],
     highlights: [
-      "Novel project-direction suggestions informed by prior academic work",
-      "Centralized student and supervisor submission workflow",
-      "Automated document and project-quality checks",
-      "Designed to reduce duplicate or overly similar project ideas",
+      "Protected student, supervisor and administrator workspaces with university-domain authentication",
+      "Student profiles, three-member groups, project discovery and supervisor-approved locking",
+      "PDF-assisted project import, editable extraction and five-phase milestone tracking",
+      "Skill-aware recommendations, contextual AI assistance and semantic similarity checks",
     ],
-    problem: "Students can struggle to find distinct final-year project directions, while supervisors need a clearer way to review ideas, submissions and repeated concepts.",
-    purpose: "Bring project discovery, suggestion, submission and review into one academic workflow that supports stronger decisions without replacing supervisor judgment.",
-    role: "Product design, React interface development and integration planning across the academic workflow.",
-    technicalDecisions: ["Component-based React interface for role-aware workflows", "AI features treated as decision support rather than an automatic final answer", "Authentication and data structure planned around student and supervisor access"],
-    futureWork: ["Complete backend integration and end-to-end validation", "Add final project screenshots and deployment documentation", "Refine AI-assisted similarity and quality checks"],
+    problem: "FYP selection and supervision can become fragmented across documents, messages and manual approvals. Students need a clearer way to find ideas that match their skills without repeating earlier work, while supervisors need one place to publish projects, resolve selection requests and follow each group's progress.",
+    purpose: "Create one academic workflow where students can build a group, discover or refine a suitable project, request approval and submit milestones while supervisors and administrators retain control over project quality, access and final decisions.",
+    role: "Full-stack product design and implementation across the React interface, Firebase authentication and data layer, and Python/FastAPI AI services.",
+    technologies: ["React", "Vite", "Firebase Auth", "Cloud Firestore", "FastAPI", "Gemini API", "Sentence Transformers", "Tailwind CSS"],
+    technicalDecisions: [
+      "React, React Router and Zustand organize protected student, supervisor and administrator workspaces without mixing role-specific navigation.",
+      "Firebase Authentication, Firestore security rules and real-time listeners support university-domain access and live project, group, request, milestone and notification state.",
+      "FastAPI separates document extraction, OCR, semantic similarity, learning-roadmap generation and administrative user operations from the React client.",
+      "The all-MiniLM-L6-v2 sentence-transformer model and cosine similarity compare project titles, descriptions and features to surface possible overlap.",
+      "Gemini supports recommendations, PDF structuring, idea refinement and roadmaps, with a local skill-and-domain scoring fallback when AI recommendations are unavailable.",
+    ],
+    verification: [
+      "Role guards and dedicated routes are implemented for student, supervisor and administrator journeys.",
+      "Group creation, invite-code joining, a three-member limit, project lock requests and approval or rejection flows are connected through Firestore.",
+      "Approved projects generate a five-phase milestone plan with submission links, supervisor feedback and notifications.",
+      "FastAPI endpoints implement PDF text extraction with OCR fallback, semantic similarity checks and skill-gap roadmap generation.",
+    ],
+    limitations: [
+      "The repository currently represents an in-development prototype rather than a production deployment.",
+      "Automated test coverage, continuous integration and complete deployment documentation are not yet included.",
+      "AI and document-storage operations need final server-side security hardening before a public release.",
+    ],
+    futureWork: [
+      "Move all generative-AI and file-storage operations behind authenticated server-side endpoints.",
+      "Add strict response-schema validation, stronger error handling and auditable supervisor actions.",
+      "Build unit, integration and end-to-end tests for authentication, permissions, locking and milestone workflows.",
+      "Complete production deployment, observability, setup documentation and final interface screenshots.",
+    ],
     github: "https://github.com/mabdula2004/AI-powered-FYP-Suggestion-Submission-Portal",
     featured: true,
     featuredOrder: 1,

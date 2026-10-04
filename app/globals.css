@@ -402,6 +402,12 @@ button { font: inherit; }
 .case-check-list { margin-top: 28px; }
 .case-check-list > div { display: flex; gap: 12px; padding: 14px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
 .case-check-list svg { flex: 0 0 auto; margin-top: 3px; color: var(--accent); }
+.case-evidence-grid { margin-top: 18px; }
+.case-boundary-card { background: color-mix(in srgb, var(--surface) 88%, var(--accent) 12%); }
+.case-boundary-list { margin-top: 28px; border-top: 1px solid var(--line); }
+.case-boundary-list > div { display: grid; grid-template-columns: 34px 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.case-boundary-list span { color: var(--accent); font: 11px ui-monospace, monospace; }
+.case-boundary-list p { margin: 0; color: var(--muted); font-size: 14px; }
 .case-visual-section { display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: 60px; margin-top: 88px; padding: 54px; border: 1px solid var(--line); border-radius: 28px; background: var(--surface); }
 .case-visual-placeholder { min-height: 250px; display: grid; place-items: center; align-content: center; gap: 13px; border: 1px dashed color-mix(in srgb, var(--accent) 55%, var(--line)); border-radius: 20px; background: color-mix(in srgb, var(--accent) 6%, var(--bg)); color: var(--muted); font-size: 13px; }
 .case-visual-placeholder svg { color: var(--accent); }
