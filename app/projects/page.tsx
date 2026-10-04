@@ -44,9 +44,10 @@ export default function ProjectsPage() {
       </section>
 
       <section className="section compact-section repository-section">
-        <div className="section-heading split-heading">
-          <div><p className="section-index">Selected GitHub work / {githubRepositories.length} repositories</p><h2>A focused view of my public build history</h2></div>
-          <p>The live profile count updates automatically. The selected repositories below are recruiter-accessible; private work is intentionally excluded.</p>
+        <div className="section-heading repository-heading">
+          <p className="section-index">Selected GitHub work / {githubRepositories.length} repositories</p>
+          <h2>A focused view of my public build history</h2>
+          <p className="repository-description">The live profile count updates automatically. The selected repositories below are recruiter-accessible; private work is intentionally excluded.</p>
         </div>
         <div className="repo-grid">
           {githubRepositories.map((repo, index) => (
