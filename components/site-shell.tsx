@@ -43,7 +43,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         <div className="header-actions">
           <div className="header-socials" aria-label="Professional links">
             <a className="icon-button social-icon" href="https://github.com/mabdula2004" target="_blank" rel="noreferrer" aria-label="GitHub profile" title="GitHub"><GitHubIcon /></a>
-            <a className="icon-button social-icon" href="https://www.linkedin.com/in/muhammad-abdullah-17jun" target="_blank" rel="noreferrer" aria-label="LinkedIn profile" title="LinkedIn"><LinkedInIcon /></a>
+            <a className="icon-button social-icon" href="https://www.linkedin.com/in/muhammad-abdula-17jun/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile" title="LinkedIn"><LinkedInIcon /></a>
             <a className="icon-button social-icon" href="mailto:mabdullah17jun@gmail.com" aria-label="Email Muhammad Abdullah" title="Email"><Mail size={17} /></a>
           </div>
           <a className="header-cv-link" href="/Muhammad-Abdullah-CV.pdf" download><Download size={15} /> Download CV</a>
@@ -58,7 +58,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
               {nav.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
               <div className="mobile-socials">
                 <a href="https://github.com/mabdula2004" target="_blank" rel="noreferrer"><GitHubIcon size={16} /> GitHub</a>
-                <a href="https://www.linkedin.com/in/muhammad-abdullah-17jun" target="_blank" rel="noreferrer"><LinkedInIcon size={16} /> LinkedIn</a>
+                <a href="https://www.linkedin.com/in/muhammad-abdula-17jun/" target="_blank" rel="noreferrer"><LinkedInIcon size={16} /> LinkedIn</a>
                 <a href="mailto:mabdullah17jun@gmail.com"><Mail size={16} /> Email</a>
                 <a href="/Muhammad-Abdullah-CV.pdf" download><Download size={16} /> CV</a>
               </div>
