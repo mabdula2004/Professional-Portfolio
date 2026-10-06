@@ -45,7 +45,7 @@ export default function ResumePage() {
         <a href="mailto:mabdullah17jun@gmail.com"><Mail size={16} /> mabdullah17jun@gmail.com</a>
         <a href="https://wa.me/923202929447" target="_blank" rel="noreferrer"><MessageCircle size={16} /> +92 320 2929447</a>
         <a href="https://github.com/mabdula2004" target="_blank" rel="noreferrer"><Code2 size={16} /> GitHub</a>
-        <a href="https://www.linkedin.com/in/muhammad-abdullah-17jun" target="_blank" rel="noreferrer"><Link2 size={16} /> LinkedIn</a>
+        <a href="https://www.linkedin.com/in/muhammad-abdula-17jun/" target="_blank" rel="noreferrer"><Link2 size={16} /> LinkedIn</a>
       </section>
 
       <div className="resume-modern-layout">
