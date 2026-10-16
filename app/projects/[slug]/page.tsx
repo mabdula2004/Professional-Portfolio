@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowUpRight, CheckCircle2, Code2, ImageIcon, Lock } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, CheckCircle2, Code2, Lock } from "lucide-react";
 import { FypHeroReel } from "@/components/fyp-hero-reel";
 import { projects } from "@/lib/portfolio-data";
 
@@ -106,17 +106,6 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
               {project.limitations?.map((item, index) => <div key={item}><span>0{index + 1}</span><p>{item}</p></div>)}
             </div>
           </article>
-        </section>
-      ) : null}
-
-      {!isFypCase ? (
-        <section className="case-visual-section">
-          <div>
-            <p className="section-index">Screenshots</p>
-            <h2>Application Screenshots</h2>
-            <p>{project.private ? "RoadWatch screenshots are not publicly available during implementation and integration testing." : "Application screenshots will be added as project documentation is completed."}</p>
-          </div>
-          <div className="case-visual-placeholder"><ImageIcon size={32} /><span>{project.private ? "Private until release" : "Screenshots coming soon"}</span></div>
         </section>
       ) : null}
 
