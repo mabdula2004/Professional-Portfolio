@@ -46,11 +46,14 @@ export default function Home() {
       </section>
 
       <section className="technology-band" aria-label="Core technologies">
-        <div className="page-shell technology-band-inner">
-          <p>Technology Stack</p>
-          <ul className="technology-list">
-            {technologies.map((technology) => <li key={technology}>{technology}</li>)}
-          </ul>
+        <div className="technology-marquee">
+          <div className="technology-track">
+            {[0, 1].map((copy) => (
+              <ul className="technology-sequence" key={copy} aria-hidden={copy === 1 ? true : undefined}>
+                {technologies.map((technology) => <li key={technology}>{technology}<span aria-hidden="true">◆</span></li>)}
+              </ul>
+            ))}
+          </div>
         </div>
       </section>
 
