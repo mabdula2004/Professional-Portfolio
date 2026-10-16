@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-import { ArrowUpRight, Code2, Database, Layers3, Lock, Sparkles, Wrench } from "lucide-react";
-import { coreSkills, projects } from "@/lib/portfolio-data";
+import { ArrowUpRight, Code2, Database, Lock, Sparkles } from "lucide-react";
+import { projects } from "@/lib/portfolio-data";
+import { ExpertiseExplorer } from "@/components/expertise-explorer";
 
 const featured = projects
   .filter((project) => project.featured)
   .sort((a, b) => (a.featuredOrder ?? 99) - (b.featuredOrder ?? 99));
 
 const technologies = ["React", "React Native", "JavaScript", "TypeScript", "Firebase", "Supabase", "MySQL", "PostgreSQL", "REST APIs", "AI Integration"];
-const expertiseIcons = [Layers3, Database, Sparkles, Wrench];
 
 export default function Home() {
   return (
@@ -94,17 +94,7 @@ export default function Home() {
       <section className="section expertise-section" aria-labelledby="expertise-title">
         <div className="page-shell">
           <div className="section-heading expertise-heading"><p className="section-index">Skills</p><h2 id="expertise-title">Technical Expertise</h2></div>
-          <div className="expertise-grid">
-            {coreSkills.map((skill, index) => {
-              const Icon = expertiseIcons[index] ?? Code2;
-              return (
-                <article className="expertise-card" key={skill.group}>
-                  <div className="expertise-card-heading"><span className="expertise-icon"><Icon size={21} aria-hidden="true" /></span><h3>{skill.group}</h3></div>
-                  <ul className="expertise-tags">{skill.items.map((item) => <li key={item}>{item}</li>)}</ul>
-                </article>
-              );
-            })}
-          </div>
+          <ExpertiseExplorer />
         </div>
       </section>
 
