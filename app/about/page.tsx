@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
+/* eslint-disable @next/next/no-html-link-for-pages, @next/next/no-img-element */
 import type { Metadata } from "next";
 import { ArrowUpRight, BookOpenCheck, Braces, Code2, Compass, GraduationCap, Layers3, MessageSquareMore, Smartphone } from "lucide-react";
 
@@ -33,10 +33,8 @@ export default function AboutPage() {
   return (
     <main className="inner-main page-shell about-page about-refresh">
       <section className="about-profile-grid">
-        <div className="about-portrait" aria-label="Muhammad Abdullah portrait placeholder">
-          <div className="about-portrait-glow" />
-          <div className="about-monogram">MA</div>
-          <span>Professional portrait coming soon</span>
+        <div className="about-portrait">
+          <img className="about-profile-photo" src="/muhammad-abdullah-portrait.png" alt="Muhammad Abdullah" width={1024} height={1024} fetchPriority="high" />
         </div>
 
         <div className="about-profile-copy">
