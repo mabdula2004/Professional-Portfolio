@@ -792,14 +792,16 @@ button { font: inherit; }
 .roadwatch-note strong { font-size: 12px; font-weight: 600; }
 .roadwatch-note small { font-size: 10px; color: var(--muted); }
 .roadwatch-note > span { font-size: 9px; padding: 5px 8px; margin-top: 8px; border: 1px solid var(--line); border-radius: 5px; }
-.challenge-preview { transform: perspective(800px) rotateY(-5deg) rotateZ(2deg); }
-.challenge-preview .preview-heading { padding-bottom: 13px; border-bottom: 1px solid #ffffff12; }
-.challenge-code { display: flex; flex-direction: column; gap: 7px; padding-block: 18px; font-family: ui-monospace, monospace; font-size: 9px; color: #c5c7d0; white-space: nowrap; }
-.challenge-code b { color: #b5a4f8; font-weight: 400; }
-.challenge-code em { color: #a6ca88; font-style: normal; }
-.challenge-code strong { color: #d5c297; font-weight: 400; }
-.challenge-pills { display: flex; gap: 8px; }
-.challenge-pills span { display: inline-flex; align-items: center; gap: 5px; border: 1px solid #ffffff20; padding: 5px 8px; border-radius: 5px; font-size: 9px; color: #bdc4b8; }
+.hirely-preview { transform: perspective(800px) rotateY(-5deg) rotateZ(2deg); }
+.hirely-preview .preview-heading { padding-bottom: 15px; border-bottom: 1px solid #ffffff12; }
+.hirely-demo-label { color: #a6a9b5; font-size: 8px; }
+.hirely-roles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-block: 17px; }
+.hirely-roles > span { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 11px; border: 1px solid #ffffff1c; border-radius: 7px; background: #ffffff05; font-size: 9px; }
+.hirely-roles svg { color: var(--project-accent); }
+.hirely-pipeline { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 9px 11px; border-radius: 6px; background: #ffffff08; color: #c4c9c2; font-size: 9px; }
+.hirely-pipeline svg { color: var(--project-accent); }
+.hirely-preview-caption { display: flex; align-items: center; gap: 6px; margin-top: 13px; color: #a6a9b5; font-size: 8px; }
+.hirely-preview-caption svg { color: var(--project-accent); }
 .velora-preview { background: #ece6dc; color: #342c26; border-color: #d5ccbf; transform: perspective(800px) rotateZ(-2deg); }
 .velora-preview .preview-heading svg { color: #79614c; }
 .preview-heading .velora-wordmark { font-family: Georgia, serif; font-size: 19px; letter-spacing: .18em; }
@@ -846,7 +848,6 @@ button { font: inherit; }
   .showcase-workflow { padding: 16px; }
   .medora-path { gap: 5px; }
   .medora-path span { padding: 6px; font-size: 9px; }
-  .challenge-code { font-size: 8px; }
   .showcase-fyp-note { padding: 11px 12px; left: 4%; }
 }
 @media (prefers-reduced-motion: reduce) {

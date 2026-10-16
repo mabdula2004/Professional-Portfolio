@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-html-link-for-pages, @next/next/no-img-element */
-import { ArrowRight, ArrowUpRight, CalendarDays, Check, Code2, FileText, GitBranch, HeartPulse, Layers3, LockKeyhole, MapPin, ShieldCheck, ShoppingBag, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BriefcaseBusiness, CalendarDays, Check, FileText, HeartPulse, Users, LockKeyhole, MapPin, ShieldCheck, ShoppingBag, Sparkles } from "lucide-react";
 import type { Project } from "@/lib/portfolio-data";
 
 function ProjectPreview({ slug }: { slug: string }) {
@@ -23,8 +23,13 @@ function ProjectPreview({ slug }: { slug: string }) {
       <div className="roadwatch-note"><LockKeyhole size={20} /><strong>Mobile development</strong><small>React Native · Expo</small><span>Private project</span></div>
     </div>;
   }
-  if (slug === "react-30-day-challenge") {
-    return <div className="showcase-workflow challenge-preview"><div className="preview-heading"><Code2 size={19} /><strong>React project series</strong><GitBranch size={17} /></div><div className="challenge-code"><span><b>import</b> &#123; useState &#125; <b>from</b> <em>&apos;react&apos;</em>;</span><span><b>export default function</b> <strong>Project</strong>() &#123;</span><span>&nbsp; <b>return</b> &lt;<em>Application</em> /&gt;;</span><span>&#125;</span></div><div className="challenge-pills"><span><Layers3 size={13} /> Components</span><span><GitBranch size={13} /> Iteration</span></div></div>;
+  if (slug === "hirely-job-portal") {
+    return <div className="showcase-workflow hirely-preview">
+      <div className="preview-heading"><BriefcaseBusiness size={20} /><strong>Hirely</strong><span className="hirely-demo-label">Recruitment workspace</span></div>
+      <div className="hirely-roles"><span><Users size={15} />Candidate</span><span><BriefcaseBusiness size={15} />Recruiter</span><span><ShieldCheck size={15} />Admin</span></div>
+      <div className="hirely-pipeline"><span>Discover</span><ArrowRight size={13} /><span>Apply</span><ArrowRight size={13} /><span>Interview</span></div>
+      <div className="hirely-preview-caption"><Check size={12} /> Job discovery &amp; application tracking</div>
+    </div>;
   }
   return <div className="showcase-workflow velora-preview"><div className="preview-heading"><strong className="velora-wordmark">VELORA</strong><ShoppingBag size={20} /></div><div className="velora-collection"><div><span>V</span><small>Product discovery</small></div><div><ShoppingBag size={35} strokeWidth={1} /><small>Shopping experience</small></div></div><div className="velora-features"><span>Collections</span><span>Wishlist</span><span>Checkout</span></div></div>;
 }
