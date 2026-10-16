@@ -1,8 +1,7 @@
 "use client";
 
 /* eslint-disable @next/next/no-img-element */
-import { ChevronLeft, ChevronRight, Pause, Play, RotateCcw } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const screens = [
   { role: "Student", title: "Dashboard overview", src: "/projects/fyp/student-dashboard.png" },
@@ -26,7 +25,6 @@ export function FypHeroReel() {
   const [introComplete, setIntroComplete] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     if (!introComplete || paused) return;
@@ -38,23 +36,6 @@ export function FypHeroReel() {
     return () => window.clearInterval(interval);
   }, [introComplete, paused]);
 
-  const move = (direction: number) => {
-    setIntroComplete(true);
-    setActiveIndex((current) => (current + direction + screens.length) % screens.length);
-  };
-
-  const replayIntro = () => {
-    setPaused(false);
-    setIntroComplete(false);
-    setActiveIndex(0);
-    requestAnimationFrame(() => {
-      if (videoRef.current) {
-        videoRef.current.currentTime = 0;
-        void videoRef.current.play();
-      }
-    });
-  };
-
   return (
     <div
       className="fyp-hero-reel"
@@ -63,7 +44,6 @@ export function FypHeroReel() {
     >
       <div className={`fyp-reel-intro ${introComplete ? "is-complete" : ""}`} aria-hidden={introComplete}>
         <video
-          ref={videoRef}
           autoPlay
           muted
           playsInline
@@ -73,7 +53,7 @@ export function FypHeroReel() {
         >
           <source src="/projects/fyp/fyp-loading-intro.mp4" type="video/mp4" />
         </video>
-        <div className="fyp-reel-intro-label"><span /> Product startup</div>
+        <div className="fyp-reel-intro-label"><span /> Application Overview</div>
       </div>
 
       <div className={`fyp-reel-gallery ${introComplete ? "is-visible" : ""}`} aria-live="polite">
@@ -90,15 +70,6 @@ export function FypHeroReel() {
           <strong>{screens[activeIndex].title}</strong>
         </div>
 
-        <div className="fyp-reel-controls">
-          <button type="button" onClick={() => move(-1)} aria-label="Previous project screen"><ChevronLeft size={16} /></button>
-          <button type="button" onClick={() => setPaused((current) => !current)} aria-label={paused ? "Resume project screens" : "Pause project screens"}>
-            {paused ? <Play size={14} fill="currentColor" /> : <Pause size={14} fill="currentColor" />}
-          </button>
-          <button type="button" onClick={() => move(1)} aria-label="Next project screen"><ChevronRight size={16} /></button>
-          <span>{String(activeIndex + 1).padStart(2, "0")} / {String(screens.length).padStart(2, "0")}</span>
-          <button className="fyp-reel-replay" type="button" onClick={replayIntro} aria-label="Replay startup animation"><RotateCcw size={14} /> Intro</button>
-        </div>
       </div>
     </div>
   );

@@ -8,16 +8,16 @@ export default function ProjectsPage() {
   return (
     <main className="inner-main page-shell projects-page">
       <section className="page-intro projects-intro">
-        <p className="section-index">Projects / Public GitHub archive</p>
-        <h1>A public record of what I build and learn</h1>
-        <p className="lead narrow">This archive brings together my public work across React, full-stack applications, mobile development, Firebase and focused learning projects. Every card opens the original GitHub repository.</p>
+        <p className="section-index">Project Portfolio</p>
+        <h1>Development Projects</h1>
+        <p className="lead narrow">Academic and personal projects in web development, mobile applications, databases and AI integration. Each entry links to its source repository on GitHub.</p>
       </section>
 
       <section className="section compact-section repository-section">
         <div className="section-heading repository-heading">
           <p className="section-index">GitHub projects</p>
           <h2>Public repositories</h2>
-          <p className="repository-description">The collection below reflects the repositories currently visible on my public profile. Private work, including RoadWatch, remains intentionally protected.</p>
+          <p className="repository-description">Selected public repositories with project descriptions and source code. Private projects, including RoadWatch, are excluded from this collection.</p>
         </div>
         <div className="repo-grid">
           {githubRepositories.map((repo, index) => (
@@ -30,7 +30,7 @@ export default function ProjectsPage() {
             </a>
           ))}
         </div>
-        <a className="github-archive-link" href="https://github.com/mabdula2004?tab=repositories" target="_blank" rel="noreferrer"><Code2 size={17} /> View live GitHub profile <ArrowUpRight size={15} /></a>
+        <a className="github-archive-link" href="https://github.com/mabdula2004?tab=repositories" target="_blank" rel="noreferrer"><Code2 size={17} /> View GitHub Profile <ArrowUpRight size={15} /></a>
       </section>
     </main>
   );

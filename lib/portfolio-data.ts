@@ -37,7 +37,7 @@ export const projects: Project[] = [
     title: "AI-Powered FYP Suggestion & Submission Portal",
     eyebrow: "Final Year Project",
     summary:
-      "A centralized academic platform that studies prior projects to suggest stronger, less repetitive final-year project directions.",
+      "An academic project management platform with AI-assisted topic recommendations, project submissions and supervision workflows.",
     description:
       "Built for COMSATS University Islamabad, Vehari Campus, this role-aware portal connects project discovery, group formation, project locking, milestone submission and academic supervision. Students receive skill-aware recommendations and AI assistance, while supervisors can import project documents, review requests and monitor progress from a dedicated workspace.",
     status: "Public repository · In development",
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     ],
     problem: "FYP selection and supervision can become fragmented across documents, messages and manual approvals. Students need a clearer way to find ideas that match their skills without repeating earlier work, while supervisors need one place to publish projects, resolve selection requests and follow each group's progress.",
     purpose: "Create one academic workflow where students can build a group, discover or refine a suitable project, request approval and submit milestones while supervisors and administrators retain control over project quality, access and final decisions.",
-    role: "Full-stack product design and implementation across the React interface, Firebase authentication and data layer, and Python/FastAPI AI services.",
+    role: "Full-stack application design and implementation across the React interface, Firebase authentication and data layer, and Python/FastAPI AI services.",
     technologies: ["React", "Vite", "Firebase Auth", "Cloud Firestore", "FastAPI", "Gemini API", "Sentence Transformers", "Tailwind CSS"],
     technicalDecisions: [
       "React, React Router and Zustand organize protected student, supervisor and administrator workspaces without mixing role-specific navigation.",
@@ -88,7 +88,7 @@ export const projects: Project[] = [
     title: "Medora Healthcare Platform",
     eyebrow: "Multi-Role Full-Stack System",
     summary:
-      "A full-stack healthcare appointment platform unifying patient care, doctor workflows and administrative operations in one role-aware product.",
+      "A healthcare appointment management application with dedicated patient, doctor and administrator workflows.",
     description:
       "Medora is a React and Supabase healthcare workflow system built as one application with dedicated patient, doctor and admin workspaces. It combines clinician discovery and appointment booking with clinical records, prescriptions, messaging, availability, verification and platform operations, backed by PostgreSQL, Row Level Security and protected server-side workflows.",
     status: "Full-stack project · Tested",
@@ -101,7 +101,7 @@ export const projects: Project[] = [
       "Responsive end-to-end workflows with automated Playwright QA",
     ],
     problem: "Healthcare appointment workflows often become fragmented across patient booking, doctor availability and administrative verification.",
-    purpose: "Create one role-aware product where patients, doctors and administrators can complete their work without losing context between separate systems.",
+    purpose: "Provide a role-based application for appointment scheduling, clinical workflows and administrative management.",
     role: "Full-stack design and development across the React interface, Supabase data model, authentication and protected workflows.",
     technicalDecisions: ["Dedicated workspaces for patient, doctor and admin roles", "PostgreSQL and Row Level Security for protected data access", "Server-validated booking logic and automated Playwright checks"],
     futureWork: ["Expand notification and communication workflows", "Improve analytics for doctors and administrators", "Prepare a production deployment and monitored test environment"],
@@ -113,11 +113,11 @@ export const projects: Project[] = [
   {
     slug: "velora-store",
     title: "VELORA Fashion Store",
-    eyebrow: "React Commerce Experience",
+    eyebrow: "React E-Commerce Application",
     summary:
-      "A premium responsive shopping interface with real product discovery, wishlist, bag, checkout validation and accessible interaction states.",
+      "A responsive React shopping application with product search, wishlist and cart management, checkout validation and accessible controls.",
     description:
-      "VELORA is a production-style frontend demonstration built to explore reusable React architecture and realistic commerce interactions. The experience includes dedicated collections, live search, filtering, sorting, product variants and persistent browser-local shopping state.",
+      "VELORA is a frontend project demonstrating reusable React components and e-commerce functionality. It includes collection pages, search, filtering, sorting, product variants and persistent browser-local shopping state.",
     status: "Frontend complete",
     year: "2026",
     stack: ["React", "JavaScript", "Vite", "Responsive UI"],
@@ -127,9 +127,9 @@ export const projects: Project[] = [
       "Wishlist, shopping bag and checkout validation",
       "Accessible labels, keyboard focus and reduced-motion support",
     ],
-    problem: "Fashion storefronts can look polished while still making discovery, selection and checkout feel disconnected or difficult to use.",
-    purpose: "Demonstrate a cohesive React commerce experience with realistic browsing and shopping interactions across responsive screens.",
-    role: "Frontend architecture, responsive interface development and product interaction design.",
+    problem: "Online shopping interfaces require consistent product discovery, selection and checkout workflows across screen sizes.",
+    purpose: "Demonstrate React component architecture, state management and responsive e-commerce workflows.",
+    role: "Frontend architecture, responsive interface development and interaction design.",
     technicalDecisions: ["Reusable React components across collections and product flows", "Browser-local persistence for wishlist and bag state", "Accessible focus, labels and reduced-motion behavior"],
     futureWork: ["Connect production-ready authentication and backend data", "Add payment-provider integration", "Publish final performance and accessibility results"],
     github: "https://github.com/mabdula2004/velora-react-shoping-store",
@@ -142,9 +142,9 @@ export const projects: Project[] = [
     title: "RoadWatch",
     eyebrow: "Private Mobile Project",
     summary:
-      "A private React Native product currently in development. Technical details are available on request.",
+      "A React Native traffic reporting application under private development, with interface implementation and proof-of-concept validation.",
     description:
-      "RoadWatch is being developed privately while implementation and testing continue. A public case study will be released when the product is ready.",
+      "RoadWatch is being developed privately while implementation and testing continue. A public case study is planned after development and testing.",
     status: "Private · In Development",
     year: "2026",
     stack: ["React Native", "Expo", "TypeScript"],
@@ -154,11 +154,11 @@ export const projects: Project[] = [
       "Implementation in progress",
       "Public case study planned after release",
     ],
-    problem: "Road-safety reporting needs a mobile experience that is fast, clear and reliable enough to support real-world use.",
-    purpose: "Develop and validate the core mobile experience before connecting the completed design to the prepared backend services.",
-    role: "Product design, React Native interface implementation and proof-of-concept validation.",
-    technicalDecisions: ["React Native with Expo for a focused cross-platform workflow", "Private development while implementation and testing continue", "Proof of concept used to validate the main product direction"],
-    futureWork: ["Integrate the completed interface with the prepared Supabase backend", "Run full workflow and device testing after integration", "Publish a wider case study only when the product is ready"],
+    problem: "Road-safety reporting requires mobile workflows for capturing incidents and reviewing supporting evidence.",
+    purpose: "Implement and validate the mobile interface, then integrate the prepared backend services.",
+    role: "Application design, React Native interface implementation and proof-of-concept validation.",
+    technicalDecisions: ["React Native with Expo for cross-platform mobile development", "Private development while implementation and testing continue", "Proof-of-concept implementation used to evaluate core functionality"],
+    futureWork: ["Integrate the completed interface with the prepared Supabase backend", "Run full workflow and device testing after integration", "Publish the case study after implementation and testing"],
     private: true,
     featured: true,
     featuredOrder: 3,
@@ -206,9 +206,9 @@ export const projects: Project[] = [
   {
     slug: "react-30-day-challenge",
     title: "React 30-Day Portfolio Challenge",
-    eyebrow: "Active Build Series",
+    eyebrow: "React Project Series",
     summary:
-      "A structured learning series focused on shipping polished React interfaces and progressively adding logic, mobile and full-stack capabilities.",
+      "A structured React project series covering component development, responsive design, application logic and backend integration.",
     description:
       "An active repository documenting consistent project-based learning. Early builds focus on reusable React interfaces and responsive design; later work expands into JavaScript logic, React Native and Supabase-backed application features.",
     status: "In progress",
@@ -221,7 +221,7 @@ export const projects: Project[] = [
       "Public Git history documenting continued development",
     ],
     problem: "Tutorial-based learning can create isolated knowledge without showing whether concepts can be applied consistently in real interfaces.",
-    purpose: "Turn a structured learning roadmap into a visible series of shipped React builds that documents progress and practical application.",
+    purpose: "Apply a structured learning roadmap through documented React projects and incremental implementation of application features.",
     role: "Independent planning, interface development, iteration and public documentation.",
     technicalDecisions: ["Progressive build scope from interface fundamentals to application logic", "Reusable components and responsive layout practice", "Public Git history used as a transparent learning record"],
     futureWork: ["Complete the remaining challenge projects", "Add more TypeScript and React Native builds", "Introduce deeper Supabase-backed application workflows"],
@@ -233,11 +233,11 @@ export const projects: Project[] = [
   {
     slug: "roamly-travel-booking",
     title: "Roamly Travel Booking",
-    eyebrow: "Full-Stack Travel Experience",
+    eyebrow: "Full-Stack Travel Application",
     summary:
-      "An editorial travel discovery and booking product with live catalog data, saved journeys and secure server-calculated bookings.",
+      "A travel booking application with database-backed listings, saved trips and server-validated booking calculations.",
     description:
-      "Roamly combines an image-led React booking experience with a dedicated Supabase backend. Visitors can search and filter curated journeys, while authenticated users can save trips, create bookings and review booking history. PostgreSQL functions validate departure dates and calculate authoritative pricing on the server.",
+      "Roamly is a React travel booking application with a dedicated Supabase backend. Visitors can search and filter curated journeys, while authenticated users can save trips, create bookings and review booking history. PostgreSQL functions validate departure dates and calculate authoritative pricing on the server.",
     status: "Full-stack project",
     year: "2026",
     stack: ["React", "Supabase", "PostgreSQL", "Playwright"],
@@ -253,11 +253,11 @@ export const projects: Project[] = [
   {
     slug: "ember-restaurant-ordering",
     title: "EMBER° Restaurant Ordering",
-    eyebrow: "Full-Stack Ordering Experience",
+    eyebrow: "Full-Stack Ordering Application",
     summary:
-      "A premium responsive restaurant storefront with a live menu, product discovery, cart interactions and a secure Supabase data model.",
+      "A responsive restaurant ordering application with menu listings, search, cart functionality and a Supabase data model.",
     description:
-      "EMBER° pairs an editorial restaurant interface with Supabase-backed menu and category data. The customer experience includes search, filtering and a calculated cart, while the PostgreSQL schema provides protected profiles, favorites, orders and order items ready for authenticated workflows.",
+      "EMBER° uses a React restaurant interface with Supabase-backed menu and category data. The customer experience includes search, filtering and a calculated cart, while the PostgreSQL schema provides protected profiles, favorites, orders and order items ready for authenticated workflows.",
     status: "Full-stack project",
     year: "2026",
     stack: ["React", "Supabase", "PostgreSQL", "Responsive UI"],
@@ -275,9 +275,9 @@ export const projects: Project[] = [
     title: "ATELIER 01 Luxury Commerce",
     eyebrow: "Full-Stack Commerce Platform",
     summary:
-      "A client-ready luxury fashion store with authenticated shopping, persistent cart and wishlist state, checkout and account management.",
+      "An e-commerce application with authentication, persistent cart and wishlist data, checkout and account management.",
     description:
-      "ATELIER 01 translates editorial fashion direction into a complete React commerce experience backed by Supabase. It includes a database-driven catalog, product discovery, authentication, persistent cart and wishlist data, profile and avatar management, order creation and responsive end-to-end QA.",
+      "ATELIER 01 is a React e-commerce project backed by Supabase. It includes a database-driven catalog, product discovery, authentication, persistent cart and wishlist data, profile and avatar management, order creation and responsive end-to-end QA.",
     status: "Full-stack project · Tested",
     year: "2026",
     stack: ["React", "Supabase", "PostgreSQL", "Playwright"],
@@ -293,22 +293,22 @@ export const projects: Project[] = [
 ];
 
 export const coreSkills = [
-  { group: "Frontend", items: ["React", "React Native", "TypeScript", "JavaScript", "HTML", "CSS", "Responsive UI"] },
-  { group: "Backend & data", items: ["Firebase", "Supabase", "PostgreSQL", "MySQL", "Authentication", "REST APIs"] },
-  { group: "AI & programming", items: ["AI integrations", "Python", "C++", "Gemini API", "Sentence Transformers"] },
+  { group: "Frontend Development", items: ["React", "React Native", "TypeScript", "JavaScript", "HTML", "CSS", "Responsive UI"] },
+  { group: "Backend & Databases", items: ["Firebase", "Supabase", "PostgreSQL", "MySQL", "Authentication", "REST APIs"] },
+  { group: "Programming & AI Integration", items: ["AI integrations", "Python", "C++", "Gemini API", "Sentence Transformers"] },
   { group: "Development Tools", items: ["Git", "GitHub", "VS Code", "Android Studio", "Google Colab"] },
 ];
 
 export const githubRepositories: GitHubRepository[] = [
   { name: "Medora Healthcare Platform", repository: "Multi-Role-Healthcare-Appointment-Management", category: "React + Supabase", description: "A multi-role healthcare system for patients, doctors and administrators." },
-  { name: "Roamly Travel Booking", repository: "Travel-Booking-Application", category: "React + Supabase", description: "An editorial travel discovery and secure booking experience." },
+  { name: "Roamly Travel Booking", repository: "Travel-Booking-Application", category: "React + Supabase", description: "A travel application with destination search, saved trips and booking workflows." },
   { name: "EMBER° Restaurant Ordering", repository: "Restaurant-Ordering-Application", category: "React + Supabase", description: "A full-stack restaurant storefront with live menu and ordering data." },
   { name: "ATELIER 01 Luxury Commerce", repository: "luxury-Ecommerce-with-Backend-", category: "React + Supabase", description: "A luxury commerce platform with authentication, checkout and account workflows." },
   { name: "AI-Powered FYP Portal", repository: "AI-powered-FYP-Suggestion-Submission-Portal", category: "React + AI", description: "A final-year project suggestion and submission workflow for students and supervisors." },
   { name: "My Projects", repository: "My-Projects", category: "Project Collection", description: "A collection of development exercises and project experiments." },
   { name: "Modern Login UI Interface", repository: "modern_login_ui_interface", category: "Interface Design", description: "A focused authentication interface and responsive layout study." },
-  { name: "Modern Login UI", repository: "modern_login_ui", category: "Interface Design", description: "A polished login experience built as a reusable UI exercise." },
-  { name: "UI App", repository: "ui_app", category: "Mobile UI", description: "A mobile application focused on practical interface composition." },
+  { name: "Modern Login UI", repository: "modern_login_ui", category: "Interface Design", description: "A reusable login interface project with responsive layouts." },
+  { name: "UI App", repository: "ui_app", category: "Mobile UI", description: "A mobile application demonstrating interface layout and component composition." },
   { name: "Dice App", repository: "Dice-app", category: "Interactive App", description: "A compact interactive dice application and logic exercise." },
   { name: "Xylophone", repository: "Xylophone", category: "Mobile App", description: "An audio-based mobile application built around touch interaction." },
   { name: "Quiz App", repository: "Quiz_App", category: "Interactive App", description: "A question-and-answer application with score-oriented interaction." },
@@ -320,15 +320,15 @@ export const githubRepositories: GitHubRepository[] = [
   { name: "Firebase CRUD", repository: "simple__read-write-update-delete__using__Firebase", category: "Firebase", description: "A focused create, read, update and delete workflow using Firebase." },
   { name: "Teacher App", repository: "Teacher", category: "Education", description: "The teacher-facing side of a role-based academic application." },
   { name: "Student Learning Platform", repository: "STUDENT-side", category: "Education", description: "The student-facing experience for courses, requests and progress." },
-  { name: "Watch UI Project", repository: "watch-steroid", category: "Interface Design", description: "A watch-inspired interface and frontend presentation project." },
+  { name: "Watch UI Project", repository: "watch-steroid", category: "Interface Design", description: "A watch interface design and frontend development project." },
   { name: "E-Commerce", repository: "E-Commerce", category: "Commerce", description: "An e-commerce interface exploring product and shopping workflows." },
   { name: "Wallpaper App", repository: "wallpaper_app", category: "Mobile App", description: "A mobile experience for browsing and presenting wallpapers." },
   { name: "Fitness App", repository: "Fitness_App", category: "Health & Fitness", description: "A fitness-oriented application and mobile interface exercise." },
   { name: "HTML & CSS", repository: "HTML_CSS", category: "Frontend Foundations", description: "A collection of responsive web layouts and frontend practice." },
   { name: "International Languages", repository: "internation_languages", category: "Education", description: "A language-learning application and interface concept." },
   { name: "React Journey", repository: "React_journey", category: "React", description: "Hands-on React exercises documenting continued frontend learning." },
-  { name: "React 30-Day Portfolio", repository: "react-30-day-portfolio", category: "React", description: "A public build series focused on consistent React practice." },
+  { name: "React 30-Day Portfolio", repository: "react-30-day-portfolio", category: "React", description: "A documented series of React interface and application projects." },
   { name: "React Learning Roadmap", repository: "react-learning-roadmap", category: "Learning", description: "A structured repository for React learning goals and progression." },
-  { name: "VELORA Fashion Store", repository: "velora-react-shoping-store", category: "React Commerce", description: "A responsive React shopping experience with product interactions." },
+  { name: "VELORA Fashion Store", repository: "velora-react-shoping-store", category: "React Commerce", description: "A responsive React shopping application with product browsing and cart interactions." },
   { name: "Professional Portfolio", repository: "Professional-Portfolio", category: "React Portfolio", description: "The source repository for this multi-page professional portfolio and case-study system." },
 ];

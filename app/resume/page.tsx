@@ -4,26 +4,51 @@ import { Award, BriefcaseBusiness, Code2, Download, GraduationCap, Link2, Mail, 
 export const metadata: Metadata = { title: "Résumé" };
 
 const education = [
-  { degree: "BS Computer Science", school: "COMSATS University Islamabad", dates: "Sep 2022 - 1 Aug 2026", note: "CGPA 3.22 / 4.0" },
-  { degree: "FSc Pre-Medical", school: "Govt Postgraduate College Vehari", dates: "Jun 2020 - May 2022", note: "" },
-  { degree: "Matric Pre-Medical", school: "Govt Model Higher Secondary School Vehari", dates: "Mar 2018 - May 2020", note: "" },
+  { degree: "Bachelor of Science in Computer Science", school: "COMSATS University Islamabad, Vehari Campus", dates: "Sep 2022 - Jul 2026", note: "CGPA 3.22 / 4.00" },
 ];
 
 const skills = [
-  { group: "Core Technologies", items: ["React", "React Native"] },
-  { group: "Languages", items: ["JavaScript (primary)", "TypeScript", "C++", "Python", "Dart"] },
-  { group: "Backend & Data", items: ["Supabase", "Firebase Auth", "Firestore", "PostgreSQL", "MySQL", "REST APIs", "FastAPI"] },
-  { group: "AI Integration", items: ["Gemini API", "Sentence Transformers"] },
+  { group: "Languages", items: ["C++", "Python", "HTML", "CSS", "JavaScript", "TypeScript"] },
+  { group: "Frameworks", items: ["React", "React Native", "Flutter"] },
+  { group: "Backend & Data", items: ["Supabase", "Firebase", "Firestore", "MySQL", "PostgreSQL", "REST APIs", "FastAPI"] },
   { group: "Development Tools", items: ["Git", "GitHub", "VS Code", "Android Studio", "Google Colab"] },
 ];
 
 const projects = [
-  { title: "AI-Powered FYP Suggestion & Submission Portal", text: "React-based academic workflow connecting project discovery, submissions and AI-assisted quality support.", year: "2026" },
-  { title: "Multi-Role Healthcare Appointment Management", text: "React and Supabase platform with patient, doctor and admin workflows, authentication and protected data.", year: "2026" },
-  { title: "RoadWatch", text: "Private React Native and Expo product in active development; design and proof-of-concept validation completed.", year: "2026" },
+  { title: "AI-Powered FYP Suggestion & Submission Portal", text: "Built role-based Student, Supervisor, and Admin workflows with AI suggestions, semantic similarity checks, document processing, and milestone tracking.", stack: "React · Firebase · AI Model" },
+  { title: "RoadWatch AI Traffic Violation Detection Platform", text: "Designed operational screens for traffic monitoring, incident review, evidence management, and AI-assisted violation detection.", stack: "React · AI Model · Supabase · PostgreSQL" },
+  { title: "Multi-Role Healthcare Appointment Management", text: "Developed authenticated role-based booking workflows with PostgreSQL-backed scheduling and protected access.", stack: "React · Supabase" },
 ];
 
-const strengths = ["Problem Solving", "Team Collaboration", "Debugging", "Responsive UI", "Agile Workflow", "Communication"];
+const experience = [
+  {
+    title: "React Developer (Intern)", company: "Sortup Pvt. Ltd.", location: "Lahore · On-site", dates: "Jul 2026 - Sep 2026",
+    details: [
+      "Contributed to React frontend development and learned to integrate the Supabase backend.",
+      "Gained hands-on experience with React Native through mobile app project tasks.",
+      "Collaborated with the development team on real projects and learned to manage software changes using Git and GitHub.",
+    ],
+  },
+  {
+    title: "Android App Development Intern", company: "We Connect", location: "Vehari · On-site", dates: "Jul 2024 - Sep 2024",
+    details: [
+      "Collaborated on mobile application tasks.",
+      "Supported feature improvements, testing, and debugging.",
+      "Helped refine performance and reliability while learning professional team workflows.",
+    ],
+  },
+];
+
+const certifications = [
+  { title: "React JS for Beginners", provider: "Cursa" },
+  { title: "React JS Complete", provider: "Cursa" },
+  { title: "Node JS Beginner", provider: "Cursa" },
+  { title: "Dart and Flutter: Mobile App Development", provider: "Udemy" },
+  { title: "Mobile App Development with Flutter", provider: "Alison" },
+  { title: "Machine Learning and AI coursework", provider: "Udemy" },
+];
+
+const strengths = ["Analytical Problem Solving", "Leadership", "Team Collaboration", "Self Motivation", "Discipline", "Ownership"];
 
 export default function ResumePage() {
   return (
@@ -34,24 +59,25 @@ export default function ResumePage() {
           <div>
             <p className="section-index">Résumé / Web edition</p>
             <h1>Muhammad Abdullah</h1>
-            <p className="lead">Full-Stack Developer focused on React, React Native and JavaScript</p>
+            <p className="lead">Full Stack Developer | React, React Native &amp; JavaScript</p>
           </div>
         </div>
         <a className="button primary resume-download" href="/Muhammad-Abdullah-CV.pdf" download><Download size={17} /> Download CV</a>
       </section>
 
       <section className="resume-contact-strip" aria-label="Contact information">
-        <span><MapPin size={16} /> Lahore, Pakistan</span>
+        <span><MapPin size={16} /> Lahore, Punjab, Pakistan</span>
         <a href="mailto:mabdullah17jun@gmail.com"><Mail size={16} /> mabdullah17jun@gmail.com</a>
         <a href="https://wa.me/923202929447" target="_blank" rel="noreferrer"><MessageCircle size={16} /> +92 320 2929447</a>
         <a href="https://github.com/mabdula2004" target="_blank" rel="noreferrer"><Code2 size={16} /> GitHub</a>
         <a href="https://www.linkedin.com/in/muhammad-abdula-17jun/" target="_blank" rel="noreferrer"><Link2 size={16} /> LinkedIn</a>
+        <a href="https://professional-portfolio-mabdula-17jun.vercel.app/" target="_blank" rel="noreferrer"><Link2 size={16} /> Portfolio</a>
       </section>
 
       <div className="resume-modern-layout">
         <aside className="resume-sidebar">
           <section className="resume-panel">
-            <div className="resume-section-title"><Sparkles size={18} /><h2>Core Skills</h2></div>
+            <div className="resume-section-title"><Sparkles size={18} /><h2>Technical Skills</h2></div>
             <div className="resume-skill-groups">
               {skills.map((skill) => <div key={skill.group}><h3>{skill.group}</h3><div>{skill.items.map((item) => <span key={item}>{item}</span>)}</div></div>)}
             </div>
@@ -60,8 +86,7 @@ export default function ResumePage() {
           <section className="resume-panel">
             <div className="resume-section-title"><Award size={18} /><h2>Certifications</h2></div>
             <div className="certificate-list">
-              <article><strong>React JS for Beginners</strong><span>Completed certification</span></article>
-              <article><strong>React JS Complete</strong><span>Cursa</span></article>
+              {certifications.map((certificate) => <article key={certificate.title}><strong>{certificate.title}</strong><span>{certificate.provider}</span></article>)}
             </div>
           </section>
 
@@ -73,9 +98,9 @@ export default function ResumePage() {
 
         <div className="resume-main-column">
           <section className="resume-panel resume-profile-panel">
-            <p className="section-index">Professional introduction</p>
-            <h2>Frontend craft with practical full-stack understanding</h2>
-            <p>I build responsive web and mobile products with React and React Native, using JavaScript as my core language and TypeScript where additional structure improves the codebase. My project work includes authentication, databases, APIs and AI integrations, with a strong focus on clear user flows and reliable implementation.</p>
+            <p className="section-index">Profile</p>
+            <h2>Professional Summary</h2>
+            <p>I am a Computer Science graduate with Web and App development internship experience and a portfolio of 40+ academic and personal projects. Combines strong programming fundamentals with hands on experience building web, mobile, and AI enabled applications. Brings analytical problem solving, leadership qualities and a collaborative approach to technical challenges. Self motivated and disciplined, with a consistent work ethic, a strong sense of ownership and a commitment to turning ideas into practical user focused solutions.</p>
           </section>
 
           <section className="resume-panel">
@@ -92,23 +117,21 @@ export default function ResumePage() {
           </section>
 
           <section className="resume-panel">
-            <div className="resume-section-title"><BriefcaseBusiness size={18} /><h2>Internship Experience</h2></div>
-            <div className="resume-experience-card">
-              <div><h3>Android App Development Intern</h3><p>We Connect Software House</p></div>
-              <time>Jul - Sep 2024</time>
-              <ul>
-                <li>Collaborated with the development team on Android application work.</li>
-                <li>Supported interface implementation, debugging, testing and performance improvements.</li>
-                <li>Participated in project meetings, feedback cycles and practical team workflows.</li>
-              </ul>
-            </div>
+            <div className="resume-section-title"><BriefcaseBusiness size={18} /><h2>Work Experience</h2></div>
+            {experience.map((item) => (
+              <div className="resume-experience-card" key={`${item.company}-${item.dates}`}>
+                <div><h3>{item.title}</h3><p>{item.company} · {item.location}</p></div>
+                <time>{item.dates}</time>
+                <ul>{item.details.map((detail) => <li key={detail}>{detail}</li>)}</ul>
+              </div>
+            ))}
           </section>
 
           <section className="resume-panel">
             <div className="resume-section-title"><BriefcaseBusiness size={18} /><h2>Selected Projects</h2></div>
             <div className="resume-project-list">
               {projects.map((project, index) => (
-                <article key={project.title}><span>0{index + 1}</span><div><h3>{project.title}</h3><p>{project.text}</p></div><time>{project.year}</time></article>
+                <article key={project.title}><span>0{index + 1}</span><div><h3>{project.title}</h3><p>{project.text}</p><p className="resume-project-stack">{project.stack}</p></div></article>
               ))}
             </div>
           </section>

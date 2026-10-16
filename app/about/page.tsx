@@ -5,27 +5,27 @@ import { ArrowUpRight, BookOpenCheck, Braces, Code2, Compass, GraduationCap, Lay
 export const metadata: Metadata = { title: "About" };
 
 const highlights = [
-  { label: "Core Web", value: "React", icon: Code2 },
-  { label: "Core Mobile", value: "React Native", icon: Smartphone },
-  { label: "Core Language", value: "JavaScript", icon: Braces },
-  { label: "Graduation", value: "August 2026", icon: GraduationCap },
+  { label: "Web Development", value: "React", icon: Code2 },
+  { label: "Mobile Development", value: "React Native", icon: Smartphone },
+  { label: "Primary Language", value: "JavaScript", icon: Braces },
+  { label: "Graduation", value: "July 2026", icon: GraduationCap },
 ];
 
 const journey = [
   {
     period: "2018 - 2022",
-    title: "A pre-medical foundation",
-    text: "Matric and FSc in pre-medical studies developed the discipline, observation and curiosity that still shape how I approach technical problems.",
+    title: "Pre-Medical Education",
+    text: "Completed Matric and FSc in pre-medical studies, developing a foundation in scientific reasoning and analytical problem solving.",
   },
   {
     period: "2022 - 2026",
-    title: "Computer science became the direction",
-    text: "At COMSATS University Islamabad, I built strong programming fundamentals and moved from mobile exercises to connected React products.",
+    title: "Bachelor of Science in Computer Science",
+    text: "Studied at COMSATS University Islamabad, Vehari Campus, with academic and project work in programming, web development, mobile applications and artificial intelligence.",
   },
   {
-    period: "Now",
-    title: "Building across web and mobile",
-    text: "My current focus is React, React Native and JavaScript, supported by TypeScript, authentication, databases, APIs and practical AI integration.",
+    period: "Current Focus",
+    title: "Web and Mobile Development",
+    text: "My technical focus includes React, React Native and JavaScript, supported by TypeScript, authentication, database integration, REST APIs and AI applications.",
   },
 ];
 
@@ -41,10 +41,10 @@ export default function AboutPage() {
 
         <div className="about-profile-copy">
           <p className="section-index">About me</p>
-          <h1>From pre-medical studies to building digital products</h1>
-          <p className="lead">I&apos;m Muhammad Abdullah, a full-stack developer in Lahore with a frontend-first foundation in React and React Native.</p>
-          <p>I enjoy turning real problems into clear, responsive products and connecting the interface with authentication, databases, REST APIs and useful AI features. JavaScript is my core language, while TypeScript helps me build with more structure and confidence.</p>
-          <a className="button primary" href="/projects">View my work <ArrowUpRight size={17} /></a>
+          <h1>Professional Profile</h1>
+          <p className="lead">I am a Computer Science graduate with Web and App development internship experience and a portfolio of 40+ academic and personal projects.</p>
+          <p>Combines strong programming fundamentals with hands on experience building web, mobile, and AI enabled applications. Brings analytical problem solving, leadership qualities and a collaborative approach to technical challenges. Self motivated and disciplined, with a consistent work ethic, a strong sense of ownership and a commitment to turning ideas into practical user focused solutions.</p>
+          <a className="button primary" href="/projects">View Projects <ArrowUpRight size={17} /></a>
         </div>
       </section>
 
@@ -59,8 +59,8 @@ export default function AboutPage() {
 
       <section className="section about-journey-section">
         <div className="section-heading about-section-heading">
-          <p className="section-index">01 / My journey</p>
-          <h2>A change in direction, built through consistent practice</h2>
+          <p className="section-index">Background</p>
+          <h2>Education &amp; Development</h2>
         </div>
         <div className="journey-list">
           {journey.map((item, index) => (
@@ -75,20 +75,20 @@ export default function AboutPage() {
 
       <section className="section compact-section about-work-section">
         <div className="section-heading about-section-heading">
-          <p className="section-index">02 / How I work</p>
-          <h2>A simple process for thoughtful progress</h2>
+          <p className="section-index">Development Approach</p>
+          <h2>Problem Solving &amp; Implementation</h2>
         </div>
         <div className="about-work-grid">
-          <article><Compass /><span>01</span><h3>Understand the problem</h3><p>I clarify the user, the workflow and the real outcome before choosing the implementation.</p></article>
-          <article><Layers3 /><span>02</span><h3>Build and test</h3><p>I turn the plan into reusable interfaces, connected data flows and working product behavior.</p></article>
-          <article><MessageSquareMore /><span>03</span><h3>Improve through feedback</h3><p>I review the result, fix weak points and refine the experience through practical iteration.</p></article>
+          <article><Compass /><span>01</span><h3>Requirements Analysis</h3><p>I identify user requirements, application workflows and technical constraints before implementation.</p></article>
+          <article><Layers3 /><span>02</span><h3>Development &amp; Testing</h3><p>I implement reusable components, integrate application data and test functionality across relevant workflows.</p></article>
+          <article><MessageSquareMore /><span>03</span><h3>Review &amp; Refinement</h3><p>I evaluate feedback, resolve defects and refine usability and implementation quality.</p></article>
         </div>
       </section>
 
       <section className="about-next-step">
         <BookOpenCheck size={22} />
-        <div><p className="section-index">Next</p><h2>See the projects behind the journey</h2></div>
-        <a className="text-link" href="/projects">Open project archive <ArrowUpRight size={16} /></a>
+        <div><p className="section-index">Project Portfolio</p><h2>Academic &amp; Personal Projects</h2></div>
+        <a className="text-link" href="/projects">View Projects <ArrowUpRight size={16} /></a>
       </section>
     </main>
   );

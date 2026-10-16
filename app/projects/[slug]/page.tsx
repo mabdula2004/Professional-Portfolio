@@ -23,8 +23,6 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
   if (!project) notFound();
   const isFypCase = project.slug === "fyp-intelligence-portal";
   const hasEvidence = Boolean(project.verification?.length || project.limitations?.length);
-  const screenshotSection = hasEvidence ? "06" : "05";
-  const futureSection = isFypCase ? "06" : hasEvidence ? "07" : "06";
 
   return (
     <main className="inner-main page-shell case-study-page">
@@ -40,7 +38,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
               <span className="status-pill private-status"><Lock size={14} /> {project.status}</span>
             ) : (
               <>
-                {project.live ? <a className="button primary" href={project.live} target="_blank" rel="noreferrer">Open live product <ArrowUpRight size={17} /></a> : null}
+                {project.live ? <a className="button primary" href={project.live} target="_blank" rel="noreferrer">View Live Application <ArrowUpRight size={17} /></a> : null}
                 {project.github ? <a className={`button ${project.live ? "secondary" : "primary"}`} href={project.github} target="_blank" rel="noreferrer"><Code2 size={17} /> View repository</a> : <span className="status-pill">{project.status}</span>}
               </>
             )}
@@ -63,13 +61,13 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
 
         <div className="case-narrative">
           <article>
-            <p className="section-index">01 / Problem</p>
-            <h2>The context behind the build</h2>
+            <p className="section-index">Problem</p>
+            <h2>Problem Statement</h2>
             <p>{project.problem ?? project.summary}</p>
           </article>
           <article>
-            <p className="section-index">02 / Purpose</p>
-            <h2>What the product is meant to improve</h2>
+            <p className="section-index">Purpose</p>
+            <h2>Project Objectives</h2>
             <p>{project.purpose ?? project.description}</p>
           </article>
         </div>
@@ -77,17 +75,17 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
 
       <section className="case-detail-grid">
         <article className="case-detail-card">
-          <p className="section-index">03 / Main functionality</p>
-          <h2>Core product workflows</h2>
+          <p className="section-index">Main functionality</p>
+          <h2>Key Features</h2>
           <div className="case-check-list">
             {project.highlights.map((item) => <div key={item}><CheckCircle2 size={18} /><span>{item}</span></div>)}
           </div>
         </article>
         <article className="case-detail-card">
-          <p className="section-index">04 / Technical decisions</p>
-          <h2>How the solution is structured</h2>
+          <p className="section-index">Technical decisions</p>
+          <h2>Architecture &amp; Implementation</h2>
           <div className="case-check-list">
-            {(project.technicalDecisions ?? project.stack.map((item) => `${item} selected for its role in the product workflow`)).map((item) => <div key={item}><Code2 size={18} /><span>{item}</span></div>)}
+            {(project.technicalDecisions ?? project.stack.map((item) => `${item} used in the application implementation`)).map((item) => <div key={item}><Code2 size={18} /><span>{item}</span></div>)}
           </div>
         </article>
       </section>
@@ -95,15 +93,15 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
       {hasEvidence ? (
         <section className="case-detail-grid case-evidence-grid">
           <article className="case-detail-card">
-            <p className="section-index">05 / Implementation evidence</p>
-            <h2>What is present in the repository</h2>
+            <p className="section-index">Implementation evidence</p>
+            <h2>Implemented Functionality</h2>
             <div className="case-check-list">
               {project.verification?.map((item) => <div key={item}><CheckCircle2 size={18} /><span>{item}</span></div>)}
             </div>
           </article>
           <article className="case-detail-card case-boundary-card">
-            <p className="section-index">Current boundaries</p>
-            <h2>What is not being overstated</h2>
+            <p className="section-index">Project Status</p>
+            <h2>Current Limitations</h2>
             <div className="case-boundary-list">
               {project.limitations?.map((item, index) => <div key={item}><span>0{index + 1}</span><p>{item}</p></div>)}
             </div>
@@ -114,16 +112,16 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
       {!isFypCase ? (
         <section className="case-visual-section">
           <div>
-            <p className="section-index">{screenshotSection} / Screenshots</p>
-            <h2>Visual documentation</h2>
-            <p>{project.private ? "RoadWatch visuals remain protected while implementation and integration testing continue." : "Final product screens will be added as the public case-study documentation is completed."}</p>
+            <p className="section-index">Screenshots</p>
+            <h2>Application Screenshots</h2>
+            <p>{project.private ? "RoadWatch screenshots are not publicly available during implementation and integration testing." : "Application screenshots will be added as project documentation is completed."}</p>
           </div>
           <div className="case-visual-placeholder"><ImageIcon size={32} /><span>{project.private ? "Private until release" : "Screenshots coming soon"}</span></div>
         </section>
       ) : null}
 
       <section className="case-future-section">
-        <div><p className="section-index">{futureSection} / Future improvements</p><h2>What comes next</h2></div>
+        <div><p className="section-index">Future Development</p><h2>Planned Improvements</h2></div>
         <div className="case-future-list">
           {(project.futureWork ?? ["Continue refining the implementation", "Add visual documentation", "Publish deployment details when ready"]).map((item, index) => (
             <div key={item}><span>0{index + 1}</span><p>{item}</p></div>
@@ -132,8 +130,8 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
       </section>
 
       <section className="inline-cta">
-        <div><p className="section-index">Continue</p><h2>Explore the public project archive</h2></div>
-        <a className="button primary" href="/projects">View all repositories <ArrowUpRight size={17} /></a>
+        <div><p className="section-index">Project Portfolio</p><h2>Additional Projects</h2></div>
+        <a className="button primary" href="/projects">View All Repositories <ArrowUpRight size={17} /></a>
       </section>
     </main>
   );

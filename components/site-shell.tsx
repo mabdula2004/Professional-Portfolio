@@ -32,7 +32,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           <span className="brand-mark">MA</span>
           <span className="brand-copy">
             <strong>Muhammad Abdullah</strong>
-            <small>Full-Stack Developer</small>
+            <small>Full Stack Developer</small>
           </span>
         </a>
 
@@ -72,10 +72,10 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       <footer className="site-footer">
         <div className="footer-grid">
           <div className="footer-intro">
-            <p className="footer-eyebrow">Full-Stack Developer</p>
-            <h2>Let&apos;s build something useful</h2>
-            <p>I create responsive React and TypeScript products backed by practical authentication, data and API workflows.</p>
-            <a className="footer-contact" href="mailto:mabdullah17jun@gmail.com"><Mail size={17} /> Start a conversation</a>
+            <p className="footer-eyebrow">Professional Contact</p>
+            <h2>Contact Information</h2>
+            <p>Based in Lahore, Pakistan. Open to full stack development roles involving web applications, mobile development and AI integration.</p>
+            <a className="footer-contact" href="mailto:mabdullah17jun@gmail.com"><Mail size={17} /> mabdullah17jun@gmail.com</a>
           </div>
         </div>
       </footer>

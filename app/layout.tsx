@@ -4,10 +4,10 @@ import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
   title: {
-    default: "Muhammad Abdullah — Full-Stack Developer",
+    default: "Muhammad Abdullah — Full Stack Developer",
     template: "%s — Muhammad Abdullah",
   },
-  description: "Full-stack developer building modern React and TypeScript applications with Firebase, Supabase and AI integrations.",
+  description: "Muhammad Abdullah's professional portfolio: Computer Science graduate, full stack developer, React and React Native projects, internship experience and technical skills.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
