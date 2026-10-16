@@ -34,7 +34,7 @@ export default function AboutPage() {
     <main className="inner-main page-shell about-page about-refresh">
       <section className="about-profile-grid">
         <div className="about-portrait">
-          <img className="about-profile-photo" src="/muhammad-abdullah-portrait.png" alt="Muhammad Abdullah" width={1024} height={1024} fetchPriority="high" />
+          <img className="about-profile-photo" src="/muhammad-abdullah-illustrated-portrait.png" alt="Illustrated portrait of Muhammad Abdullah" width={1254} height={1254} fetchPriority="high" />
         </div>
 
         <div className="about-profile-copy">
