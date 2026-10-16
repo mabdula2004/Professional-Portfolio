@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-import { ArrowUpRight, Code2, Database, Lock, Sparkles } from "lucide-react";
+import { ArrowUpRight, Code2, Database, Sparkles } from "lucide-react";
 import { projects } from "@/lib/portfolio-data";
 import { ExpertiseExplorer } from "@/components/expertise-explorer";
+import { FeaturedProjects } from "@/components/featured-projects";
 
 const featured = projects
   .filter((project) => project.featured)
@@ -62,32 +63,7 @@ export default function Home() {
           <div><p className="section-index">Project Portfolio</p><h2>Featured Projects</h2></div>
           <p>Selected academic and personal projects demonstrating frontend development, mobile applications, database integration and AI functionality.</p>
         </div>
-        <div className="project-grid featured-project-grid">
-          {featured.map((project, index) => {
-            const cardContent = <>
-              <div className="project-number">0{index + 1}</div>
-              {project.private ? <span className="privacy-badge"><Lock size={13} /> Private · In Development</span> : null}
-              <div className="project-art" aria-hidden="true">
-                <span className="art-grid" />
-                <strong>{project.title.split(" ").slice(0, 2).join(" ")}</strong>
-                <small>{project.eyebrow}</small>
-              </div>
-              <div className="project-copy">
-                <p>{project.eyebrow}</p>
-                <h3>{project.title}</h3>
-                <span>{project.summary}</span>
-                <div className="tag-row">{project.stack.slice(0, 3).map((item) => <small key={item}>{item}</small>)}</div>
-              </div>
-              {project.private ? <Lock className="project-lock" size={19} /> : <ArrowUpRight className="project-arrow" size={20} />}
-            </>;
-
-            return (
-              <a className={`project-card ${project.private ? "private-project-card" : ""} accent-${project.accent}`} href={`/projects/${project.slug}`} key={project.slug} aria-label={project.private ? `${project.title}, private project in development` : project.title}>
-                {cardContent}
-              </a>
-            );
-          })}
-        </div>
+        <FeaturedProjects projects={featured} />
         <a className="text-link" href="/projects">View All Projects <ArrowUpRight size={16} /></a>
       </section>
 
