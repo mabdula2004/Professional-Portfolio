@@ -293,9 +293,9 @@ export const projects: Project[] = [
 ];
 
 export const coreSkills = [
-  { group: "Frontend Development", items: ["React", "React Native", "TypeScript", "JavaScript", "HTML", "CSS", "Responsive UI"] },
+  { group: "Frontend Development", items: ["React", "React Native", "JavaScript", "TypeScript", "HTML", "CSS"] },
   { group: "Backend & Databases", items: ["Firebase", "Supabase", "PostgreSQL", "MySQL", "Authentication", "REST APIs"] },
-  { group: "Programming & AI Integration", items: ["AI integrations", "Python", "C++", "Gemini API", "Sentence Transformers"] },
+  { group: "Programming & AI Integration", items: ["Python", "AI Integration"] },
   { group: "Development Tools", items: ["Git", "GitHub", "VS Code", "Android Studio", "Google Colab"] },
 ];
 

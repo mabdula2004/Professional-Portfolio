@@ -1,15 +1,37 @@
 "use client";
 
 import { useRef, useState, type KeyboardEvent } from "react";
-import { Atom, Braces, ChevronRight, Code2, Database, Layers3, Smartphone, Sparkles, Wrench } from "lucide-react";
+import { Atom, Braces, ChevronRight, Code2, Database, FileCode2, Flame, GitBranch, FolderGit2, KeyRound, Layers3, Network, NotebookPen, Palette, Smartphone, Sparkles, Terminal, Wrench, Zap } from "lucide-react";
 import { coreSkills } from "@/lib/portfolio-data";
 
 const domains = [
-  { icon: Layers3, label: "Web & Mobile", description: "Responsive interfaces and cross-platform applications with reusable components and structured application logic.", symbols: [Atom, Smartphone] },
-  { icon: Database, label: "Backend & Data", description: "Authentication, relational data and API integration for connected application workflows.", symbols: [Database, Database] },
-  { icon: Sparkles, label: "Programming & AI", description: "Programming fundamentals and model integration applied to application features and information processing.", symbols: [Sparkles, Braces] },
-  { icon: Wrench, label: "Development Tools", description: "Version control, development environments and tools used across web, mobile and AI project work.", symbols: [Code2, Code2] },
+  { icon: Layers3, label: "Web & Mobile", description: "Responsive interfaces and cross-platform applications with reusable components and structured application logic." },
+  { icon: Database, label: "Backend & Data", description: "Authentication, relational data and API integration for connected application workflows." },
+  { icon: Sparkles, label: "Programming & AI", description: "Programming fundamentals and model integration applied to application features and information processing." },
+  { icon: Wrench, label: "Development Tools", description: "Version control, development environments and tools used across web, mobile and AI project work." },
 ];
+
+const skillIcons = {
+  React: Atom,
+  "React Native": Smartphone,
+  JavaScript: Braces,
+  TypeScript: FileCode2,
+  HTML: Code2,
+  CSS: Palette,
+  Firebase: Flame,
+  Supabase: Zap,
+  PostgreSQL: Database,
+  MySQL: Database,
+  Authentication: KeyRound,
+  "REST APIs": Network,
+  Python: Terminal,
+  "AI Integration": Sparkles,
+  Git: GitBranch,
+  GitHub: FolderGit2,
+  "VS Code": Code2,
+  "Android Studio": Smartphone,
+  "Google Colab": NotebookPen,
+};
 
 export function ExpertiseExplorer() {
   const [active, setActive] = useState(0);
@@ -63,14 +85,11 @@ export function ExpertiseExplorer() {
             <div className="expertise-panel-content">
               <div className="expertise-panel-art" aria-hidden="true"><span /><span /><DomainIcon size={106} strokeWidth={.8} /></div>
               <div className="expertise-panel-copy"><p className="expertise-panel-label">Technical skillset</p><h3>{skill.group}</h3><p>{domain.description}</p></div>
-              <div className="expertise-featured-skills">
-                {skill.items.slice(0, 2).map((item, itemIndex) => {
-                  const Icon = domain.symbols[itemIndex];
-                  return <div className="expertise-featured-skill" key={item}><span><Icon size={25} strokeWidth={1.6} aria-hidden="true" /></span><strong>{item}</strong></div>;
+              <ul className="expertise-skill-grid" aria-label={`${skill.group} skills`}>
+                {skill.items.map((item) => {
+                  const Icon = skillIcons[item as keyof typeof skillIcons] ?? Code2;
+                  return <li className="expertise-skill" key={item}><span><Icon size={22} strokeWidth={1.6} aria-hidden="true" /></span><strong>{item}</strong></li>;
                 })}
-              </div>
-              <ul className="expertise-supporting-skills" aria-label={`${skill.group} technologies`}>
-                {skill.items.slice(2).map((item) => <li key={item}><span aria-hidden="true" />{item}</li>)}
               </ul>
             </div>
           ) : null}

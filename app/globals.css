@@ -228,13 +228,10 @@ button { font: inherit; }
 .expertise-panel-label { margin: 0 0 16px; color: var(--skill-tone); font-size: var(--type-label); font-weight: 800; letter-spacing: .13em; text-transform: uppercase; line-height: 1.5; }
 .expertise-panel-copy h3 { max-width: 440px; margin: 0 0 15px; font-size: var(--type-feature-title); font-weight: 650; line-height: var(--line-heading); letter-spacing: -.035em; }
 .expertise-panel-copy > p:last-child { max-width: 415px; margin: 0; color: var(--muted); font-size: var(--type-body); line-height: var(--line-body); }
-.expertise-featured-skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 32px; }
-.expertise-featured-skill { position: relative; display: flex; min-width: 0; align-items: center; gap: 14px; min-height: 94px; padding: 20px; overflow: hidden; border: 1px solid color-mix(in srgb, var(--skill-tone) 22%, var(--line)); border-radius: 17px; background: linear-gradient(135deg, color-mix(in srgb, var(--skill-tone) 7%, var(--surface)), var(--surface)); }
-.expertise-featured-skill > span { display: inline-grid; place-items: center; flex: 0 0 auto; width: 42px; height: 42px; border-radius: 13px; background: color-mix(in srgb, var(--skill-tone) 10%, var(--bg)); color: var(--skill-tone); }
-.expertise-featured-skill strong { font-size: 16px; font-weight: 650; line-height: 1.35; overflow-wrap: anywhere; }
-.expertise-supporting-skills { display: flex; flex-wrap: wrap; gap: 10px 20px; margin: 25px 0 0; padding: 22px 0 0; border-top: 1px solid var(--line); list-style: none; }
-.expertise-supporting-skills li { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: var(--type-caption); line-height: 1.5; }
-.expertise-supporting-skills li > span { width: 4px; height: 4px; flex: 0 0 auto; border-radius: 50%; background: var(--skill-tone); }
+.expertise-skill-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 28px 0 0; padding: 0; list-style: none; }
+.expertise-skill { display: flex; min-width: 0; align-items: center; gap: 12px; min-height: 82px; padding: 16px; border: 1px solid color-mix(in srgb, var(--skill-tone) 26%, var(--line)); border-radius: 14px; background: linear-gradient(135deg, color-mix(in srgb, var(--skill-tone) 7%, var(--surface)), var(--surface)); color: var(--text); }
+.expertise-skill > span { display: inline-grid; place-items: center; flex: 0 0 auto; width: 36px; height: 36px; border-radius: 10px; background: color-mix(in srgb, var(--skill-tone) 10%, var(--bg)); color: var(--skill-tone); }
+.expertise-skill strong { font-size: var(--type-body); font-weight: 650; line-height: 1.4; overflow-wrap: anywhere; }
 @keyframes expertise-panel-enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes expertise-orbit { from { transform: rotate(0); } to { transform: rotate(360deg); } }
 .cta-panel { margin-block: 120px; padding: 72px; border-radius: 32px; background: #6e4ff8; color: white; }
@@ -563,8 +560,7 @@ button { font: inherit; }
 @media (max-width: 1050px) {
   .expertise-workspace { grid-template-columns: 245px minmax(0, 1fr); }
   .expertise-panel { padding: 32px; }
-  .expertise-featured-skill { padding: 16px; gap: 10px; }
-  .expertise-featured-skill strong { font-size: 14px; }
+  .expertise-skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .journey-list { grid-template-columns: minmax(0, 1fr); gap: 22px; }
   .journey-list::before { top: 22px; bottom: 22px; left: 22px; right: auto; width: 1px; height: auto; background: linear-gradient(180deg, var(--line), color-mix(in srgb, var(--accent) 65%, var(--line))); }
   .journey-stage { display: grid; grid-template-columns: 44px minmax(0, 1fr); align-items: start; gap: 22px; }
@@ -613,9 +609,9 @@ button { font: inherit; }
   .expertise-panel { padding: 28px 22px; }
   .expertise-panel-art { width: 155px; height: 155px; right: -14px; }
   .expertise-panel-copy > p:last-child { font-size: var(--type-body); line-height: var(--line-body); }
-  .expertise-featured-skills { margin-top: 25px; gap: 10px; }
-  .expertise-featured-skill { flex-direction: column; align-items: flex-start; gap: 14px; padding: 18px 15px; }
-  .expertise-supporting-skills { gap: 12px 16px; }
+  .expertise-skill-grid { margin-top: 25px; gap: 10px; }
+  .expertise-skill { flex-direction: column; align-items: flex-start; gap: 12px; padding: 16px; min-height: 110px; }
+  .expertise-skill > span { width: 30px; height: 30px; }
   .site-header { height: 70px; padding-inline: 16px; }
   .brand-copy { display: none; }
   .header-socials { display: none; }
