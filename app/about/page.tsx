@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages, @next/next/no-img-element */
 import type { Metadata } from "next";
-import { ArrowUpRight, BookOpenCheck, Braces, Code2, Compass, GraduationCap, Layers3, MessageSquareMore, Smartphone } from "lucide-react";
+import { ArrowUpRight, BookOpenCheck, Braces, Code2, Compass, FlaskConical, GraduationCap, Layers3, MessageSquareMore, Smartphone } from "lucide-react";
 
 export const metadata: Metadata = { title: "About" };
 
@@ -14,16 +14,19 @@ const highlights = [
 const journey = [
   {
     period: "2018 - 2022",
+    icon: FlaskConical,
     title: "Pre-Medical Education",
     text: "Completed Matric and FSc in pre-medical studies, developing a foundation in scientific reasoning and analytical problem solving.",
   },
   {
     period: "2022 - 2026",
+    icon: GraduationCap,
     title: "Bachelor of Science in Computer Science",
     text: "Studied at COMSATS University Islamabad, Vehari Campus, with academic and project work in programming, web development, mobile applications and artificial intelligence.",
   },
   {
     period: "Current Focus",
+    icon: Code2,
     title: "Web and Mobile Development",
     text: "My technical focus includes React, React Native and JavaScript, supported by TypeScript, authentication, database integration, REST APIs and AI applications.",
   },
@@ -55,20 +58,23 @@ export default function AboutPage() {
         ))}
       </section>
 
-      <section className="section about-journey-section">
+      <section className="section about-journey-section" aria-labelledby="education-heading">
         <div className="section-heading about-section-heading">
           <p className="section-index">Background</p>
-          <h2>Education &amp; Development</h2>
+          <h2 id="education-heading">Education &amp; Development</h2>
         </div>
-        <div className="journey-list">
-          {journey.map((item, index) => (
-            <article key={item.period}>
-              <div className="journey-marker">0{index + 1}</div>
-              <span>{item.period}</span>
-              <div><h3>{item.title}</h3><p>{item.text}</p></div>
-            </article>
+        <ol className="journey-list">
+          {journey.map(({ icon: Icon, ...item }, index) => (
+            <li className={`journey-stage${index === journey.length - 1 ? " is-current" : ""}`} key={item.period}>
+              <span className="journey-node" aria-hidden="true"><Icon size={21} /></span>
+              <article className="journey-card">
+                <span className="journey-period">{item.period}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
 
       <section className="section compact-section about-work-section">
