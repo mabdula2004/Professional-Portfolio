@@ -29,5 +29,9 @@ export const projectScreenshots: Record<string, { label: string; screens: Projec
     { src: "/projects/hirely/jobs.png", label: "Candidate · Job discovery" },
     { src: "/projects/hirely/mobile.png", label: "Mobile · Homepage", fit: "contain" },
   ] },
+  "roadwatch": { label: "RoadWatch", screens: [
+    { src: "/projects/roadwatch/app-registration.jpg", label: "Reporting app · Web preview" },
+    { src: "/projects/roadwatch/dashboard.jpg", label: "Review dashboard · Empty queue" },
+  ] },
   "velora-store": { label: "VELORA Fashion Store", screens: [{ src: "/projects/velora/home.jpg", label: "Storefront · Homepage" }] },
 };

@@ -869,3 +869,6 @@ button { font: inherit; }
 @keyframes capture-reveal { from { opacity: .35; } to { opacity: 1; } }
 @media (max-width: 760px) { .showcase-primary .showcase-site-browser { width: 100%; max-width: 410px; } }
 @media (prefers-reduced-motion: reduce) { .showcase-capture img { animation: none; } }
+
+.case-screenshot-reel { min-width: 0; margin: 24px; }
+.case-screenshot-reel .showcase-browser.showcase-site-browser { max-width: none; transform: none; }

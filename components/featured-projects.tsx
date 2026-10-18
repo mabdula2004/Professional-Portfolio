@@ -1,17 +1,11 @@
 /* eslint-disable @next/next/no-html-link-for-pages, @next/next/no-img-element */
-import { ArrowUpRight, FileText, LockKeyhole, MapPin } from "lucide-react";
+import { ArrowUpRight, LockKeyhole } from "lucide-react";
 import type { Project } from "@/lib/portfolio-data";
 import { projectScreenshots } from "@/lib/project-screenshots";
 import { ProjectScreenshotReel } from "@/components/project-screenshot-reel";
 
 function ProjectPreview({ slug }: { slug: string }) {
   if (projectScreenshots[slug]) return <ProjectScreenshotReel slug={slug} />;
-  if (slug === "roadwatch") {
-    return <div className="roadwatch-preview">
-      <div className="roadwatch-phone"><span className="phone-speaker" /><div className="preview-heading"><MapPin size={17} /><strong>RoadWatch</strong></div><div className="phone-report"><FileText size={25} /><strong>Incident report</strong><span>Capture evidence</span><span>Add location</span><span>Submit report</span></div></div>
-      <div className="roadwatch-note"><LockKeyhole size={20} /><strong>Mobile development</strong><small>React Native · Expo</small><span>Private project</span></div>
-    </div>;
-  }
   return null;
 }
 

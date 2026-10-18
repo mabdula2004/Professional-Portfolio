@@ -18,6 +18,7 @@ export type Project = {
   futureWork?: string[];
   github?: string;
   live?: string;
+  dashboard?: string;
   private?: boolean;
   featured?: boolean;
   featuredOrder?: number;
@@ -140,48 +141,48 @@ export const projects: Project[] = [
   {
     slug: "roadwatch",
     title: "RoadWatch",
-    eyebrow: "Mobile Reporting Application",
-    summary:
-      "A React Native and Supabase application for phone-verified reporting, device video capture and private evidence uploads, with a personal report vault and account management.",
-    description:
-      "RoadWatch connects its original mobile interface to authenticated Supabase records. The application includes onboarding, camera capture, video review, private uploads, a report vault, wallet, safety tools and profile settings. The current implementation supports reporter-owned data and upload workflows while AI analysis and enforcement integrations remain under development.",
-    status: "Private · In development",
+    eyebrow: "Web & Mobile Application",
+    summary: "A React Native reporting app and React review dashboard with Supabase authentication, device video capture, evidence tracking and an implemented AI review pipeline.",
+    description: "RoadWatch combines a native reporting application, a React review dashboard and a Supabase data layer. It includes account verification, device capture, evidence review, report tracking, wallet and profile screens, and a two-stage AI analysis implementation. The web preview and dashboard are deployed; officer authorization and AI provider configuration remain in progress.",
+    status: "Live previews · In development",
     year: "2026",
-    stack: ["React Native", "Supabase", "Expo", "TypeScript"],
-    technologies: ["React Native", "Expo", "TypeScript", "Supabase Auth", "PostgreSQL", "Supabase Storage", "Edge Functions"],
+    stack: ["React Native", "React", "Supabase", "Expo"],
+    technologies: ["React Native", "React", "Expo", "TypeScript", "JavaScript", "Supabase Auth", "PostgreSQL", "Supabase Storage", "Vercel"],
     highlights: [
-      "Phone OTP authentication and protected account completion, with optional email and vehicle plate",
-      "Device camera recording with capture time and GPS, followed by video review and a reporter-selected incident type",
-      "Authenticated uploads to private storage and a reporter-specific Vault with report status refresh",
-      "Account profile, trust score, reward balance and theme/language preferences connected to Supabase",
-      "Safety screen with confirmation before emergency calls and clear limits on unavailable registry features",
+      "Account registration and email verification with phone, profile and vehicle details",
+      "Native video capture with GPS metadata, evidence review and report-specific uploads",
+      "Personal report vault, wallet, preferences and safety tools backed by Supabase",
+      "React dashboard interface for review queues, evidence inspection and report-status actions",
+      "Two-stage vision analysis implemented behind an authenticated server endpoint",
     ],
-    problem: "Mobile incident reporting needs a clear capture-and-review process, protected evidence storage and an accurate view of each reporter's own submissions. The interface must distinguish a reporter's claim from a verified decision.",
-    purpose: "Connect a native reporting workflow to authenticated account data and private uploads, providing a foundation for later evidence analysis and human review.",
-    role: "Mobile application development, Supabase integration and protected video-upload workflows.",
+    problem: "Traffic incident reporting requires a clear capture-and-review process, protected evidence storage and an accurate view of each reporter's submissions. A report must remain distinct from an authorized review decision.",
+    purpose: "Connect mobile evidence reporting, personal submission tracking and a dedicated review interface in one application ecosystem.",
+    role: "React Native application development, React dashboard implementation, Supabase integration and web deployment.",
     technicalDecisions: [
-      "Retain the original React Native screen structure and use Expo for device camera, recording and location access.",
-      "Require confirmed phone authentication for protected account completion and reporter-owned data access.",
-      "Use a JWT-protected Edge Function and report-specific signed upload URLs for private video storage.",
-      "Apply Row Level Security to reporter records and refresh Vault status periodically from the server.",
-      "Store profile edits and theme/language preferences in Supabase instead of presenting sample values as live account data.",
+      "Maintain separate Expo application and React/Vite dashboard directories within one repository.",
+      "Use Expo camera and location APIs for device-based evidence capture on Android and iOS.",
+      "Use Supabase authentication and Row Level Security for reporter-owned records.",
+      "Verify user sessions at the AI server endpoint and keep provider credentials outside the client bundle.",
+      "Deploy the reporting web preview and dashboard as separate Vercel projects.",
     ],
     verification: [
-      "The README documents connected phone OTP, camera capture, video review and private upload behavior.",
-      "Vault, wallet and settings read reporter-specific Supabase records; profile updates and logout are connected.",
-      "Recordings are limited to ten seconds or 50 MB, and selected incident types remain reporter claims rather than AI decisions.",
+      "Both production frontends return successful responses and were visually checked in the browser.",
+      "Automated API checks cover authentication, malformed evidence and server-selected model settings.",
+      "The server endpoint loads correctly and returns an explicit configuration response while its provider key is absent.",
     ],
     limitations: [
-      "A working SMS provider and real-device delivery testing are still required for reliable phone onboarding.",
-      "AI classification, plate OCR, face blurring, evidence hashing and a robust retry queue are not active.",
-      "Government registry access, citations, police review, citizen appeals and reward withdrawal remain pending; the app does not issue automated fines.",
+      "The browser version is a preview; evidence recording requires the native Android or iOS app.",
+      "AI analysis requires a newly issued provider key configured on the server.",
+      "Officer sign-in and backend review authorization still need completion; the public dashboard does not demonstrate a complete adjudication workflow.",
     ],
     futureWork: [
-      "Complete SMS delivery validation and end-to-end testing on physical devices.",
-      "Integrate video analysis, plate recognition, privacy filtering and evidence integrity checks.",
-      "Add resilient upload retries and the planned human review and appeals workflows.",
+      "Complete officer authentication and appropriate backend review permissions.",
+      "Validate registration, evidence capture and AI analysis end to end on physical devices.",
+      "Verify appeals, reward handling and resilient uploads across the complete workflow.",
     ],
-    private: true,
+    github: "https://github.com/mabdula2004/roadwatch_traffic-voilation-detecting-app",
+    live: "https://roadwatch-app-psi.vercel.app/",
+    dashboard: "https://roadwatch-dashboard-eight.vercel.app/",
     featured: true,
     featuredOrder: 3,
     accent: "green",

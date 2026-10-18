@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, CheckCircle2, Code2, Lock } from "lucide-react";
+import { ProjectScreenshotReel } from "@/components/project-screenshot-reel";
 import { FypHeroReel } from "@/components/fyp-hero-reel";
 import { projects } from "@/lib/portfolio-data";
 
@@ -22,13 +23,14 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
   const project = caseStudies.find((item) => item.slug === slug);
   if (!project) notFound();
   const isFypCase = project.slug === "fyp-intelligence-portal";
+  const hasRoadwatchReel = project.slug === "roadwatch";
   const hasEvidence = Boolean(project.verification?.length || project.limitations?.length);
 
   return (
     <main className="inner-main page-shell case-study-page">
       <a className="back-link" href="/"><ArrowLeft size={16} /> Featured projects</a>
 
-      <section className={`case-hero ${isFypCase ? "case-hero-with-reel" : ""} ${project.private ? "private-case-hero" : ""} accent-${project.accent}`}>
+      <section className={`case-hero ${isFypCase || hasRoadwatchReel ? "case-hero-with-reel" : ""} ${project.private ? "private-case-hero" : ""} accent-${project.accent}`}>
         <div className="case-copy">
           <p className="section-index">{project.eyebrow} / {project.year}</p>
           <h1>{project.title}</h1>
@@ -39,12 +41,13 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
             ) : (
               <>
                 {project.live ? <a className="button primary" href={project.live} target="_blank" rel="noreferrer">View Live Application <ArrowUpRight size={17} /></a> : null}
+                {project.dashboard ? <a className="button secondary" href={project.dashboard} target="_blank" rel="noreferrer">View Dashboard <ArrowUpRight size={17} /></a> : null}
                 {project.github ? <a className={`button ${project.live ? "secondary" : "primary"}`} href={project.github} target="_blank" rel="noreferrer"><Code2 size={17} /> View repository</a> : <span className="status-pill">{project.status}</span>}
               </>
             )}
           </div>
         </div>
-        {isFypCase ? <FypHeroReel /> : (
+        {isFypCase ? <FypHeroReel /> : hasRoadwatchReel ? <div className="case-screenshot-reel"><ProjectScreenshotReel slug={project.slug} /></div> : (
           <div className={`case-art ${project.private ? "private-case-art" : ""}`}>
             {project.private ? <Lock className="private-case-lock" aria-hidden="true" /> : <span>{project.title.split(" ").map((word) => word[0]).slice(0, 3).join("")}</span>}
             <small>{project.private ? "Protected project in active development" : project.status}</small>
