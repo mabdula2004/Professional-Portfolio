@@ -7,7 +7,10 @@ import { journeyDuration, journeyFrame, journeyPaths, journeyStops } from "@/lib
 
 const stages = [
   { ...education[2], label: "Matric", icon: FlaskConical },
-  { ...education[1], label: "FSc", icon: Microscope },
+  {
+    ...education[1], label: "FSc", icon: Microscope,
+    description: "Pre-medical studies developed my scientific reasoning, careful observation and analytical problem solving. Combined with Computer Science, this foundation helps me understand healthcare workflows and translate domain requirements into practical applications, including appointment and patient information systems.",
+  },
   { ...education[0], label: "BSCS", icon: GraduationCap },
   {
     label: "Development", icon: Code2, degree: "Web and Mobile Development", school: "Current Focus", dates: "Present", note: "",
