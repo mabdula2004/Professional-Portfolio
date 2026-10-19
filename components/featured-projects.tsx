@@ -26,7 +26,7 @@ export function FeaturedProjects({ projects }: { projects: Project[] }) {
             <span>{project.private ? "Project overview" : "Explore project"}</span><span className="showcase-arrow"><ArrowUpRight size={19} /></span>
           </a>
           <div className="showcase-live-links">
-            {project.live && <a className="showcase-live-link" href={project.live} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} live demo (opens in a new tab)`}>Live demo <ArrowUpRight size={15} aria-hidden="true" /></a>}
+            {project.live && <a className="showcase-live-link" href={project.live} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} ${project.dashboard ? "app" : "live demo"} (opens in a new tab)`}>{project.dashboard ? "APP" : "Live demo"} <ArrowUpRight size={15} aria-hidden="true" /></a>}
             {project.dashboard && <a className="showcase-live-link" href={project.dashboard} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} dashboard (opens in a new tab)`}>Dashboard <ArrowUpRight size={15} aria-hidden="true" /></a>}
           </div>
         </div>
