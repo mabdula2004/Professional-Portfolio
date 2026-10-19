@@ -938,12 +938,16 @@ button { font: inherit; }
 
 /* The Home hero carries the identity; retain only the monogram in its header. */
 .site-frame:has(main.home-page) > .site-header .brand-copy { display: none; }
-.home-page .hero-name { margin: 24px 0 0; color: var(--text); font-size: clamp(1.7rem, 3.2vw, 2.7rem); font-weight: 650; line-height: 1.18; letter-spacing: -.045em; text-wrap: balance; }
-.home-page .hero-name > span { color: var(--accent); }
-.home-page .hero h1 { margin-top: 12px; }
+@font-face { font-family: "Portfolio Display"; src: url("/fonts/anton/Anton-Regular.ttf") format("truetype"); font-style: normal; font-weight: 400; font-display: swap; }
+.home-page .hero-copy { container-type: inline-size; }
+.home-page .hero-name { display: flex; flex-direction: column; width: max-content; max-width: 100%; margin: 28px 0 0; color: var(--text); font-family: "Portfolio Display", Impact, "Arial Narrow", sans-serif; font-size: clamp(3.6rem, 7vw, 7rem); font-size: clamp(3.6rem, 19cqw, 7rem); font-weight: 400; line-height: .98; letter-spacing: -.025em; text-transform: uppercase; }
+.home-page .hero-name-first { display: block; }
+.home-page .hero-name .hero-name-last { display: block; align-self: flex-end; padding-left: .6em; margin-top: -.015em; }
+.home-page .hero-name-last { color: var(--accent); }
+.home-page .hero h1 { margin: 26px 0 22px; font-size: var(--type-feature-title); line-height: 1.2; letter-spacing: -.025em; font-weight: 650; }
 @supports (background-clip: text) or (-webkit-background-clip: text) {
-  .home-page .hero-name > span { background: linear-gradient(110deg, var(--accent) 10%, var(--accent-2) 95%); background-clip: text; -webkit-background-clip: text; color: transparent; }
+  .home-page .hero-name-last { background: linear-gradient(110deg, var(--accent) 10%, var(--accent-2) 95%); background-clip: text; -webkit-background-clip: text; color: transparent; }
 }
 @media (forced-colors: active) {
-  .home-page .hero-name > span { color: CanvasText; background: none; }
+  .home-page .hero-name-last { color: CanvasText; background: none; }
 }

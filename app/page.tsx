@@ -16,7 +16,7 @@ export default function Home() {
       <section className="hero page-shell">
         <div className="hero-copy">
           <p className="kicker"><span /> Professional Portfolio</p>
-          <p className="hero-name">Muhammad <span>Abdullah</span></p>
+          <p className="hero-name"><span className="hero-name-first">Muhammad</span>{" "}<span className="hero-name-last">Abdullah</span></p>
           <h1>Full Stack Developer</h1>
           <p className="hero-summary">
             I&apos;m Muhammad Abdullah, a Computer Science graduate with internship experience in web and mobile development. My projects apply React, React Native, databases, APIs and AI integration.
