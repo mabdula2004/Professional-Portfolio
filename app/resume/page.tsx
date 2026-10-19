@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Award, BriefcaseBusiness, Code2, Download, GraduationCap, Link2, Mail, MapPin, MessageCircle, Sparkles } from "lucide-react";
+import { Award, BriefcaseBusiness, ArrowUpRight, Code2, GraduationCap, Link2, Mail, MapPin, MessageCircle, Sparkles } from "lucide-react";
 
 export const metadata: Metadata = { title: "Résumé" };
 
@@ -10,29 +10,58 @@ const education = [
 ];
 
 const skills = [
-  { group: "Languages", items: ["C++", "Python", "HTML", "CSS", "JavaScript", "TypeScript"] },
+  { group: "Languages", items: ["C++", "Python", "HTML", "CSS", "JavaScript", "TypeScript", "Node.js"] },
   { group: "Frameworks", items: ["React", "React Native", "Flutter"] },
   { group: "Backend & Data", items: ["Supabase", "Firebase", "Firestore", "MySQL", "PostgreSQL", "REST APIs", "FastAPI"] },
   { group: "Development Tools", items: ["Git", "GitHub", "VS Code", "Android Studio", "Google Colab"] },
 ];
 
 const projects = [
-  { title: "AI-Powered FYP Suggestion & Submission Portal", text: "Built role-based Student, Supervisor, and Admin workflows with AI suggestions, semantic similarity checks, document processing, and milestone tracking.", stack: "React · Firebase · AI Model" },
-  { title: "RoadWatch AI Traffic Violation Detection Platform", text: "Designed operational screens for traffic monitoring, incident review, evidence management, and AI-assisted violation detection.", stack: "React · AI Model · Supabase · PostgreSQL" },
-  { title: "Multi-Role Healthcare Appointment Management", text: "Developed authenticated role-based booking workflows with PostgreSQL-backed scheduling and protected access.", stack: "React · Supabase" },
+  {
+    title: "AI-Powered FYP Suggestion & Submission Portal",
+    details: [
+      "Built role-based Student, Supervisor and Admin workflows with AI suggestions, semantic similarity checks, PDF processing with OCR and milestone tracking.",
+      "Added route guards with university-domain authentication, group formation, supervisor-approved project locking and five-phase milestone tracking secured with Firestore rules.",
+    ],
+    stack: "React · Firebase · FastAPI",
+  },
+  {
+    title: "RoadWatch Traffic Monitoring Platform",
+    details: [
+      "Wrote the PRD, validated video-based violation detection through a proof of concept, designed the ERD and schema, created the app and dashboard UI in Magic Patterns, then implemented the application and integrated Supabase services.",
+      "Developed a mobile app for reporters and a web dashboard for human reviewers.",
+    ],
+    stack: "React · React Native · Supabase · PostgreSQL",
+  },
+  {
+    title: "Multi-Role Healthcare Appointment Management",
+    details: [
+      "Developed authenticated, role-based booking workflows with PostgreSQL scheduling, Row Level Security, server-validated bookings and Playwright end-to-end tests.",
+      "Implemented four-step patient booking with database overlap prevention, private document storage and GitHub Actions running builds and Playwright tests across desktop, tablet and mobile.",
+    ],
+    stack: "React · Supabase · PostgreSQL",
+  },
+  {
+    title: "Hirely Multi-Role Job Portal",
+    details: [
+      "Built Candidate, Recruiter and Admin workspaces covering job discovery, the applicant pipeline, messaging and analytics.",
+      "Implemented an ATS pipeline, interview scheduling, a résumé centre, job alerts and admin moderation with audit logs, deployed on Vercel.",
+    ],
+    stack: "React · Supabase · PostgreSQL",
+  },
 ];
 
 const experience = [
   {
-    title: "React Developer (Intern)", company: "Sortup Pvt. Ltd.", location: "Lahore · On-site", dates: "Jul 2026 - Sep 2026",
+    title: "React Developer (Intern)", company: "Sortup Pvt. Ltd.", location: "Lahore · On-site", dates: "Aug 2026 - Oct 2026",
     details: [
-      "Contributed to React frontend development and learned to integrate the Supabase backend.",
-      "Gained hands-on experience with React Native through mobile app project tasks.",
-      "Collaborated with the development team on real projects and learned to manage software changes using Git and GitHub.",
+      "Contributed to React frontend development and practised integrating backend services.",
+      "Gained hands-on experience with React Native through mobile application projects.",
+      "Collaborated with the development team on real projects and used Git and GitHub for code management.",
     ],
   },
   {
-    title: "Android App Development Intern", company: "We Connect", location: "Vehari · On-site", dates: "Jul 2024 - Sep 2024",
+    title: "Android App Development (Intern)", company: "We Connect", location: "Vehari · On-site", dates: "Jul 2024 - Sep 2024",
     details: [
       "Collaborated on mobile application tasks.",
       "Supported feature improvements, testing, and debugging.",
@@ -41,16 +70,16 @@ const experience = [
   },
 ];
 
-const certifications = [
-  { title: "React JS for Beginners", provider: "Cursa" },
-  { title: "React JS Complete", provider: "Cursa" },
-  { title: "Node JS Beginner", provider: "Cursa" },
-  { title: "Dart and Flutter: Mobile App Development", provider: "Udemy" },
+const certifications: { title: string; provider: string; href?: string }[] = [
+  { title: "React JS Complete", provider: "Cursa", href: "https://drive.google.com/file/d/1RYrVcvLU5weUz57YtYTInZ1gMs3afibh/view?usp=sharing" },
+  { title: "React: All You Need to Know", provider: "Udemy", href: "https://drive.google.com/file/d/14W2hj1RsPnut9Q-oppHaFXd-GsFJVwox/view?usp=sharing" },
+  { title: "Node JS Complete", provider: "Cursa", href: "https://drive.google.com/file/d/1eLyVG-UiOLP0pXVhJwiOBcs0wFZQebjf/view?usp=sharing" },
+  { title: "Dart and Flutter: Mobile App Development", provider: "Udemy", href: "https://drive.google.com/file/d/1nPIXOiMdpZfow8xoecLKkpXnVApQ-NfS/view?usp=sharing" },
+  { title: "Machine Learning and AI coursework", provider: "Udemy", href: "https://drive.google.com/file/d/1XwfyS_rJyQBpGrOOIzDm8_ACejgWCrfC/view?usp=sharing" },
   { title: "Mobile App Development with Flutter", provider: "Alison" },
-  { title: "Machine Learning and AI coursework", provider: "Udemy" },
 ];
 
-const strengths = ["Analytical Problem Solving", "Leadership", "Team Collaboration", "Self Motivation", "Discipline", "Ownership"];
+const strengths = ["Problem Solving", "Team Collaboration", "Self Motivation", "Discipline", "Ownership", "Consistent Work Ethic"];
 
 export default function ResumePage() {
   return (
@@ -61,14 +90,13 @@ export default function ResumePage() {
           <div>
             <p className="section-index">Résumé / Web edition</p>
             <h1>Muhammad Abdullah</h1>
-            <p className="lead">Full Stack Developer | React, React Native &amp; JavaScript</p>
+            <p className="lead">Full Stack Developer</p>
           </div>
         </div>
-        <a className="button primary resume-download" href="/Muhammad-Abdullah-CV.pdf" download><Download size={17} /> Download CV</a>
       </section>
 
       <section className="resume-contact-strip" aria-label="Contact information">
-        <span><MapPin size={16} /> Lahore, Punjab, Pakistan</span>
+        <span><MapPin size={16} /> Vehari, Punjab, Pakistan</span>
         <a href="mailto:mabdullah17jun@gmail.com"><Mail size={16} /> mabdullah17jun@gmail.com</a>
         <a href="https://wa.me/923202929447" target="_blank" rel="noreferrer"><MessageCircle size={16} /> +92 320 2929447</a>
         <a href="https://github.com/mabdula2004" target="_blank" rel="noreferrer"><Code2 size={16} /> GitHub</a>
@@ -88,7 +116,12 @@ export default function ResumePage() {
           <section className="resume-panel">
             <div className="resume-section-title"><Award size={18} /><h2>Certifications</h2></div>
             <div className="certificate-list">
-              {certifications.map((certificate) => <article key={certificate.title}><strong>{certificate.title}</strong><span>{certificate.provider}</span></article>)}
+              {certifications.map((certificate) => (
+                <article key={certificate.title}>
+                  <strong>{certificate.title}</strong><span>{certificate.provider}</span>
+                  {certificate.href ? <a className="resume-certificate-link" href={certificate.href} target="_blank" rel="noreferrer" aria-label={`View ${certificate.title} certificate`}>View certificate <ArrowUpRight size={14} aria-hidden="true" /></a> : null}
+                </article>
+              ))}
             </div>
           </section>
 
@@ -102,7 +135,7 @@ export default function ResumePage() {
           <section className="resume-panel resume-profile-panel">
             <p className="section-index">Profile</p>
             <h2>Professional Summary</h2>
-            <p>I am a Computer Science graduate with Web and App development internship experience and a portfolio of 40+ academic and personal projects. Combines strong programming fundamentals with hands on experience building web, mobile, and AI enabled applications. Brings analytical problem solving, leadership qualities and a collaborative approach to technical challenges. Self motivated and disciplined, with a consistent work ethic, a strong sense of ownership and a commitment to turning ideas into practical user focused solutions.</p>
+            <p>I am a Full Stack Developer and recent Computer Science graduate with internships in React and Android development. At Sortup, I built frontend interfaces, connected Supabase backend services, and created and integrated backend APIs. I start with the problem and develop the complete solution: for my final-year project, I built an AI-powered FYP portal for my university, bringing scattered documents and manual approvals into one workflow with role-based access, AI project suggestions and semantic similarity checks. I am self-motivated and disciplined, with a consistent work ethic, a strong sense of ownership and a commitment to practical solutions.</p>
           </section>
 
           <section className="resume-panel">
@@ -133,7 +166,7 @@ export default function ResumePage() {
             <div className="resume-section-title"><BriefcaseBusiness size={18} /><h2>Selected Projects</h2></div>
             <div className="resume-project-list">
               {projects.map((project, index) => (
-                <article key={project.title}><span>0{index + 1}</span><div><h3>{project.title}</h3><p>{project.text}</p><p className="resume-project-stack">{project.stack}</p></div></article>
+                <article key={project.title}><span>0{index + 1}</span><div><h3>{project.title}</h3><ul>{project.details.map(detail => <li key={detail}>{detail}</li>)}</ul><p className="resume-project-stack">{project.stack}</p></div></article>
               ))}
             </div>
           </section>

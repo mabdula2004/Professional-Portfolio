@@ -951,3 +951,9 @@ button { font: inherit; }
 @media (forced-colors: active) {
   .home-page .hero-name-last { color: CanvasText; background: none; }
 }
+
+.resume-certificate-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; color: var(--accent); font-size: var(--type-caption); font-weight: 650; line-height: 1.5; }
+.resume-certificate-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.resume-certificate-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
+.resume-project-list ul { margin: 8px 0 0; padding-left: 18px; color: var(--muted); font-size: var(--type-body); line-height: var(--line-body); }
+.resume-project-list li + li { margin-top: 8px; }
