@@ -32,8 +32,8 @@ export default function Home() {
             <div className="code-lines">
               <p><b>const</b> developer = &#123;</p>
               <p>&nbsp;&nbsp;focus: <em>&quot;Web &amp; mobile development&quot;</em>,</p>
-              <p>&nbsp;&nbsp;frontend: [<em>&quot;React&quot;</em>, <em>&quot;TypeScript&quot;</em>],</p>
-              <p>&nbsp;&nbsp;backend: [<em>&quot;Firebase&quot;</em>, <em>&quot;Supabase&quot;</em>],</p>
+              <p>&nbsp;&nbsp;frontend: [<em>&quot;React&quot;</em>, <em>&quot;React Native&quot;</em>],</p>
+              <p>&nbsp;&nbsp;backend: [<em>&quot;Supabase&quot;</em>, <em>&quot;PostgreSQL&quot;</em>],</p>
               <p>&nbsp;&nbsp;integration: <em>&quot;AI applications&quot;</em></p>
               <p>&#125;;</p>
             </div>
