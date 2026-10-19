@@ -2,10 +2,10 @@
 import { ArrowUpRight, LockKeyhole } from "lucide-react";
 import type { Project } from "@/lib/portfolio-data";
 import { projectScreenshots } from "@/lib/project-screenshots";
-import { ProjectScreenshotReel } from "@/components/project-screenshot-reel";
+import { ProjectFilmstrip } from "@/components/project-filmstrip";
 
 function ProjectPreview({ slug }: { slug: string }) {
-  if (projectScreenshots[slug]) return <ProjectScreenshotReel slug={slug} />;
+  if (projectScreenshots[slug]) return <ProjectFilmstrip slug={slug} compact />;
   return null;
 }
 

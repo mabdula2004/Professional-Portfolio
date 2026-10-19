@@ -1,8 +1,9 @@
 /* eslint-disable @next/next/no-html-link-for-pages, @next/next/no-img-element */
 import type { Metadata } from "next";
-import { ArrowUpRight, BookOpenCheck, Braces, Code2, Compass, GraduationCap, Layers3, MessageSquareMore, Smartphone } from "lucide-react";
+import { ArrowUpRight, BookOpenCheck, Braces, Code2, GraduationCap, Smartphone } from "lucide-react";
 
 import { EducationJourney } from "@/components/education-journey";
+import { DevelopmentProcess } from "@/components/development-process";
 
 export const metadata: Metadata = { title: "About" };
 
@@ -42,17 +43,7 @@ export default function AboutPage() {
 
       <EducationJourney />
 
-      <section className="section compact-section about-work-section">
-        <div className="section-heading about-section-heading">
-          <p className="section-index">Development Approach</p>
-          <h2>Problem Solving &amp; Implementation</h2>
-        </div>
-        <div className="about-work-grid">
-          <article><Compass /><span>01</span><h3>Requirements Analysis</h3><p>I identify user requirements, application workflows and technical constraints before implementation.</p></article>
-          <article><Layers3 /><span>02</span><h3>Development &amp; Testing</h3><p>I implement reusable components, integrate application data and test functionality across relevant workflows.</p></article>
-          <article><MessageSquareMore /><span>03</span><h3>Review &amp; Refinement</h3><p>I evaluate feedback, resolve defects and refine usability and implementation quality.</p></article>
-        </div>
-      </section>
+      <DevelopmentProcess />
 
       <section className="about-next-step">
         <BookOpenCheck size={22} />
