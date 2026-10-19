@@ -872,3 +872,66 @@ button { font: inherit; }
 
 .case-screenshot-reel { min-width: 0; margin: 24px; }
 .case-screenshot-reel .showcase-browser.showcase-site-browser { max-width: none; transform: none; }
+
+/* Scroll-linked repository deck. Normal page scrolling drives the pinned stage. */
+.repository-scroll { position: relative; padding-bottom: 0; }
+.repository-stage { padding-block: 16px; }
+.repository-stage-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 26px; }
+.projects-page .repository-stage-heading .repository-heading { margin: 0; }
+.repository-stage-heading .repository-description { margin-top: 14px; }
+.repository-view-toggle { display: inline-flex; flex-shrink: 0; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 999px; padding: 10px 16px; margin-top: 8px; color: var(--muted); background: var(--surface); font: inherit; font-size: var(--type-caption); cursor: pointer; }
+.repository-view-toggle:hover { color: var(--text); border-color: var(--accent); }
+.repository-scroll[data-mode="stack"] { height: calc(var(--stack-travel, 0px) + var(--stack-stage-height, 650px)); }
+.repository-scroll[data-mode="stack"] .repository-stage { position: sticky; top: 96px; }
+.repository-deck { position: relative; isolation: isolate; height: clamp(430px, 49svh, 450px); perspective: 1400px; }
+.repository-deck::before, .repository-deck::after { content: ""; position: absolute; inset: 12px 22px -12px; border: 1px solid var(--line); border-radius: 24px; background: var(--surface-2); z-index: -1; pointer-events: none; }
+.repository-deck::after { inset: 24px 44px -24px; opacity: .55; z-index: -2; }
+.repository-deck-group { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(var(--stack-columns), minmax(0, 1fr)); gap: 18px; transform-origin: center bottom; }
+.repository-deck-group:not(:first-child) { visibility: hidden; }
+.repository-deck-group[inert] { pointer-events: none; }
+.projects-page .repo-stack-card { min-width: 0; min-height: 0; height: 100%; padding: clamp(20px, 2.2vw, 30px); border-radius: 24px; background: linear-gradient(150deg, color-mix(in srgb, var(--accent) 5%, var(--surface)), var(--surface) 60%); box-shadow: 0 12px 30px color-mix(in srgb, var(--text) 4%, transparent); }
+.projects-page .repo-stack-card:hover { transform: translateY(-4px); }
+.repo-stack-card .repo-card-top { gap: 10px; }
+.repo-stack-card .repo-card-top > svg { color: var(--accent); }
+.repo-stack-card time { color: var(--muted); font-size: var(--type-caption); line-height: 1.5; text-align: right; }
+.projects-page .repo-stack-card > p { margin-top: 24px; }
+.repo-stack-card h3 { overflow-wrap: anywhere; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+.repo-stack-card > span { max-width: 36ch; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+.repository-stage-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 44px; }
+.repository-scroll-hint { display: flex; align-items: center; gap: 8px; margin: 0; color: var(--muted); font-size: var(--type-caption); }
+.repository-step-controls { display: flex; align-items: center; gap: 15px; }
+.repository-step-controls > span { min-width: 86px; text-align: center; color: var(--text); font-size: var(--type-caption); font-variant-numeric: tabular-nums; }
+.repository-step-controls > span > span { color: var(--muted); }
+.repository-step-controls button { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 50%; background: var(--surface); color: var(--text); cursor: pointer; }
+.repository-step-controls button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.repository-step-controls button:disabled { opacity: .3; cursor: default; }
+.repository-scroll-progress { height: 2px; margin-top: 18px; background: var(--line); overflow: hidden; border-radius: 2px; }
+.repository-scroll-progress > div { width: 100%; height: 100%; background: var(--accent); transform: scaleX(0); transform-origin: left center; }
+.repository-scroll[data-mode="grid"] .repo-stack-card { min-height: 310px; }
+.repository-view-toggle:focus-visible, .repository-step-controls button:focus-visible, .repo-stack-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+@media (max-width: 999px) {
+  .repository-stage-heading .repository-heading h2 { font-size: var(--type-section-title); }
+  .repository-stage-heading { gap: 14px; }
+}
+@media (max-width: 639px) {
+  .repository-scroll[data-mode="stack"] .repository-stage { top: 86px; }
+  .repository-stage-heading { display: grid; grid-template-columns: 1fr auto; column-gap: 8px; }
+  .repository-stage-heading .repository-heading { grid-column: 1 / -1; }
+  .repository-view-toggle { grid-column: 2; grid-row: 2; margin-top: 0; padding: 7px 12px; }
+  .repository-stage-heading:has(.repository-view-toggle) { margin-bottom: 16px; }
+  .repository-stage-heading .repository-description { margin-top: 10px; }
+  .repository-deck { height: 430px; }
+  .projects-page .repo-stack-card { padding: 24px; }
+  .projects-page .repo-stack-card > p { margin-top: 24px; }
+  .repository-stage-footer { padding-top: 36px; gap: 8px; }
+  .repository-step-controls { gap: 7px; }
+  .repository-scroll-hint { font-size: 11px; gap: 5px; }
+  .repository-deck::before { inset-inline: 12px; }
+  .repository-deck::after { inset-inline: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .repository-scroll { height: auto !important; }
+  .repository-stage { position: static !important; }
+  .repo-stack-card, .repo-stack-card:hover { transition: none; transform: none; }
+}
+.projects-page .repository-scroll { padding-top: 0; margin-top: 32px; }

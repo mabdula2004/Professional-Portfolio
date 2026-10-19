@@ -372,9 +372,10 @@ export const coreSkills = [
 ];
 
 export const githubRepositories: GitHubRepository[] = [
+  { name: "RoadWatch", repository: "roadwatch_traffic-voilation-detecting-app", category: "React Native + React", description: "A mobile traffic-reporting app and web review dashboard with Supabase authentication and evidence workflows." },
   { name: "Medora Healthcare Platform", repository: "Multi-Role-Healthcare-Appointment-Management", category: "React + Supabase", description: "A multi-role healthcare system for patients, doctors and administrators." },
   { name: "Roamly Travel Booking", repository: "Travel-Booking-Application", category: "React + Supabase", description: "A travel application with destination search, saved trips and booking workflows." },
-  { name: "EMBER° Restaurant Ordering", repository: "Restaurant-Ordering-Application", category: "React + Supabase", description: "A full-stack restaurant storefront with live menu and ordering data." },
+  { name: "EMBER° Restaurant Ordering", repository: "Restaurant-Ordering-Application", category: "React + Supabase", description: "A React restaurant application with menu discovery, configurable dishes and demo checkout." },
   { name: "ATELIER 01 Luxury Commerce", repository: "luxury-Ecommerce-with-Backend-", category: "React + Supabase", description: "A luxury commerce platform with authentication, checkout and account workflows." },
   { name: "AI-Powered FYP Portal", repository: "AI-powered-FYP-Suggestion-Submission-Portal", category: "React + AI", description: "A final-year project suggestion and submission workflow for students and supervisors." },
   { name: "My Projects", repository: "My-Projects", category: "Project Collection", description: "A collection of development exercises and project experiments." },
