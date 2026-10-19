@@ -16,7 +16,7 @@ export function ProjectScreenshotReel({ slug }: { slug: string }) {
     const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; }, { threshold: .15 });
     observer.observe(element);
     const timer = window.setInterval(() => {
-      const card = element.closest("a");
+      const card = element.closest(".showcase-card, a");
       if (!visible || reducedMotion.matches || document.hidden || card?.matches(":hover, :focus-within")) return;
       setActive((previous) => (previous + 1) % project.screens.length);
     }, 4500);

@@ -957,3 +957,15 @@ button { font: inherit; }
 .resume-certificate-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
 .resume-project-list ul { margin: 8px 0 0; padding-left: 18px; color: var(--muted); font-size: var(--type-body); line-height: var(--line-body); }
 .resume-project-list li + li { margin-top: 8px; }
+
+/* Independent project and live-demo links retain the full-card case-study target. */
+.showcase-card { position: relative; isolation: isolate; }
+.showcase-footer { flex-wrap: wrap; }
+.showcase-details-link { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; }
+.showcase-details-link::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+.showcase-live-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.showcase-live-link { position: relative; z-index: 2; display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 44px; padding: 9px 13px; border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line)); border-radius: 10px; background: color-mix(in srgb, var(--accent) 10%, var(--surface)); color: var(--text); }
+.showcase-live-link:hover { background: color-mix(in srgb, var(--accent) 20%, var(--surface)); border-color: var(--accent); }
+.showcase-live-link:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.showcase-details-link:focus-visible { outline: none; }
+.showcase-details-link:focus-visible::after { outline: 3px solid var(--accent); outline-offset: -4px; }

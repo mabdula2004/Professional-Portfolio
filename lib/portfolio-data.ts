@@ -107,6 +107,7 @@ export const projects: Project[] = [
     technicalDecisions: ["Dedicated workspaces for patient, doctor and admin roles", "PostgreSQL and Row Level Security for protected data access", "Server-validated booking logic and automated Playwright checks"],
     futureWork: ["Expand notification and communication workflows", "Improve analytics for doctors and administrators", "Prepare a production deployment and monitored test environment"],
     github: "https://github.com/mabdula2004/Multi-Role-Healthcare-Appointment-Management",
+    live: "https://medora-healthcare-appointment-manag.vercel.app/",
     featured: true,
     featuredOrder: 2,
     accent: "cyan",

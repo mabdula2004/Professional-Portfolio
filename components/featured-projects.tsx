@@ -11,9 +11,8 @@ function ProjectPreview({ slug }: { slug: string }) {
 
 export function FeaturedProjects({ projects }: { projects: Project[] }) {
   return <div className="project-showcase">
-    {projects.map((project, index) => <a
+    {projects.map((project, index) => <article
       className={`showcase-card accent-${project.accent}${index === 0 ? " showcase-primary" : ""}`}
-      href={`/projects/${project.slug}`}
       key={project.slug}
     >
       <div className={`showcase-preview preview-${project.slug}`} aria-hidden="true"><ProjectPreview slug={project.slug} /></div>
@@ -22,8 +21,16 @@ export function FeaturedProjects({ projects }: { projects: Project[] }) {
         <h3>{project.title}</h3>
         <p>{project.summary}</p>
         <ul className="showcase-tags" aria-label="Technologies">{project.stack.slice(0, 3).map((item) => <li key={item}>{item}</li>)}</ul>
-        <div className="showcase-footer"><span>{project.private ? "Project overview" : "Explore project"}</span><span className="showcase-arrow"><ArrowUpRight size={19} /></span></div>
+        <div className="showcase-footer">
+          <a className="showcase-details-link" href={`/projects/${project.slug}`} aria-label={`Explore ${project.title}`}>
+            <span>{project.private ? "Project overview" : "Explore project"}</span><span className="showcase-arrow"><ArrowUpRight size={19} /></span>
+          </a>
+          <div className="showcase-live-links">
+            {project.live && <a className="showcase-live-link" href={project.live} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} live demo (opens in a new tab)`}>Live demo <ArrowUpRight size={15} aria-hidden="true" /></a>}
+            {project.dashboard && <a className="showcase-live-link" href={project.dashboard} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} dashboard (opens in a new tab)`}>Dashboard <ArrowUpRight size={15} aria-hidden="true" /></a>}
+          </div>
+        </div>
       </div>
-    </a>)}
+    </article>)}
   </div>;
 }
