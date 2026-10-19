@@ -33,5 +33,14 @@ export const projectScreenshots: Record<string, { label: string; screens: Projec
     { src: "/projects/roadwatch/app-registration.jpg", label: "Reporting app · Web preview" },
     { src: "/projects/roadwatch/dashboard.jpg", label: "Review dashboard · Empty queue" },
   ] },
-  "velora-store": { label: "VELORA Fashion Store", screens: [{ src: "/projects/velora/home.jpg", label: "Storefront · Homepage" }] },
+  "ember-restaurant-ordering": { label: "EMBER° Restaurant Ordering", screens: [
+    { src: "/projects/ember/home.jpg", label: "Customer · Homepage" },
+    { src: "/projects/ember/menu.jpg", label: "Customer · Menu discovery" },
+    { src: "/projects/ember/dish-details.jpg", label: "Customer · Dish customisation" },
+    { src: "/projects/ember/bag.jpg", label: "Customer · Shopping bag" },
+    { src: "/projects/ember/checkout.jpg", label: "Customer · Demo checkout" },
+    { src: "/projects/ember/saved-dishes.jpg", label: "Customer · Saved dishes" },
+    { src: "/projects/ember/story.jpg", label: "Restaurant · Our story" },
+    { src: "/projects/ember/locations.jpg", label: "Restaurant · Concept kitchens" },
+  ] },
 };

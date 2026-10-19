@@ -23,14 +23,14 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
   const project = caseStudies.find((item) => item.slug === slug);
   if (!project) notFound();
   const isFypCase = project.slug === "fyp-intelligence-portal";
-  const hasRoadwatchReel = project.slug === "roadwatch";
+  const hasScreenshotReel = ["roadwatch", "ember-restaurant-ordering"].includes(project.slug);
   const hasEvidence = Boolean(project.verification?.length || project.limitations?.length);
 
   return (
     <main className="inner-main page-shell case-study-page">
       <a className="back-link" href="/"><ArrowLeft size={16} /> Featured projects</a>
 
-      <section className={`case-hero ${isFypCase || hasRoadwatchReel ? "case-hero-with-reel" : ""} ${project.private ? "private-case-hero" : ""} accent-${project.accent}`}>
+      <section className={`case-hero ${isFypCase || hasScreenshotReel ? "case-hero-with-reel" : ""} ${project.private ? "private-case-hero" : ""} accent-${project.accent}`}>
         <div className="case-copy">
           <p className="section-index">{project.eyebrow} / {project.year}</p>
           <h1>{project.title}</h1>
@@ -47,7 +47,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
             )}
           </div>
         </div>
-        {isFypCase ? <FypHeroReel /> : hasRoadwatchReel ? <div className="case-screenshot-reel"><ProjectScreenshotReel slug={project.slug} /></div> : (
+        {isFypCase ? <FypHeroReel /> : hasScreenshotReel ? <div className="case-screenshot-reel"><ProjectScreenshotReel slug={project.slug} /></div> : (
           <div className={`case-art ${project.private ? "private-case-art" : ""}`}>
             {project.private ? <Lock className="private-case-lock" aria-hidden="true" /> : <span>{project.title.split(" ").map((word) => word[0]).slice(0, 3).join("")}</span>}
             <small>{project.private ? "Protected project in active development" : project.status}</small>
