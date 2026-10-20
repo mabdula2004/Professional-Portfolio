@@ -6,12 +6,18 @@ import { education } from "@/lib/education";
 import { journeyDuration, journeyFrame, journeyPaths, journeyStops } from "@/lib/education-journey";
 
 const stages = [
-  { ...education[2], label: "Matric", icon: FlaskConical },
+  {
+    ...education[2], label: "Matric", icon: FlaskConical,
+    description: "Developed a foundation in biology, chemistry and physics, strengthening observation, logical reasoning and disciplined study habits. This scientific background shaped my interest in understanding problems systematically before working towards a solution.",
+  },
   {
     ...education[1], label: "FSc", icon: Microscope,
     description: "Pre-medical studies developed my scientific reasoning, careful observation and analytical problem solving. Combined with Computer Science, this foundation helps me understand healthcare workflows and translate domain requirements into practical applications, including appointment and patient information systems.",
   },
-  { ...education[0], label: "BSCS", icon: GraduationCap },
+  {
+    ...education[0], label: "BSCS", icon: GraduationCap,
+    description: "Studied programming, data structures, databases and software engineering, then applied these foundations in web, mobile and AI-enabled academic projects. My final-year project strengthened my experience with role-based workflows, data integration and practical problem solving.",
+  },
   {
     label: "Development", icon: Code2, degree: "Web and Mobile Development", school: "Current Focus", dates: "Present", note: "",
     description: "My technical focus includes React, React Native and JavaScript, supported by TypeScript, authentication, database integration, REST APIs and AI applications.",

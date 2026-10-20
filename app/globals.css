@@ -1029,35 +1029,6 @@ button { font: inherit; }
   .education-detail, .education-stop-icon { animation: none !important; transition: none; }
 }
 
-/* Continuous screenshot film, shared by Home previews and featured case studies. */
-.project-filmstrip { --film-screen-width: 300px; width: 100%; min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); box-shadow: 0 14px 36px color-mix(in srgb, var(--text) 7%, transparent); }
-.filmstrip-heading { display: flex; align-items: center; gap: 8px; min-width: 0; padding: 12px 16px; border-bottom: 1px solid var(--line); font-size: var(--type-caption); font-weight: 650; }
-.filmstrip-heading > svg { flex-shrink: 0; color: var(--accent); }
-.filmstrip-heading > span:first-of-type { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.filmstrip-heading-note { margin-left: auto; color: var(--muted); font-weight: 400; white-space: nowrap; }
-.filmstrip-window { position: relative; overflow: hidden; padding: 20px 0; background: color-mix(in srgb, var(--accent) 4%, var(--bg)); }
-.filmstrip-window::before, .filmstrip-window::after { content: ""; position: absolute; z-index: 1; left: 0; right: 0; height: 5px; pointer-events: none; background: repeating-linear-gradient(90deg, transparent 0 10px, var(--line) 10px 18px, transparent 18px 28px); }
-.filmstrip-window::before { top: 5px; }
-.filmstrip-window::after { bottom: 5px; }
-.filmstrip-track { display: flex; width: max-content; animation: project-film-left var(--film-duration) linear infinite; will-change: transform; }
-.filmstrip-group { display: flex; flex-shrink: 0; gap: 16px; padding-right: 16px; }
-.filmstrip-shot { flex: 0 0 var(--film-screen-width); width: var(--film-screen-width); min-width: 0; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
-.filmstrip-shot img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top center; background: var(--surface-2); }
-.filmstrip-shot img.filmstrip-contain { object-fit: contain; }
-.filmstrip-shot figcaption { padding: 8px 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; border-top: 1px solid var(--line); color: var(--muted); font-size: var(--type-caption); line-height: 1.4; }
-.project-filmstrip[data-animate="false"] .filmstrip-track, .project-filmstrip:hover .filmstrip-track, .project-filmstrip:focus-within .filmstrip-track, .showcase-card:hover .filmstrip-track, .showcase-card:focus-within .filmstrip-track { animation-play-state: paused; }
-.project-filmstrip:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
-.case-filmstrip { min-width: 0; padding: 24px; }
-.filmstrip-compact { --film-screen-width: 210px; }
-.filmstrip-compact .filmstrip-heading { padding: 8px 12px; }
-.filmstrip-compact .filmstrip-heading-note { display: none; }
-.filmstrip-compact .filmstrip-window { padding-block: 14px; }
-.filmstrip-compact .filmstrip-shot img { height: 112px; aspect-ratio: auto; }
-.filmstrip-compact .filmstrip-shot figcaption { padding: 6px 9px; font-size: 10px; }
-.showcase-preview:has(.project-filmstrip) { padding: 20px; }
-.showcase-primary .filmstrip-compact .filmstrip-shot img { height: 160px; }
-@keyframes project-film-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
 /* A practical development cycle with a method summary and six ordered steps. */
 .development-process-heading { display: grid; grid-template-columns: 1fr .85fr; align-items: center; gap: 48px; margin-bottom: 30px; }
 .development-process-heading .about-section-heading { margin-bottom: 0; }
@@ -1090,17 +1061,42 @@ button { font: inherit; }
   .development-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 640px) {
-  .case-filmstrip { padding: 0 20px 24px; }
-  .project-filmstrip { --film-screen-width: 240px; border-radius: 14px; }
-  .filmstrip-compact { --film-screen-width: 210px; }
-  .filmstrip-heading-note { display: none; }
   .development-method, .development-step { padding: 22px; }
   .development-steps { grid-template-columns: 1fr; }
   .development-step-top { margin-bottom: 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .filmstrip-track { animation: none !important; transform: none; will-change: auto; }
-  .filmstrip-window { overflow-x: auto; }
-  .filmstrip-copy { display: none; }
   .development-step, .development-step::after, .development-step-icon { transition: none; }
+}
+
+/* Restrained screenshot transitions shared by featured cards and case studies. */
+.project-image-preview { min-width: 0; width: 100%; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); box-shadow: 0 12px 34px color-mix(in srgb, var(--text) 7%, transparent); }
+.project-image-stage { position: relative; overflow: hidden; aspect-ratio: 16 / 10; max-height: 320px; background: var(--surface-2); }
+.project-image-stage img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
+.project-image-stage .project-image-previous { position: absolute; inset: 0; }
+.project-image-current { position: relative; }
+.project-image-current.is-changing { animation: project-image-reveal 650ms cubic-bezier(.2,.65,.3,1) both; }
+.project-image-caption { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 42px; padding: 6px 12px; border-top: 1px solid var(--line); color: var(--muted); font-size: var(--type-caption); line-height: 1.5; }
+.project-image-caption > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.project-image-controls { display: flex; flex-shrink: 0; gap: 4px; }
+.project-image-controls button { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 1px solid var(--line); border-radius: 9px; background: var(--surface); color: var(--text); cursor: pointer; }
+.project-image-controls button:hover { color: var(--accent); border-color: var(--accent); }
+.project-image-preview:focus-visible, .project-image-controls button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.case-image-preview { min-width: 0; padding: 24px; }
+.project-image-preview-compact .project-image-stage { height: 165px; aspect-ratio: auto; }
+.project-image-preview-compact .project-image-caption { min-height: 36px; padding: 7px 11px; }
+.showcase-preview:has(.project-image-preview) { padding: 20px; }
+.showcase-primary .project-image-preview-compact .project-image-stage { height: 235px; }
+@keyframes project-image-reveal { from { opacity: 0; transform: translateY(5px) scale(1.01); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@media (max-width: 760px) {
+  .showcase-primary .project-image-preview-compact .project-image-stage { height: 165px; }
+}
+@media (max-width: 640px) {
+  .case-image-preview { padding: 0 20px 24px; }
+}
+@media (max-width: 480px) {
+  .showcase-primary .project-image-preview-compact .project-image-stage { height: 144px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-image-current.is-changing { animation: none; }
 }

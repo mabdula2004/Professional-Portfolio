@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, CheckCircle2, Code2, Lock } from "lucide-react";
-import { ProjectFilmstrip } from "@/components/project-filmstrip";
+import { ProjectImagePreview } from "@/components/project-image-preview";
 import { projectScreenshots } from "@/lib/project-screenshots";
 import { projects } from "@/lib/portfolio-data";
 
@@ -46,7 +46,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
             )}
           </div>
         </div>
-        {hasScreenshotReel ? <div className="case-filmstrip"><ProjectFilmstrip slug={project.slug} /></div> : (
+        {hasScreenshotReel ? <div className="case-image-preview"><ProjectImagePreview key={project.slug} slug={project.slug} /></div> : (
           <div className={`case-art ${project.private ? "private-case-art" : ""}`}>
             {project.private ? <Lock className="private-case-lock" aria-hidden="true" /> : <span>{project.title.split(" ").map((word) => word[0]).slice(0, 3).join("")}</span>}
             <small>{project.private ? "Protected project in active development" : project.status}</small>
