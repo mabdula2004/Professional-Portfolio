@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-import { Download, Mail, Menu, Moon, Sun, X } from "lucide-react";
+import { Download, Mail, Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-controls";
 
 function GitHubIcon({ size = 18 }: { size?: number }) {
   return (
@@ -47,11 +48,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             <a className="icon-button social-icon" href="mailto:mabdullah17jun@gmail.com" aria-label="Email Muhammad Abdullah" title="Email"><Mail size={17} /></a>
           </div>
           <a className="header-cv-link" href="/Muhammad-Abdullah-CV.pdf" download><Download size={15} /> Download CV</a>
-          <label className="icon-button theme-toggle" title="Toggle light and dark theme">
-            <input type="checkbox" aria-label="Toggle light and dark theme" />
-            <Sun className="theme-sun" size={18} />
-            <Moon className="theme-moon" size={18} />
-          </label>
+          <ThemeToggle />
           <details className="mobile-nav">
             <summary className="icon-button" aria-label="Toggle navigation"><Menu className="menu-open-icon" size={20} /><X className="menu-close-icon" size={20} /></summary>
             <nav className="main-nav" aria-label="Mobile navigation">

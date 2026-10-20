@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { SiteShell } from "@/components/site-shell";
+import { PortfolioThemeProvider } from "@/components/theme-controls";
 
 export const metadata: Metadata = {
   title: {
@@ -21,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="dark" suppressHydrationWarning>
-      <body className="antialiased"><SiteShell>{children}</SiteShell></body>
+      <body className="antialiased"><PortfolioThemeProvider><SiteShell>{children}</SiteShell></PortfolioThemeProvider></body>
     </html>
   );
 }

@@ -43,19 +43,7 @@
   color-scheme: dark;
 }
 
-.site-frame:has(.theme-toggle input:checked) {
-  --bg: #f4f3ef;
-  --surface: #ffffff;
-  --surface-2: #eae9e4;
-  --text: #151518;
-  --muted: #62626b;
-  --line: rgba(21, 21, 24, 0.14);
-  --accent: #6d4aff;
-  --accent-2: #9a84ff;
-  --header: rgba(244, 243, 239, 0.86);
-  --shadow: 0 22px 70px rgba(25, 21, 45, 0.12);
-  color-scheme: light;
-}
+
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -89,10 +77,10 @@ button { font: inherit; }
 .icon-button:hover { border-color: var(--accent); }
 .icon-button::-webkit-details-marker { display: none; }
 .theme-toggle { position: relative; }
-.theme-toggle input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.theme-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 .theme-moon { display: none; }
-.theme-toggle:has(input:checked) .theme-sun { display: none; }
-.theme-toggle:has(input:checked) .theme-moon { display: block; }
+:root[data-theme="light"] .theme-sun { display: none; }
+:root[data-theme="light"] .theme-moon { display: block; }
 .mobile-nav { position: relative; display: none; }
 .menu-close-icon { display: none; }
 .mobile-nav[open] .menu-open-icon { display: none; }
