@@ -43,7 +43,7 @@ export function ProjectImagePreview({ slug, compact = false }: { slug: string; c
       const target = element.closest(".showcase-card") ?? element;
       if (!visible || document.hidden || preference.matches || target.matches(":hover, :focus-within")) return;
       void showImage(current.current + 1);
-    }, 5000);
+    }, 3000);
     return () => {
       mounted.current = false;
       request.current++;
