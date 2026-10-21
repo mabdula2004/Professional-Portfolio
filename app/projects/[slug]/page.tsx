@@ -6,7 +6,7 @@ import { ProjectImagePreview } from "@/components/project-image-preview";
 import { projectScreenshots } from "@/lib/project-screenshots";
 import { projects } from "@/lib/portfolio-data";
 
-const caseStudies = projects.filter((project) => project.featured);
+const caseStudies = projects.filter((project) => project.featured && !project.private);
 
 export function generateStaticParams() {
   return caseStudies.map((project) => ({ slug: project.slug }));

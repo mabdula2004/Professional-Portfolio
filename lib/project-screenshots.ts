@@ -29,10 +29,6 @@ export const projectScreenshots: Record<string, { label: string; screens: Projec
     { src: "/projects/hirely/jobs.png", label: "Candidate · Job discovery" },
     { src: "/projects/hirely/mobile.png", label: "Mobile · Homepage", fit: "contain" },
   ] },
-  "roadwatch": { label: "RoadWatch", screens: [
-    { src: "/projects/roadwatch/app-registration.jpg", label: "Reporting app · Web preview" },
-    { src: "/projects/roadwatch/dashboard.jpg", label: "Review dashboard · Empty queue" },
-  ] },
   "ember-restaurant-ordering": { label: "EMBER° Restaurant Ordering", screens: [
     { src: "/projects/ember/home.jpg", label: "Customer · Homepage" },
     { src: "/projects/ember/menu.jpg", label: "Customer · Menu discovery" },

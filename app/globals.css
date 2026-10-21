@@ -1089,3 +1089,8 @@ button { font: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .project-image-current.is-changing { animation: none; }
 }
+
+/* Confidential projects expose only a non-interactive card. */
+.showcase-locked { display: flex; flex-direction: column; align-items: center; gap: 20px; color: var(--muted); font-size: var(--type-caption); letter-spacing: .08em; text-transform: uppercase; }
+.showcase-lock-icon { display: grid; place-items: center; width: 88px; height: 88px; border: 1px solid var(--line); border-radius: 24px; color: var(--accent); background: var(--surface); }
+.showcase-locked-footer { justify-content: flex-start; margin-top: auto; color: var(--muted); font-weight: 500; }

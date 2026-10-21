@@ -24,14 +24,6 @@ const projects = [
     stack: "React · Firebase · FastAPI",
   },
   {
-    title: "RoadWatch Traffic Monitoring Platform",
-    details: [
-      "Wrote the PRD, validated video-based violation detection through a proof of concept, designed the ERD and schema, created the app and dashboard UI in Magic Patterns, then implemented the application and integrated Supabase services.",
-      "Developed a mobile app for reporters and a web dashboard for human reviewers.",
-    ],
-    stack: "React · React Native · Supabase · PostgreSQL",
-  },
-  {
     title: "Multi-Role Healthcare Appointment Management",
     details: [
       "Developed authenticated, role-based booking workflows with PostgreSQL scheduling, Row Level Security, server-validated bookings and Playwright end-to-end tests.",
