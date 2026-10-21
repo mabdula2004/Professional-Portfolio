@@ -107,18 +107,22 @@ button { font: inherit; }
 .visual-glow { position: absolute; inset: 12% 4%; z-index: -2; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--accent) 45%, transparent), transparent 65%); filter: blur(30px); }
 .hero-visual::before { content: ""; position: absolute; width: 440px; height: 440px; border: 1px solid var(--line); border-radius: 50%; box-shadow: 0 0 0 52px color-mix(in srgb, var(--line) 25%, transparent), 0 0 0 104px color-mix(in srgb, var(--line) 12%, transparent); }
 .orbit-card { position: relative; z-index: 2; width: min(440px, 94%); padding: 18px; border: 1px solid rgba(255,255,255,.14); border-radius: 26px; background: #111116; color: #f5f3ff; box-shadow: var(--shadow); transform: rotate(-2deg); }
-/* Slow, restrained motion keeps the technology card readable. */
+/* Identical faces keep the code readable through a complete 3D turn. */
+.hero-card-stage { position: relative; z-index: 2; width: min(440px, 94%); perspective: 1200px; transform: rotate(-2deg); }
+.hero-card-rotor { display: grid; transform-style: preserve-3d; }
+.hero-card-face { grid-area: 1 / 1; width: 100%; backface-visibility: hidden; -webkit-backface-visibility: hidden; transform: rotateY(0deg) translateZ(.5px); }
+.hero-card-back { transform: rotateY(180deg) translateZ(.5px); }
 @keyframes hero-card-rotation {
-  0%, 100% { transform: perspective(1200px) translateY(0) rotateX(3deg) rotateY(-5deg) rotateZ(-2deg); }
-  50% { transform: perspective(1200px) translateY(-7px) rotateX(-2deg) rotateY(5deg) rotateZ(1.5deg); }
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
 }
 @keyframes hero-circle-depth {
   0%, 100% { transform: translateY(5px) scale(.95); opacity: .7; }
   50% { transform: translateY(-5px) scale(1.04); opacity: 1; }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .hero-visual > .main-card { transform-origin: 50% 55%; animation: hero-card-rotation 20s ease-in-out infinite; }
-  .hero-visual::before { animation: hero-circle-depth 12s ease-in-out infinite; }
+  .hero-card-rotor { animation: hero-card-rotation 8s linear infinite; }
+  .hero-visual::before { animation: hero-circle-depth 10s ease-in-out infinite; }
 }
 .code-window-top { display: flex; align-items: center; gap: 6px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,.1); }
 .code-window-top span { width: 8px; height: 8px; border-radius: 50%; background: #5b5b67; }

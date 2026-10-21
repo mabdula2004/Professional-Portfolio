@@ -10,6 +10,21 @@ const featured = projects
 
 const technologies = ["React", "React Native", "JavaScript", "TypeScript", "Firebase", "Supabase", "MySQL", "PostgreSQL", "REST APIs", "AI Integration"];
 
+function DeveloperCardContent() {
+  return <>
+    <div className="code-window-top"><span /><span /><span /><small>product.tsx</small></div>
+    <div className="code-lines">
+      <p><b>const</b> developer = &#123;</p>
+      <p>&nbsp;&nbsp;focus: <em>&quot;Web &amp; mobile development&quot;</em>,</p>
+      <p>&nbsp;&nbsp;frontend: [<em>&quot;React&quot;</em>, <em>&quot;React Native&quot;</em>],</p>
+      <p>&nbsp;&nbsp;backend: [<em>&quot;Supabase&quot;</em>, <em>&quot;PostgreSQL&quot;</em>],</p>
+      <p>&nbsp;&nbsp;integration: <em>&quot;AI applications&quot;</em></p>
+      <p>&#125;;</p>
+    </div>
+    <div className="build-status"><span /> Open to development opportunities</div>
+  </>;
+}
+
 export default function Home() {
   return (
     <main className="home-page">
@@ -28,17 +43,11 @@ export default function Home() {
         </div>
 
         <div className="hero-visual" aria-label="Technology overview">
-          <div className="orbit-card main-card">
-            <div className="code-window-top"><span /><span /><span /><small>product.tsx</small></div>
-            <div className="code-lines">
-              <p><b>const</b> developer = &#123;</p>
-              <p>&nbsp;&nbsp;focus: <em>&quot;Web &amp; mobile development&quot;</em>,</p>
-              <p>&nbsp;&nbsp;frontend: [<em>&quot;React&quot;</em>, <em>&quot;React Native&quot;</em>],</p>
-              <p>&nbsp;&nbsp;backend: [<em>&quot;Supabase&quot;</em>, <em>&quot;PostgreSQL&quot;</em>],</p>
-              <p>&nbsp;&nbsp;integration: <em>&quot;AI applications&quot;</em></p>
-              <p>&#125;;</p>
+          <div className="hero-card-stage">
+            <div className="hero-card-rotor">
+              <div className="orbit-card hero-card-face"><DeveloperCardContent /></div>
+              <div className="orbit-card hero-card-face hero-card-back" aria-hidden="true"><DeveloperCardContent /></div>
             </div>
-            <div className="build-status"><span /> Open to development opportunities</div>
           </div>
           <div className="floating-chip chip-react"><Code2 size={16} /> React</div>
           <div className="floating-chip chip-data"><Database size={16} /> Data</div>
