@@ -1,0 +1,22 @@
+.stage {
+  min-width: 0;
+}
+
+.rotor {
+  transform: rotateY(0deg);
+}
+
+.face {
+  min-width: 0;
+}
+
+@keyframes fullTurn {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rotor {
+    animation: fullTurn 8s linear infinite;
+  }
+}
